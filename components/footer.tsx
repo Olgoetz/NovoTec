@@ -13,8 +13,8 @@ export const Footer = () => {
   }, []);
   return (
     <div className="bg-black w-full pt-10  text-white mt-10">
-      <div className="grid md:grid-cols-3 text-center md:text-left gap-6 max-w-[1000px] mx-auto">
-        <div className="w-[500px] md:w-full mx-auto">
+      <div className="grid md:grid-cols-3 text-left gap-6 container max-w-[1000px] mx-auto">
+        <div className="w-full mx-auto">
           <p className=" text-lg mb-5 font-semibold border-b py-3 border-white">
             Links
           </p>
@@ -40,8 +40,8 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="w-[500px] md:w-full mx-auto">
-          <p className=" text-lg mb-5 font-semibold  border-b py-3 border-white">
+        <div className="w-full mx-auto">
+          <p className=" text-lg mb-5 font-semibold border-b py-3 border-white">
             Kontakt{" "}
           </p>
           <ul className="flex flex-col  space-y-5 text-sm">
@@ -61,7 +61,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="w-[500px] md:w-full mx-auto">
+        <div className="w-full mx-auto">
           <p className=" text-lg mb-5 font-semibold  border-b py-3 border-white">
             Sonstiges
           </p>
