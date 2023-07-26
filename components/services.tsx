@@ -22,25 +22,25 @@ export const Services = () => {
       title: "Ausbau",
       icon: BuildingIcon,
       color: "text-green-400",
-      bg_color: "bg-green-400/10",
+      bg_color: "",
     },
     {
       title: "Brandsanierung",
       icon: FlameIcon,
       color: "text-red-500",
-      bg_color: "bg-red-400/10",
+      bg_color: "",
     },
     {
       title: "Wasserschadensanierung",
       icon: DropletIcon,
       color: "text-blue-400",
-      bg_color: "bg-blue-400/10",
+      bg_color: "",
     },
     {
       title: "Projektleitung",
       icon: PresentationIcon,
       color: "text-orange-400",
-      bg_color: "bg-orange-400/10",
+      bg_color: "",
     },
   ];
   return (

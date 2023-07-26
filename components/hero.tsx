@@ -3,7 +3,7 @@ import { Star, ThumbsUp, Medal } from "lucide-react";
 import Image from "next/image";
 export const Hero = () => {
   return (
-    <div className="w-full mt-20 md:mt-4">
+    <div className="w-full mt-4">
       <div className=" text-black bg-blend-overlay bg-slate-200/30 min-h-screen bg-center z-10 bg-cover bg-[url(/novotec_Foto_drei_Transporter.jpg)]">
         {/* <h2 className="text-2xl uppercase text-right font-semibold mb-10 border-b pb-2">
           <NovoTec /> :: Wofür stehen wir?
