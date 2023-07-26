@@ -53,7 +53,7 @@ export const Services = () => {
 
         <div className="grid md:grid-cols-2 items-center gap-8 ">
           {services.map((service) => (
-            <Accordion type="single" collapsible>
+            <Accordion key={service.title} type="single" collapsible>
               <AccordionItem
                 className={cn("rounded-lg", service.bg_color)}
                 value={service.title}
