@@ -44,7 +44,7 @@ export const Services = () => {
     },
   ];
   return (
-    <div id="services" className="w-full py-20">
+    <div id="services" className="w-full mt-10 py-20">
       <div className="container">
         <h2 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
           <NovoTec /> :: Ausbau- und Sanierungsmanagement - unsere

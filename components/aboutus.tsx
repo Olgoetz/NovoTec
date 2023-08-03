@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 
 const AboutUs = () => {
   return (
-    <div id="überuns" className="py-20">
+    <div id="überuns" className="py-20 mt-10">
       <div className="container">
         <h2 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
           <NovoTec /> :: Über uns
@@ -35,9 +35,6 @@ const AboutUs = () => {
               einzigartige Synergien, die einen entscheidenden Beitrag zum
               Erfolg Ihrer Bauprojekte leisten.
             </p>
-            <Button asChild variant="outline" className="w-full mt-5">
-              <Link href="/#top">Unsere Geschichte</Link>
-            </Button>
           </div>
           <div className="flex flex-col mt-5 items-center">
             <p className="font-bold text-5xl">2012</p>

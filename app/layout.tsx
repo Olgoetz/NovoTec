@@ -8,7 +8,7 @@ const montserrat = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "NovoTec",
-  description: "Ausbau und Sanierungsmanagement im Köln und Umgebung",
+  description: "Ausbau und Sanierungsmanagement in Köln und Umgebung",
 };
 
 export default function RootLayout({

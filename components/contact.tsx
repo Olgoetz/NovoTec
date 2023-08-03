@@ -46,7 +46,7 @@ export default function Contact() {
   }
 
   return (
-    <div id="kontakt" className="py-20">
+    <div id="kontakt" className="py-20 mt-10">
       <div className="container ">
         <h2 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
           <NovoTec /> :: So erreichen Sie uns
