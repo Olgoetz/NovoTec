@@ -141,7 +141,7 @@ export default async function Jobs() {
                     href={`/jobs/${j.id}`}
                     className="p-3 outline-none rounded-md border-gray-500"
                   >
-                    Hier geht's zur vollständigen Beschreibung
+                    Hier geht&apos;s zur vollständigen Beschreibung
                   </Link>
                 </div>
               </Button>
