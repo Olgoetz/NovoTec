@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Job } from "@/types/job";
 import {
   Card,
   CardContent,
@@ -10,8 +10,15 @@ import {
 } from "@/components/ui/card";
 import NovoTec from "@/components/novotec";
 import { Award } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ChevronRightCircle } from "lucide-react";
 
-const Job = () => {
+export default async function Jobs() {
+  const jobsData = await fetch(
+    "https://my.api.mockaroo.com/jobs.json?key=e31556b0"
+  ).then((res) => res.json());
+
   return (
     <div className="py-20 mt-10">
       <div className="container ">
@@ -25,28 +32,22 @@ const Job = () => {
           Berufserfahrung hast – wenn Du mit uns wachsen willst und unsere
           Leidenschaft teilst, findest Du bei uns spannende Möglichkeiten.
         </p>
-        <Card className="my-10 text-justify">
-          <CardHeader>
-            <CardTitle>
-              <div className="flex items-center">
-                <Award className="h-10 w-10 mr-4" />
-                Sanitäranlagenmeister
-              </div>
-            </CardTitle>
-            <CardDescription>Level: Meister</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="font-bold py-3">Beschreibung:</p>
-            <p>
-              Als Sanitäranlagenmeister sind Sie verantwortlich für die Planung,
-              Installation, Wartung und Reparatur von Sanitäranlagen in Gebäuden
-              und anderen Einrichtungen. Sie leiten ein Team von
-              Sanitärtechnikern und arbeiten eng mit Bauherren, Architekten und
-              anderen Gewerken zusammen, um sicherzustellen, dass die
-              Sanitäranlagen den geltenden Vorschriften und Standards
-              entsprechen und reibungslos funktionieren.
-            </p>
-            <p className="font-bold py-3">Verantworlichkeiten:</p>
+
+        {jobsData.map((j: Job) => (
+          <Card key={j.id} className="my-10 text-justify">
+            <CardHeader>
+              <CardTitle>
+                <div className="flex items-center">
+                  <Award className="h-10 w-10 mr-4" />
+                  {j.title}
+                </div>
+              </CardTitle>
+              <CardDescription>Level: {j.level}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="font-bold py-3">Beschreibung:</p>
+              <p>{j.description}</p>
+              {/* <p className="font-bold py-3">Verantworlichkeiten:</p>
             <p>
               <ol>
                 <li className="py-2">
@@ -130,15 +131,24 @@ const Job = () => {
                   der Sanitärtechnik.
                 </li>
               </ul>
-            </p>
-          </CardContent>
-          <CardFooter>
-            <p>Bewerbung an foo@bar.com</p>
-          </CardFooter>
-        </Card>
+            </p> */}
+            </CardContent>
+            <CardFooter>
+              <Button asChild variant="outline" className="p-3 outline-none">
+                <div className="flex items-center">
+                  <ChevronRightCircle />
+                  <Link
+                    href={`/jobs/${j.id}`}
+                    className="p-3 outline-none rounded-md border-gray-500"
+                  >
+                    Hier geht's zur vollständigen Beschreibung
+                  </Link>
+                </div>
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     </div>
   );
-};
-
-export default Job;
+}

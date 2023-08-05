@@ -1,9 +1,9 @@
-import Job from "@/components/job";
+import Jobs from "@/components/jobs";
 
-export default function Jobs() {
+export default function Page() {
   return (
     <div>
-      <Job />
+      <Jobs />
     </div>
   );
 }
