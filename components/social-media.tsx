@@ -3,7 +3,11 @@ import { Instagram, Linkedin, Facebook } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-const SocialMedia = ({ styles }: { styles: string }) => {
+interface Styles {
+  styles?: string;
+}
+
+const SocialMedia = ({ styles }: Styles) => {
   return (
     <>
       <div className={cn("flex items space-x-4", styles)}>

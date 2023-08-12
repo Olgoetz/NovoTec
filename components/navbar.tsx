@@ -38,7 +38,7 @@ export const Navbar = () => {
     <>
       <div
         id="top"
-        className="px-5 z-50 flex justify-between items-center fixed top-0 left-0 w-full h-[80px] bg-white"
+        className="px-5 z-50 flex justify-between items-center fixed top-0 left-0 w-full h-[110px] bg-white"
       >
         <div className="mr-4 hidden md:flex">
           <Link href="/">

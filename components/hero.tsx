@@ -1,5 +1,11 @@
 import NovoTec from "@/components/novotec";
 import { Star, ThumbsUp, Medal } from "lucide-react";
+import {
+  BuildingIcon,
+  PresentationIcon,
+  DropletIcon,
+  FlameIcon,
+} from "lucide-react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 export const Hero = () => {
@@ -49,6 +55,37 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+      <main className="py-20">
+        <div className="flex justify-center items-center text-3xl">
+          <h1>Herzlich Willkommen bei </h1>
+          <NovoTec classes="ml-2" />
+        </div>
+        <div className="text-center leading-8 my-10">
+          <p>
+            Wir sind ein Kölner Qualitätsdienstleister im Bereich Aus- und
+            Sanierungsmanagement mit über 10 Jahren Erfahrung.
+          </p>
+          <p>Unser Angebot umfasst 4 Kernkompetenzen:</p>
+        </div>
+        <div className="mt-10 text-xl font-semibold grid md:grid-cols-2 gap-7 text-center w-[400px]  md:w-[800px] mx-auto ">
+          <div className="h-[80px] flex items-center justify-center border rounded-md shadow-lg">
+            <BuildingIcon className="h-8 w-8 mr-5" />
+            <h3>Ausbau</h3>
+          </div>
+          <div className="h-[80px] flex items-center justify-center  border rounded-md shadow-lg">
+            <FlameIcon className="h-8 w-8 mr-5" />
+            <h3>Brandsanierung</h3>
+          </div>
+          <div className="h-[80px] flex items-center justify-center  border rounded-md shadow-lg">
+            <DropletIcon className="h-8 w-8 mr-5" />
+            <h3>Wassersanierung</h3>
+          </div>
+          <div className="h-[80px] flex  items-center justify-center  border rounded-md shadow-lg">
+            <PresentationIcon className="h-8 w-8 mr-5" />
+            <h3>Projektleitung</h3>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };
