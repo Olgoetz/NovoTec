@@ -42,7 +42,7 @@ export const Navbar = () => {
       >
         <div className="mr-4 hidden md:flex">
           <Link href="/">
-            <Image width={200} height={20} alt="Logo" src="/novotec_logo.jpg" />
+            <Image width={250} height={20} alt="Logo" src="/novotec_logo.png" />
           </Link>
         </div>
         <div className=" text-gray-600 ">
