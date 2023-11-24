@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.1) translate(0, 0);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurns 30s infinite alternate;
+}
+html {
+  scroll-behavior: smooth !important;
+  height: 100vh;
+}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 0 81% 20%;
+    --primary-foreground: 0 81% 45%;
+
+    /* --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%; */
+
+    --secondary: 40 1% 20%;
+    --secondary-foreground: 40 1% 43%;
+
+    /* --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%; */
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 217.2 32.6% 17.5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.separator {
+  position: relative;
+}
+
+.separator::before {
+  content: "";
+  background-color: white;
+  position: absolute;
+
+  width: 14px;
+  height: 100%;
+  margin-left: -6px;
+  transform: skewX(-20deg);
+}
+
+:root {
+  /* COLORS */
+  --cookie-consent-banner-colors-primary: #d01516;
+  --cookie-consent-banner-colors-primary-border: #d01516;
+  --cookie-consent-banner-colors-primary-content: #fff;
+  --cookie-consent-banner-colors-secondary: transparent;
+  --cookie-consent-banner-colors-secondary-border: #fff;
+  --cookie-consent-banner-colors-secondary-content: #fff;
+  --cookie-consent-banner-colors-background-body: rgba(25, 31, 34, 0.92);
+  --cookie-consent-banner-colors-text: #fff;
+
+  /* FONTS */
+  --cookie-consent-banner-font-family-headline: inherit;
+  --cookie-consent-banner-font-size-headline: 1.5rem;
+  --cookie-consent-banner-font-family-body: inherit;
+  --cookie-consent-banner-font-size-body: 0.875rem;
+}

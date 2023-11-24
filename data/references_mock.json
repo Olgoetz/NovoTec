@@ -1,0 +1,21 @@
+[
+  {
+    "id": "Haus 1",
+    "sys": {
+      "id": "1"
+    },
+    "fields": {
+      "title": "Haus 1",
+      "category": "Umbau",
+      "photos": [
+        {
+          "fields": {
+            "file": {
+              "url": "/ref1.webp"
+            }
+          }
+        }
+      ]
+    }
+  }
+]
