@@ -50,18 +50,6 @@ const ReferenceSingle = async ({ id }: { id: string }) => {
                 <CalendarCheck2 width={26} height={26} />
                 <p className="ml-8 text-left">{reference.fields.duration}</p>
               </li>
-              <li className="flex items-center">
-                <CalendarCheck2 width={26} height={26} />
-                <p className="ml-8 text-left">{reference.fields.duration}</p>
-              </li>
-              <li className="flex items-center">
-                <CalendarCheck2 width={26} height={26} />
-                <p className="ml-8 text-left">{reference.fields.duration}</p>
-              </li>
-              <li className="flex items-center">
-                <CalendarCheck2 width={26} height={26} />
-                <p className="ml-8 text-left">{reference.fields.duration}</p>
-              </li>
             </ul>
           </div>
         </div>
