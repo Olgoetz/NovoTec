@@ -7,10 +7,6 @@ import { MoveRight } from "lucide-react";
 
 import getContentByType from "@/lib/getContentByType";
 
-import references from "@/data/references_mock.json";
-
-const data = references;
-
 // const getPhotos = async () => {
 //   try {
 //     const result = await unsplashAPi.search.getPhotos({
@@ -33,14 +29,15 @@ const data = references;
 // };
 
 const References: React.FC = async () => {
-  //const response: any = await getContentByType("reference");
-  const response = data;
+  const response: any = await getContentByType("reference");
+  console.log("[ui.references]", response);
+  //console.log("[ui.references]", response[0].fields.photos[0]);
   return (
     <div className="w-full mt-10 md:mt-20 py-20">
       <div className="container">
-        <h2 className="text-2xl h- uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
+        <h1 className="text-2xl h- uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
           Referenzen
-        </h2>
+        </h1>
 
         <div className="grid md:grid-cols-2 gap-6 mx-auto">
           {response.map((el: any) => (
@@ -48,11 +45,13 @@ const References: React.FC = async () => {
               key={el.sys.id}
               className="space-y-6 border relative p-3 pb-2 h-auto"
             >
-              <div className="relative w-full h-[260px] md:h-[400px]">
+              <div
+                key={el.sys.id}
+                className="relative w-full h-[260px] md:h-[400px]"
+              >
                 <Image
                   fill
-                  //  src={`https:${el.fields.photos[0].fields.file.url}`}
-                  src="/ref1.png"
+                  src={`https:${el.fields.photos[0].fields.file.url}`}
                   alt={el.fields.title}
                 />
               </div>

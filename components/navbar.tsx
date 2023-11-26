@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 import React, { useState } from "react";
-
+import { usePathname } from "next/navigation";
 import { Mail, Menu, Phone, X } from "lucide-react";
-
+import clsx from "clsx";
 import SocialMedia from "./social-media";
 
 const routes = [
@@ -38,7 +38,7 @@ const routes = [
 
 export const Navbar = () => {
   const [nav, setNav] = useState(false);
-
+  const pathName = usePathname();
   // const [isScrolling, setIsScrolling] = useState(false);
 
   // useEffect(() => {
@@ -116,7 +116,7 @@ export const Navbar = () => {
           <div className="px-5 hidden md:flex flex-1 mt-6 items-center justify-between">
             <div className=" mr-4 ">
               <Link href="/">
-                <img
+                <Image
                   width={250}
                   height={20}
                   alt="Logo"
@@ -130,7 +130,13 @@ export const Navbar = () => {
                 {routes.map((route) => (
                   <Link
                     key={route.label}
-                    className="group p-3 font-medium hover:text-primary-foreground hover:bg-secondary/10 rounded-lg transition"
+                    className={clsx(
+                      "group p-3 font-medium hover:text-primary-foreground hover:bg-secondary/10 rounded-lg transition",
+                      {
+                        "text-primary-foreground bg-secondary/10":
+                          pathName === route.link,
+                      }
+                    )}
                     href={route.link}
                   >
                     {route.label}

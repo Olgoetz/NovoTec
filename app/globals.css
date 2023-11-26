@@ -113,6 +113,13 @@ html {
   margin-left: -6px;
   transform: skewX(-20deg);
 }
+.thumbs .swiper-slide {
+  opacity: 0.25;
+}
+
+.thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
 
 :root {
   /* COLORS */

@@ -10,6 +10,7 @@ export default function Slider(reference: any) {
           paddingBottom: "30px",
           position: "relative",
         }}
+        key={reference.reference.fields.title}
       >
         <Carousel
           additionalTransfrom={0}
@@ -64,11 +65,10 @@ export default function Slider(reference: any) {
           {reference.reference.fields.photos.map((el: any) => (
             <div key={el.fields.file.url} className="w-full">
               <Image
-                width={800}
-                height={500}
                 className="mx-auto"
-                //  src={`https:${el.fields.file.url}`}
-                src="/ref1.png"
+                fill
+                style={{ objectFit: "cover" }}
+                src={`https:${el.fields.file.url}`}
                 alt={el.fields.title}
               />
             </div>

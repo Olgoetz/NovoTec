@@ -43,9 +43,9 @@ export default async function Jobs() {
   return (
     <div className="py-20 mt-10 md:mt-20">
       <div className="container ">
-        <h2 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
+        <h1 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
           Dein Job bei uns - Deine Chance für Veränderung
-        </h2>
+        </h1>
         <p>
           Wer den Markt verändern will, benötigt kluge Köpfe, die ihm dabei
           helfen. Wir lieben unsere Arbeit und sind uns sicher: Dir wird es
