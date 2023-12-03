@@ -8,6 +8,11 @@ terraform {
       source  = "integrations/github"
       version = "~> 5.0"
     }
+
+    contentful = {
+      source  = "labd/contentful"
+      version = "~> 0.4"
+    }
   }
 }
 

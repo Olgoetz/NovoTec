@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import { Footer } from "@/components/footer";
 import CookieConsent from "@/components/cookieConsent";
+import { getDomain } from "@/lib/utils";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     "Bauunternehmer",
     "Bauprojekt",
   ],
-  metadataBase: new URL(process.env.URL!),
+  metadataBase: new URL(getDomain() as string),
   alternates: {
     canonical: "/",
   },
