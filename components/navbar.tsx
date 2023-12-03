@@ -20,7 +20,7 @@ const routes = [
   },
   {
     label: "Leistungen",
-    link: "/services",
+    link: "/leistungen",
   },
   {
     label: "Referenzen",

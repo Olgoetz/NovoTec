@@ -41,7 +41,7 @@ export const Gallery = ({ reference }: { reference: any }) => {
           swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
         }}
         pagination={{ clickable: true }}
-        className="h-[550px] w-full rounded-lg"
+        className="h-[550px] max-w-[1200px] rounded-lg"
       >
         {reference.fields.photos.map((el: any) => (
           <SwiperSlide
@@ -51,6 +51,7 @@ export const Gallery = ({ reference }: { reference: any }) => {
             <Image
               fill
               className="block h-full w-full object-cover"
+              sizes="100vw"
               src={`https:${el.fields.file.url}`}
               alt={el.fields.title}
             />
@@ -67,12 +68,13 @@ export const Gallery = ({ reference }: { reference: any }) => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[Navigation, Thumbs, FreeMode]}
-        className="thumbs h-24 mt-4 flex items-center justify-center cursor-pointer rounded overflow-hidden"
+        className="max-w-[1200px] thumbs h-24 mt-4 flex items-center justify-center cursor-pointer rounded overflow-hidden"
       >
         {reference.fields.photos.map((el: any) => (
           <SwiperSlide key={el.fields.file.url}>
             <Image
               fill
+              sizes="33vw"
               className="block h-full w-full object-cover "
               src={`https:${el.fields.file.url}`}
               alt={el.fields.title}

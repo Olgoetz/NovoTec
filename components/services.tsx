@@ -56,12 +56,12 @@ export const Services = () => {
                   </div>
                   <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-4 text-left text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                     <div className="flex min-h-full flex-col items-center justify-center">
-                      <ul className=" text-sm ">
-                        {c.description.map((i) => (
-                          <li key={c.description[0]}>{i}</li>
+                      <ul className="text-sm ">
+                        {c.description.map((v, i) => (
+                          <li key={`${c.title}+${c.description[i]}`}>{v}</li>
                         ))}
                         {c.title === "Energieeffiziente Sanierung" && (
-                          <ul>
+                          <ul key={`${c.title}+${c.description[0]}`}>
                             <li>
                               • Folgende Leistungen bieten wir in Zusammenarbeit
                               mit unsem eigenen Tochterunternehmen{" "}
@@ -143,8 +143,8 @@ export const Services = () => {
                 </AccordionTrigger>
                 <AccordionContent className="md:h-[350px] p-2">
                   <ul className="space-y-3">
-                    {task.description.map((i) => (
-                      <li key={i[0]}>{i}</li>
+                    {task.description.map((i, v) => (
+                      <li key={i}>{v}</li>
                     ))}
                   </ul>
                 </AccordionContent>

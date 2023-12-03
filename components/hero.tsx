@@ -1,16 +1,6 @@
 import NovoTec from "@/components/novotec";
-import {
-  Construction,
-  DoorOpen,
-  Droplet,
-  DropletIcon,
-  PencilRuler,
-  Star,
-  ThumbsUp,
-} from "lucide-react";
+import { Star, ThumbsUp } from "lucide-react";
 
-import { BuildingIcon, PresentationIcon, Leaf, FlameIcon } from "lucide-react";
-import Image from "next/image";
 import coreCompetencies from "@/data/coreCompetencies";
 import { cn } from "@/lib/utils";
 export const Hero = () => {

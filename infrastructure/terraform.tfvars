@@ -1,0 +1,6 @@
+CONTENTFUL_SPACE_ID     = "j2bkpry69ktm"
+RESEND_FROM_EMAIL       = "no-reply@cloud-companion.de"
+RESEND_TO_EMAIL_NONPROD = "dev.goetzoliver@gmail"
+RESEND_TO_EMAIL_PROD    = "info@novotec-koeln.de"
+URL_NONPROD             = "https://novotec-git-main-olgoetz.vercel.app/"
+URL_PROD                = "https://novotec-koeln.de/"

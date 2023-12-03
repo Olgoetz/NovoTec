@@ -1,10 +1,11 @@
 import Jobs from "@/components/jobs";
+import getContentByType from "@/lib/getContentByType";
 
-export const revalidate = 0;
-export default function Page() {
+export default async function Page() {
+  const jobs = await getContentByType("job");
   return (
     <div>
-      <Jobs />
+      <Jobs jobs={jobs} />
     </div>
   );
 }

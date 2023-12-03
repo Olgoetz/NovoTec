@@ -1,5 +1,4 @@
 import React from "react";
-import { Job } from "@/types/job";
 import {
   Card,
   CardContent,
@@ -11,25 +10,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronRightCircle } from "lucide-react";
-import getContentByType from "@/lib/getContentByType";
+
 import { ListItemRenderer } from "@/lib/helpers";
-const JobSingle = async ({ id }: { id: string }) => {
-  // console.log(id);
-  // const jobsData = await fetch(
-  //   "https://my.api.mockaroo.com/jobs.json?key=e31556b0"
-  // ).then((res) => res.json());
-  const jobs = await getContentByType("job");
-
+const JobSingle = async ({
+  titleUrlFriendly,
+  jobs,
+}: {
+  titleUrlFriendly: string;
+  jobs: any;
+}) => {
+  console.log("[ui.jobSingle]", jobs);
   // Find the specific job with the matching id from the params
-  const job: any = jobs.find((j: any) => j.sys.id === id);
-
+  const job: any = jobs.find(
+    (j: any) => j.fields.titleUrlFriendly === titleUrlFriendly
+  );
+  console.log("[ui.jobSingle]", job);
   if (!job) {
     // Handle the case when the job with the specified id is not found
     return <div className="mt-32">Job not found!</div>;
   }
 
   return (
-    <div className="py-20 mt-20">
+    <div className="py-20 mt-12">
       <div className="container ">
         <Card className="hyphens-auto md:mt-20 text-left">
           <CardHeader>
@@ -68,17 +70,18 @@ const JobSingle = async ({ id }: { id: string }) => {
                   bewerbung@novotec-koeln.de
                 </a>
               </p>
-              <Button asChild variant="outline" className="p-3 outline-none">
-                <div className="flex items-center">
-                  <ChevronRightCircle />
-                  <Link
-                    href="/jobs"
-                    className="p-2 outline-none rounded-md border-gray-500"
-                  >
+              <Link href="/jobs" className="w-full">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="p-3 outline-none w-full"
+                >
+                  <div className="p-2 outline-none rounded-md border-gray-500">
+                    <ChevronRightCircle className="mr-2" />
                     Zurück zur Übersicht
-                  </Link>
-                </div>
-              </Button>
+                  </div>
+                </Button>
+              </Link>
             </div>
           </CardFooter>
         </Card>

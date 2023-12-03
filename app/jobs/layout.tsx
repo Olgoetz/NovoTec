@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Jobs",
+  description: "Freistellen bei NovoTec",
+  keywords: ["NovoTec", "Jobs", "freie Stellen"],
+};
+
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="h-full overflow-auto">

@@ -23,7 +23,10 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 import GoogleMaps from "./googleMaps";
 import Link from "next/link";
+import pino from "../logger";
+import type { Logger } from "pino";
 
+const logger: Logger = pino;
 const formSchema = z.object({
   name: z.string(),
   text: z.string().min(1, { message: "Benötigt" }),
@@ -43,7 +46,7 @@ export default function Contact() {
       email: "",
     },
   });
-
+  logger.info("contact loaded");
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const response = await axios.post("/api/email", { values });

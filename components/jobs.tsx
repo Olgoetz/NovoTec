@@ -12,11 +12,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronRightCircle } from "lucide-react";
 import Image from "next/image";
-import getContentByType from "@/lib/getContentByType";
 
-export default async function Jobs() {
-  const jobs = await getContentByType("job");
+import pino from "../logger";
+import type { Logger } from "pino";
 
+const logger: Logger = pino;
+
+export default async function Jobs({ jobs }: { jobs: any }) {
+  // const jobs = await getContentByType("job");
+  logger.info("%s: Loading jobs", __filename);
+  console.log("loading jobs");
   if (jobs?.status === 500) {
     return (
       <div className="flex flex-col my-40 w-full h-[200px] items-center justify-center text-center text-lg">
@@ -167,7 +172,7 @@ export default async function Jobs() {
                 <div className="flex items-center">
                   <ChevronRightCircle />
                   <Link
-                    href={`/jobs/${j.sys.id}`}
+                    href={`/jobs/${j.fields.titleUrlFriendly}`}
                     className="p-3 outline-none rounded-md border-gray-500"
                   >
                     Hier geht&apos;s zur vollständigen Beschreibung

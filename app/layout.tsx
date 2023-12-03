@@ -5,12 +5,32 @@ import { Raleway } from "next/font/google";
 import { Footer } from "@/components/footer";
 import CookieConsent from "@/components/cookieConsent";
 
-import Head from "next/head";
 const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NovoTec - Ausbau- & Sanierungsmanagement",
-  description: "Ausbau und Sanierungsmanagement in Köln und Umgebung",
+  title: {
+    template: "%s | NovoTec",
+    default: "NovoTec - Ausbau- & Sanierungsmanagement",
+  },
+
+  description: "Ausbau- und Sanierungsmanagement in Köln und Umgebung",
+  keywords: [
+    "NovoTec",
+    "Sanierung",
+    "Sanierungsmanagement",
+    "Ausbaumanagement",
+    "Projektmanagement",
+    "Köln",
+    "NRW",
+    "Nordrhein-Westfalen",
+    "Bonn",
+    "Bau",
+    "Bauwesen",
+    "Bauwirtschaft",
+    "Bauunternehmen",
+    "Bauunternehmer",
+    "Bauprojekt",
+  ],
   metadataBase: new URL(process.env.URL!),
   alternates: {
     canonical: "/",
