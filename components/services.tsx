@@ -143,8 +143,8 @@ export const Services = () => {
                 </AccordionTrigger>
                 <AccordionContent className="md:h-[350px] p-2">
                   <ul className="space-y-3">
-                    {task.description.map((i, v) => (
-                      <li key={i}>{v}</li>
+                    {task.description.map((v, i) => (
+                      <li key={v}>{i}</li>
                     ))}
                   </ul>
                 </AccordionContent>
