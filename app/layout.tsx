@@ -7,7 +7,7 @@ import CookieConsent from "@/components/cookieConsent";
 import { getDomain } from "@/lib/utils";
 
 const raleway = Raleway({ subsets: ["latin"] });
-
+const url = getDomain() as string;
 export const metadata: Metadata = {
   title: {
     template: "%s | NovoTec",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "Bauunternehmer",
     "Bauprojekt",
   ],
-  metadataBase: new URL(getDomain() as string),
+  metadataBase: new URL(url),
   alternates: {
     canonical: "/",
   },
