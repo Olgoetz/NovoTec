@@ -4041,10 +4041,10 @@ regexp.prototype.flags@^1.5.0:
     define-properties "^1.2.0"
     functions-have-names "^1.2.3"
 
-resend@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/resend/-/resend-2.0.0.tgz"
-  integrity sha512-jAh0DN84ZjjmzGM2vMjJ1hphPBg1mG98dzopF7kJzmin62v8ESg4og2iCKWdkAboGOT2SeO5exbr/8Xh8gLddw==
+resend@2.1.0-canary.1:
+  version "2.1.0-canary.1"
+  resolved "https://registry.yarnpkg.com/resend/-/resend-2.1.0-canary.1.tgz#fefc142ae03e837f97053467a29a7e3ee61341e1"
+  integrity sha512-MYB50lpc4x4bxasymfJSzFFdUxMIzJ4pa8N2az5HvpEN731jUFOs5jtOCiTTnEMtFJ4bocs9LX1rGrT48TBFOg==
   dependencies:
     "@react-email/render" "0.0.9"
 
