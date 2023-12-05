@@ -144,7 +144,7 @@ export const Services = () => {
                 <AccordionContent className="md:h-[350px] p-2">
                   <ul className="space-y-3">
                     {task.description.map((v, i) => (
-                      <li key={v}>{i}</li>
+                      <li key={i}>{v}</li>
                     ))}
                   </ul>
                 </AccordionContent>
