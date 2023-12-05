@@ -25,6 +25,7 @@ import GoogleMaps from "./googleMaps";
 import Link from "next/link";
 import pino from "../logger";
 import type { Logger } from "pino";
+import { sendMail } from "@/app/api/email/actions";
 
 const logger: Logger = pino;
 const formSchema = z.object({
@@ -46,12 +47,16 @@ export default function Contact() {
       email: "",
     },
   });
-  logger.info("contact loaded");
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const response = await axios.post("/api/email", { values });
-      console.log(response);
-
+      const { name, email, text } = values;
+      const payload = {
+        name,
+        email,
+        message: text,
+      };
+      await sendMail(payload);
       form.reset();
     } catch (err) {
       console.error(err);

@@ -37,3 +37,9 @@ variable "RESEND_TO_EMAIL_NONPROD" {
 variable "RESEND_TO_EMAIL_PROD" {
   type = string
 }
+
+
+variable "ngrok_url" {
+  type    = string
+  default = "https://localhost"
+}
