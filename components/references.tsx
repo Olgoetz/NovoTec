@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { MoveRight } from "lucide-react";
 
 import getContentByType from "@/lib/getContentByType";
 
@@ -60,7 +59,7 @@ const References: React.FC = async () => {
               </div>
               <h4 className="text-left text-2xl py-3 text-black font-semibold">
                 {/* {console.log(el)} */}
-                {el.fields.title}
+                {el.fields.title}, {el.fields.location}
               </h4>
 
               <Button

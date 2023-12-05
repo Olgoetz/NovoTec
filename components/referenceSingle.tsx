@@ -1,10 +1,19 @@
 import React from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-import { CalendarCheck2, Building } from "lucide-react";
+import {
+  CalendarCheck2,
+  Building,
+  Map,
+  Layers,
+  PencilRuler,
+  BoxSelect,
+} from "lucide-react";
 import getContentByType from "@/lib/getContentByType";
 import { Gallery } from "./ui/gallery";
+
+import { Reference } from "@/types/reference";
+import Link from "next/link";
+import { Button } from "./ui/button";
 //import data from "@/data/references_mock.json";
 const ReferenceSingle = async ({ id }: { id: string }) => {
   console.log(id);
@@ -23,14 +32,47 @@ const ReferenceSingle = async ({ id }: { id: string }) => {
     );
   }
 
+  const referenceProperties: Reference[] = [
+    {
+      label: "Standort",
+      content: reference.fields.location,
+      icon: Map,
+    },
+    {
+      label: "Baumaßname",
+      content: reference.fields.category,
+      icon: Building,
+    },
+    {
+      label: "Objektart",
+      content: reference.fields.title,
+      icon: PencilRuler,
+    },
+    {
+      label: "Gewerke",
+      content: reference.fields.tasks,
+      icon: Layers,
+    },
+    {
+      label: "Umbaufläche",
+      content: `${reference.fields.area} m²`,
+      icon: BoxSelect,
+    },
+    {
+      label: "Bauzeit",
+      content: reference.fields.duration,
+      icon: CalendarCheck2,
+    },
+  ];
+
   return (
     <div className="py-20 mt-10 md:mt-20 container">
       <h1 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
-        {reference.fields.title}
+        {reference.fields.title}, {reference.fields.location}
       </h1>
       <Gallery reference={reference} />
 
-      <div className="grid grid-cols-2 text-center mt-10 bg-gray-400/10 p-4">
+      <div className="grid md:grid-cols-2 text-center mt-10 bg-gray-400/10 p-4">
         <div className="text-8xl p-10">
           <p>
             <span className="text-secondary-foreground font-bold">Das</span>
@@ -42,60 +84,36 @@ const ReferenceSingle = async ({ id }: { id: string }) => {
         <div className="bg-gray-400/20 text-2xl my-4">
           <div className="p-8 h-full">
             <ul className="flex flex-col justify-between space-y-4 h-full">
-              <li className="flex items-center text-sm">
-                <Building width={26} height={26} />
-                <p className="ml-8 text-left">{reference.fields.title}</p>
-              </li>
-              <li className="flex items-center">
-                <CalendarCheck2 width={26} height={26} />
-                <p className="ml-8 text-left">{reference.fields.duration}</p>
-              </li>
+              {referenceProperties.map((property) => (
+                <li
+                  key={`${property.label}-${property.content}`}
+                  className="flex items-center text-sm"
+                >
+                  <property.icon width={26} height={26} />
+                  <p className="ml-8 text-left">
+                    <span className="font-bold">{property.label}:</span>{" "}
+                    {property.content}
+                  </p>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </div>
-    </div>
 
-    // <div className="py-20 mt-20">
-    //   <div className="container ">
-    //     <Card className="hyphens-auto md:mt-20 text-left">
-    //       <CardHeader>
-    //         <div className="grid grid-cols-[auto,1fr] gap-4 items-center justify-start">
-    //           <div className="relative h-12 w-12">
-    //             <Image
-    //               src="/novotec_logo_pic_only.png"
-    //               alt="NovoTec Logo"
-    //               fill
-    //             />
-    //           </div>
-    //           <CardTitle>
-    //             <div className="flex flex-col space-y-2 text-primary-foreground">
-    //               <h2>{reference.fields.title}</h2>
-    //             </div>
-    //           </CardTitle>
-    //         </div>
-    //       </CardHeader>
-    //       <CardContent>
-    //         <p className="font-bold py-3">Beschreibung:</p>
-    //       </CardContent>
-    //       <CardFooter>
-    //         <div className="flex flex-col space-y-3">
-    //           <Button asChild variant="outline" className="p-3 outline-none">
-    //             <div className="flex items-center">
-    //               <ChevronRightCircle />
-    //               <Link
-    //                 href="/referenzen"
-    //                 className="p-2 outline-none rounded-md border-gray-500"
-    //               >
-    //                 Zurück zur Übersicht
-    //               </Link>
-    //             </div>
-    //           </Button>
-    //         </div>
-    //       </CardFooter>
-    //     </Card>
-    //   </div>
-    // </div>
+      <Button
+        asChild
+        variant="outline"
+        className="mt-10 bg-primary-foreground hover:bg-secondary-foreground w-full"
+      >
+        <Link
+          href={`/referenzen`}
+          className="text-white hover:text-white font-semibold"
+        >
+          Zurück zu Referenzen
+        </Link>
+      </Button>
+    </div>
   );
 };
 
