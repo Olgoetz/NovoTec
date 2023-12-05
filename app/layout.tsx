@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "Bauunternehmer",
     "Bauprojekt",
   ],
-  metadataBase: new URL(url),
+  metadataBase: new URL(process.env.URL_PROD! || process.env.URL_NONPROD!),
   alternates: {
     canonical: "/",
   },
