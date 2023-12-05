@@ -41,12 +41,12 @@ const ReferenceSingle = async ({ id }: { id: string }) => {
     {
       label: "Baumaßname",
       content: reference.fields.category,
-      icon: Building,
+      icon: PencilRuler,
     },
     {
       label: "Objektart",
       content: reference.fields.title,
-      icon: PencilRuler,
+      icon: Building,
     },
     {
       label: "Gewerke",
