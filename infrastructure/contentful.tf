@@ -9,8 +9,12 @@ locals {
       name     = "ngrok"
       base_url = var.ngrok_url
     }
-    web = {
-      name     = "novotec-web"
+    preview = {
+      name     = "novotec-preview"
+      base_url = "https://novotec-git-main-olgoetz.vercel.app/"
+    }
+    prod = {
+      name     = "novotec-prod"
       base_url = "https://novotec-koeln.de"
     }
   }
