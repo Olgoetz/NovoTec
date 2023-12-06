@@ -1,6 +1,6 @@
 import NovoTec from "@/components/novotec";
 import { Star, ThumbsUp } from "lucide-react";
-
+import Image from "next/image";
 import coreCompetencies from "@/data/coreCompetencies";
 import { cn } from "@/lib/utils";
 export const Hero = () => {
@@ -8,11 +8,20 @@ export const Hero = () => {
     "bg-slate-800/40 flex flex-col border border-white p-5 items-center space-y-3 justify-center";
   return (
     <div className="w-full mt-4 overflow-hidden">
-      <div className=" text-white inset-0 animate-ken-burns  bg-blend-overlay bg-slate-200/30 min-h-screen bg-center z-10 bg-cover bg-[url(/novotec_Foto_drei_Transporter.jpg)]">
+      <div className="relative min-h-screen text-white ">
+        {/* <div className="relative text-white inset-0 animate-ken-burns  bg-blend-overlay bg-slate-200/30 min-h-screen bg-center z-10 bg-cover bg-[url(/novotec_Foto_drei_Transporter.jpg)]"> */}
         {/* <h2 className="text-2xl uppercase  text-right font-semibold mb-10 border-b pb-2">
           <NovoTec /> :: Wofür stehen wir?
         </h2> */}
-        <div className="min-h-screen container flex items-center justify-center">
+
+        <Image
+          src="/novotec_Foto_drei_Transporter.jpg"
+          alt=""
+          fill
+          className="object-cover object-center bg-blend-overlay  inset-0 animate-ken-burns -z-20"
+        />
+        <div className="absolute inset-0 bg-slate-200/30 animate-ken-burns " />
+        <div className="min-h-screen z-20 container flex items-center justify-center">
           <div className="grid md:grid-cols-2 max-w-[1000px] gap-4 text-sm text-center">
             <div className={box_style}>
               <div>
