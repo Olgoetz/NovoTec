@@ -97,19 +97,22 @@ export const Navbar = () => {
                   />
                 </Link>
               </div> */}
-              <div className="relative h-6 w-6 ml-4 mr-8">
-                <Link href="https://novotherm-koeln.de/">
-                  <Image
-                    fill
-                    src="/novotherm_logo_white.svg"
-                    alt="Novotherm Logo"
-                    style={{ objectFit: "cover" }}
-                    quality={100}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
-                  />
-                </Link>
+              <div className="flex space-x-4">
+                <div className="relative h-6 w-6">
+                  <Link href="https://novotherm-koeln.de/">
+                    <Image
+                      fill
+                      src="/novotherm_logo_white.svg"
+                      alt="Novotherm Logo"
+                      style={{ objectFit: "cover" }}
+                      className="pr-1"
+                      quality={100}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+                    />
+                  </Link>
+                </div>
+                <SocialMedia classes={"text-white"} />
               </div>
-              <SocialMedia classes={"text-white"} />
             </div>
           </div>
           {/* row 2 */}

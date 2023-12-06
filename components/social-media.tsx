@@ -10,18 +10,18 @@ interface Styles {
 const SocialMedia = ({ classes }: Styles) => {
   return (
     <>
-      <div className={cn("flex space-x-4", classes)}>
+      <div className={cn("flex space-x-4 justify-start", classes)}>
         <Link
           href="https://www.instagram.com/novotec_koeln/?hl=de"
           target="_blank"
         >
-          <Instagram />
+          <Instagram className="h-6 w-6" />
         </Link>
         <Link
           href="https://www.facebook.com/novoteckoeln/?locale=de_DE"
           target="_blank"
         >
-          <Facebook />
+          <Facebook className="h-6 w-6" />
         </Link>
       </div>
     </>

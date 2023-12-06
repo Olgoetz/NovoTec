@@ -11,7 +11,7 @@ locals {
     }
     preview = {
       name     = "novotec-preview"
-      base_url = "https://novotec-git-main-olgoetz.vercel.app/"
+      base_url = "https://novotec-git-main-olgoetz.vercel.app"
     }
     prod = {
       name     = "novotec-prod"
