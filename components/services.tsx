@@ -52,7 +52,7 @@ export const Services = () => {
                   <div className="flex flex-col font-semibold text-lg space-y-2 items-center justify-center h-full">
                     {c.icon && <c.icon className={c.iconStyles2} />}
 
-                    <h3>{c.title}</h3>
+                    <p className="text-lg">{c.title}</p>
                   </div>
                   <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-4 text-left text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                     <div className="flex min-h-full flex-col items-center justify-center">
