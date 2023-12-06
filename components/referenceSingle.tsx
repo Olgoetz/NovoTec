@@ -41,12 +41,12 @@ const ReferenceSingle = async ({ id }: { id: string }) => {
     {
       label: "Baumaßname",
       content: reference.fields.category,
-      icon: Building,
+      icon: PencilRuler,
     },
     {
       label: "Objektart",
       content: reference.fields.title,
-      icon: PencilRuler,
+      icon: Building,
     },
     {
       label: "Gewerke",
@@ -73,7 +73,7 @@ const ReferenceSingle = async ({ id }: { id: string }) => {
       <Gallery reference={reference} />
 
       <div className="grid md:grid-cols-2 text-center mt-10 bg-gray-400/10 p-4">
-        <div className="text-8xl p-10">
+        <div className="text-5xl md:text-8xl p-10">
           <p>
             <span className="text-secondary-foreground font-bold">Das</span>
           </p>
