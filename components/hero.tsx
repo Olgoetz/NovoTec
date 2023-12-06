@@ -18,6 +18,7 @@ export const Hero = () => {
           src="/novotec_Foto_drei_Transporter.jpg"
           alt=""
           fill
+          priority
           className="object-cover object-center bg-blend-overlay  inset-0 animate-ken-burns -z-20"
         />
         <div className="absolute inset-0 bg-slate-200/30 animate-ken-burns " />
