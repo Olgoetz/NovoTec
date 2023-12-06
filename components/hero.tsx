@@ -19,9 +19,9 @@ export const Hero = () => {
           alt=""
           fill
           priority
-          className="object-cover object-center bg-blend-overlay  inset-0 animate-ken-burns -z-20"
+          className="object-cover object-center  inset-0 animate-ken-burns -z-20"
         />
-        <div className="absolute inset-0 bg-slate-200/30 animate-ken-burns " />
+        {/* <div className="absolute inset-0 bg-slate-200/30 animate-ken-burns " /> */}
         <div className="min-h-screen z-20 container flex items-center justify-center">
           <div className="grid md:grid-cols-2 max-w-[1000px] gap-4 text-sm text-center">
             <div className={box_style}>
