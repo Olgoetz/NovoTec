@@ -87,7 +87,7 @@ export const Hero = () => {
                   />
                 )}
 
-                <p className="text-lg">{c.title}</p>
+                <p>{c.title}</p>
               </div>
             </div>
           ))}

@@ -14,10 +14,10 @@
 .animate-ken-burns {
   animation: kenBurns 30s infinite alternate;
 }
-html {
+/* html {
   scroll-behavior: smooth !important;
-  height: 100vh;
-}
+} */
+
 @layer base {
   :root {
     --background: 0 0% 100%;
