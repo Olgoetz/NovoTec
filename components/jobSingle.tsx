@@ -27,7 +27,12 @@ const JobSingle = async ({
   console.log("[ui.jobSingle]", job);
   if (!job) {
     // Handle the case when the job with the specified id is not found
-    return <div className="mt-32">Job not found!</div>;
+    return (
+      <div className="my-40 text-center text-3xl">
+        Job nicht gefunden! Bitte überprüfe den seo friendly Eintrag in
+        Contentful
+      </div>
+    );
   }
 
   return (

@@ -88,7 +88,7 @@ export const Footer = () => {
 
       <div className="flex items-center justify-center flex-1 py-10">
         <CopyrightIcon className="h-5 w-5 mr-3" />
-        <p>2023 - {currentYear} NovoTec GmbH & Co. KG</p>
+        <p>{currentYear} NovoTec GmbH & Co. KG</p>
       </div>
     </div>
   );

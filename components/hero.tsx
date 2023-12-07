@@ -29,11 +29,11 @@ export const Hero = () => {
                 <ThumbsUp className="text-primary-foreground" size={50} />
               </div>
               <h3 className="font-semibold text-lg text-white">
-                Persönlich und professional
+                Persönlich und professionell
               </h3>
               <p>
-                Persönliche und professionelle Immobiliensanierungen
-                und-ausbauten in Raum Köln und ganz NRW aus einer Hand.
+                Persönliche und professionelle Immobiliensanierungen und
+                -ausbauten im Raum Köln und ganz NRW aus einer Hand.
               </p>
             </div>
             <div className={box_style}>
@@ -58,7 +58,7 @@ export const Hero = () => {
         </div>
         <div className="text-center leading-8 my-10">
           <p>
-            Wir sind ein Kölner Qualitätsdienstleister im Bereich Aus- und
+            Wir sind ein Kölner Qualitätsdienstleister im Bereich Ausbau- und
             Sanierungsmanagement mit über 10 Jahren Erfahrung.
           </p>
           <p>Unser Angebot umfasst 6 Kernkompetenzen:</p>
