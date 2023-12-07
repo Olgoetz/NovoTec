@@ -15,6 +15,10 @@ resource "vercel_project" "novotec" {
 
 }
 
+resource "vercel_project_domain" "prod" {
+  project_id = vercel_project.novotec.id
+  domain     = "novotec-koeln.de"
+}
 
 locals {
   env_variables_all = {
