@@ -89,7 +89,7 @@ const ReferenceSingle = async ({ id }: { id: string }) => {
                   key={`${property.label}-${property.content}`}
                   className="flex items-center text-sm"
                 >
-                  <property.icon width={26} height={26} />
+                  <property.icon width={26} height={26} className="shrink-0"/>
                   <p className="ml-8 text-left">
                     <span className="font-bold">{property.label}:</span>{" "}
                     {property.content}
