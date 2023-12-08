@@ -59,7 +59,7 @@ const References: React.FC = async () => {
               </div>
               <h4 className="text-left text-2xl py-3 text-black font-semibold">
                 {/* {console.log(el)} */}
-                {el.fields.title}, {el.fields.location}
+                {el.fields.location}, {el.fields.title}
               </h4>
 
               <Button
