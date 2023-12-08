@@ -68,7 +68,7 @@ const ReferenceSingle = async ({ id }: { id: string }) => {
   return (
     <div className="py-20 mt-10 md:mt-20 container">
       <h1 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
-        {reference.fields.title}, {reference.fields.location}
+        {reference.fields.location}, {reference.fields.title}
       </h1>
       <Gallery reference={reference} />
 
