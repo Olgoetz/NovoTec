@@ -117,7 +117,7 @@ const mainServices: Service[] = [
     description: [
       "• Schonende und ungefährliche Entfernung von Asbesthaltigen Baumaterialien nach TRGS-Vorgaben.",
       "• Der ehemalig sehr gefragte Baustoff darf heutzutage nicht mehr verbaut werden.",
-      "• Wird er jedoch entdeckt ist der Bauherr dafür verpflichtet diesen von einem Fachunternehmen entfernen zu lassen.",
+      "• Wird er jedoch entdeckt ist der Bauherr dazu verpflichtet diesen von einem Fachunternehmen entfernen zu lassen.",
     ],
   },
 

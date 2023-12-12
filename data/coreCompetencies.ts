@@ -4,10 +4,10 @@ import { MdOutlineWindow } from "react-icons/md";
 import Image from "next/image";
 const coreCompetencies: Competency[] = [
   {
-    title: "Wasserschadenssanierung",
+    title: "Wasserschadensanierung",
     description: [
       "• Einleitung schnellstmöglicher und schadensmindernder Maßnahmen nach einem eingetroffenen Versicherungsschaden",
-      "• Sanierung von Brand- & Wasserschadenssanierung oder auch Schimmelbefall",
+      "• Sanierung von Brand- & Wasserschäden oder auch Schimmelbefall",
       "• Technische Trocknung",
     ],
     containerStyles: "",
@@ -16,10 +16,10 @@ const coreCompetencies: Competency[] = [
     iconStyles2: "h-12 w-12",
   },
   {
-    title: "Brandsanierung",
+    title: "Brandschadensanierung",
     description: [
       "• Einleitung schnellstmöglicher und schadensmindernder Maßnahmen nach einem eingetroffenen Versicherungsschaden",
-      "• Sanierung von Brandsanierung",
+      "• Sanierung von Brandschäden",
     ],
     containerStyles: "",
     icon: Flame,

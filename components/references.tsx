@@ -54,12 +54,10 @@ const References: React.FC = async () => {
                   alt={el.fields.title}
                 />
               </div>
-              <div className="w-fit p-3 bottom-[160px] bg-white absolute right-7 text-center border">
-                <p>{el.fields.category}</p>
-              </div>
-              <h4 className="text-left text-2xl py-3 text-black font-semibold">
+              
+              <h4 className="text-left text-lg md:text-2xl py-3 text-black font-semibold">
                 {/* {console.log(el)} */}
-                {el.fields.title}, {el.fields.location}
+                {el.fields.location}, {el.fields.title}
               </h4>
 
               <Button
