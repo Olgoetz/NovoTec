@@ -18,7 +18,7 @@ export const Hero = () => {
           src="/novotec_Foto_drei_Transporter.jpg"
           alt=""
           fill
-          //  priority
+          priority
           className="object-cover object-center  inset-0 animate-ken-burns -z-20"
         />
         <div className="absolute inset-0 bg-slate-200/20 animate-ken-burns " />
@@ -53,7 +53,9 @@ export const Hero = () => {
       </div>
       <section className="py-20">
         <div className="flex flex-col justify-center items-center text-3xl">
-          <h1 className="text-5xl">Herzlich Willkommen bei </h1>
+          <h1 className="text-4xl md:text-5xl text-center">
+            Herzlich Willkommen bei{" "}
+          </h1>
           {/* <NovoTec classes="ml-2" /> */}
           <Image
             src="/novotec_logo_hero.png"
