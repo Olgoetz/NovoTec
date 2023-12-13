@@ -16,8 +16,15 @@ resource "vercel_project" "novotec" {
 }
 
 resource "vercel_project_domain" "prod" {
+  project_id           = vercel_project.novotec.id
+  domain               = "novotec-koeln.de"
+  redirect             = vercel_project_domain.prod2.domain
+  redirect_status_code = 308
+}
+
+resource "vercel_project_domain" "prod2" {
   project_id = vercel_project.novotec.id
-  domain     = "novotec-koeln.de"
+  domain     = "www.novotec-koeln.de"
 }
 
 locals {
