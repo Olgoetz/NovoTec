@@ -53,7 +53,7 @@ export const Hero = () => {
       </div>
       <section className="py-20">
         <div className="flex flex-col justify-center items-center text-3xl">
-          <h1 className="text-4xl md:text-5xl text-center">
+          <h1 className="text-3xl md:text-5xl text-center">
             Herzlich Willkommen bei{" "}
           </h1>
           {/* <NovoTec classes="ml-2" /> */}
