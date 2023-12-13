@@ -52,9 +52,17 @@ export const Hero = () => {
         </div>
       </div>
       <section className="py-20">
-        <div className="flex flex-col md:flex-row justify-center items-center text-3xl">
-          <h1>Herzlich Willkommen bei </h1>
-          <NovoTec classes="ml-2" />
+        <div className="flex flex-col justify-center items-center text-3xl">
+          <h1 className="text-5xl">Herzlich Willkommen bei </h1>
+          {/* <NovoTec classes="ml-2" /> */}
+          <Image
+            src="/novotec_logo_hero.png"
+            alt="NovoTec Logo Hero"
+            width={200}
+            height={200}
+            sizes="100vw"
+            className="mt-6"
+          />
         </div>
         <div className="text-center leading-8 my-10">
           <p>

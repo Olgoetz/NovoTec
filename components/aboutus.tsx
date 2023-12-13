@@ -133,7 +133,7 @@ const AboutUs = () => {
                 size={50}
               />
               <p className="md:text-lg text-center font-semibold">
-                Wir leiten ihre Projekte zu erstklassigen Ergebnissen
+                Wir leiten Ihre Projekte zu erstklassigen Ergebnissen
               </p>
             </div>
             <p className="break-normal">
