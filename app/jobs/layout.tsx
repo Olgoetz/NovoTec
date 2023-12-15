@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Jobs",
-  description: "Freistellen bei NovoTec",
+  description: "Freie Stellen bei NovoTec",
   keywords: ["NovoTec", "Jobs", "freie Stellen"],
 };
 
