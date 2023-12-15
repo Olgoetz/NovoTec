@@ -15,7 +15,7 @@ locals {
     }
     prod = {
       name     = "novotec-prod"
-      base_url = "https://novotec-koeln.de"
+      base_url = "https://www.novotec-koeln.de"
     }
   }
 
