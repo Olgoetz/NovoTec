@@ -50,8 +50,10 @@ export default function RootLayout({
     <html className="scroll-smooth" lang="en">
       <body className={raleway.className}>
         <Navbar />
-        {children}
-        <Footer />
+        <div className="overflow-auto flex flex-col h-screen justify-between">
+          {children}
+          <Footer />
+        </div>
         <CookieConsent />
       </body>
     </html>

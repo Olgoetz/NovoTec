@@ -7,12 +7,12 @@ export const Hero = () => {
   const box_style =
     "bg-slate-800/40 flex flex-col border border-white p-5 items-center space-y-3 justify-center";
   return (
-    <div className="w-full mt-4 overflow-hidden">
-      <div className="relative min-h-screen text-white ">
-        {/* <div className="relative text-white inset-0 animate-ken-burns  bg-blend-overlay bg-slate-200/30 min-h-screen bg-center z-10 bg-cover bg-[url(/novotec_Foto_drei_Transporter.jpg)]"> */}
-        {/* <h2 className="text-2xl uppercase  text-right font-semibold mb-10 border-b pb-2">
+    <div className="w-full mt-36">
+      {/* <div className="relative min-h-screen text-white ">
+        <div className="relative text-white inset-0 animate-ken-burns  bg-blend-overlay bg-slate-200/30 min-h-screen bg-center z-10 bg-cover bg-[url(/novotec_Foto_drei_Transporter.jpg)]">
+        <h2 className="text-2xl uppercase  text-right font-semibold mb-10 border-b pb-2">
           <NovoTec /> :: Wofür stehen wir?
-        </h2> */}
+        </h2>
 
         <Image
           src="/novotec_Foto_drei_Transporter.jpg"
@@ -50,20 +50,21 @@ export const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <section className="py-20">
-        <div className="flex flex-col justify-center items-center text-3xl">
+        <div className="flex flex-col justify-center items-center font-bold text-3xl gap-y-8">
           <h1 className="text-3xl md:text-5xl text-center">
             Herzlich Willkommen bei{" "}
           </h1>
           {/* <NovoTec classes="ml-2" /> */}
+
           <Image
-            src="/novotec_logo_hero.png"
+            src="/novotec_logo.png"
             alt="NovoTec Logo Hero"
-            width={200}
-            height={200}
+            width={400}
+            height={400}
             sizes="100vw"
-            className="mt-6"
+            priority
           />
         </div>
         <div className="text-center leading-8 my-10">
