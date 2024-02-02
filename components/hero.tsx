@@ -7,7 +7,7 @@ export const Hero = () => {
   const box_style =
     "bg-slate-800/40 flex flex-col border border-white p-5 items-center space-y-3 justify-center";
   return (
-    <div className="w-full mt-36">
+    <div className="w-full mt-28 md:mt-36">
       {/* <div className="relative min-h-screen text-white ">
         <div className="relative text-white inset-0 animate-ken-burns  bg-blend-overlay bg-slate-200/30 min-h-screen bg-center z-10 bg-cover bg-[url(/novotec_Foto_drei_Transporter.jpg)]">
         <h2 className="text-2xl uppercase  text-right font-semibold mb-10 border-b pb-2">
