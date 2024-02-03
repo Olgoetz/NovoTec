@@ -53,7 +53,7 @@ export const Hero = () => {
       </div> */}
       <section className="py-20">
         <div className="flex flex-col justify-center items-center font-bold text-3xl gap-y-8">
-          <h1 className="text-3xl md:text-5xl text-center">
+          <h1 className="text-2xl md:text-5xl text-center">
             Herzlich Willkommen bei{" "}
           </h1>
           {/* <NovoTec classes="ml-2" /> */}
@@ -67,7 +67,7 @@ export const Hero = () => {
             priority
           />
         </div>
-        <div className="text-center leading-8 my-10">
+        <div className="text-center px-4 leading-8 my-10">
           <p>
             Wir sind ein Kölner Qualitätsdienstleister im Bereich Ausbau- und
             Sanierungsmanagement mit über 10 Jahren Erfahrung.
