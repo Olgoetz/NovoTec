@@ -67,7 +67,7 @@ export const Hero = () => {
             priority
           />
         </div>
-        <div className="text-center px-4 leading-8 my-10">
+        <div className="text-center px-6 leading-8 my-10">
           <p>
             Wir sind ein Kölner Qualitätsdienstleister im Bereich Ausbau- und
             Sanierungsmanagement mit über 10 Jahren Erfahrung.
