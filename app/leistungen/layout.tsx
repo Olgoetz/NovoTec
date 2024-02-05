@@ -18,11 +18,7 @@ export const metadata: Metadata = {
 };
 
 const ServicesLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <main className="h-full overflow-auto">
-      <div className="mx-auto h-full w-full">{children}</div>
-    </main>
-  );
+  return <>{children}</>;
 };
 
 export default ServicesLayout;

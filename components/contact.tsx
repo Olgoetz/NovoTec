@@ -2,8 +2,6 @@
 
 import DotLoader from "react-spinners/DotLoader";
 
-import axios from "axios";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
