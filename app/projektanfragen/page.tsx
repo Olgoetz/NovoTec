@@ -2,9 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -20,18 +18,12 @@ import FormButton from "@/components/form-button";
 import { useToast } from "@/components/ui/use-toast";
 import { useAction } from "next-safe-action/hooks";
 import ToastMessage from "@/components/toast-message";
-import {
-  FormSchema,
-  TEmailFormSchema,
-  TFormSchema,
-  submitSafeInquiry,
-} from "./_lib/actions";
+import { FormSchema, TFormSchema, submitSafeInquiry } from "./_lib/actions";
 import { FileState, MultiFileDropzone } from "@/components/multi-file-dropzone";
 import { EdgeStoreApiClientError } from "@edgestore/react/shared";
 import { formatFileSize } from "@edgestore/react/utils";
 import { useState } from "react";
 import { useEdgeStore } from "@/lib/edgestore";
-import { getDownloadUrl } from "@edgestore/react/utils";
 
 import Link from "next/link";
 
