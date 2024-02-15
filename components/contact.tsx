@@ -23,7 +23,6 @@ import GoogleMaps from "./googleMaps";
 import Link from "next/link";
 import pino from "../logger";
 import type { Logger } from "pino";
-import { sendMail } from "@/app/api/email/actions";
 
 const logger: Logger = pino;
 const formSchema = z.object({
