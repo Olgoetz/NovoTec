@@ -172,7 +172,7 @@ export default async function Jobs({ jobs }: { jobs: any }) {
                 <div className="flex items-center">
                   <ChevronRightCircle />
                   <Link
-                    href={`/jobs/festanstellung/${j.fields.titleUrlFriendly}`}
+                    href={`/jobs/${j.fields.titleUrlFriendly}`}
                     className="p-3 outline-none rounded-md border-gray-500"
                   >
                     Hier geht&apos;s zur vollständigen Beschreibung
