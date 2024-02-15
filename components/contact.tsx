@@ -69,7 +69,7 @@ export default function Contact() {
           So erreichen Sie uns
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-x-6 max-w-[1000px] mx-auto">
+        <div className="grid md:grid-cols-2 gap-x-6  mx-auto">
           {/* <div className="relative">
             <Image fill src="/contact.jpg" alt="contanct" />
           </div> */}
@@ -92,7 +92,7 @@ export default function Contact() {
               </li>
             </ul>
           </div>
-          <div className="w-full mt-10">
+          {/* <div className="w-full mt-10">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -186,7 +186,7 @@ export default function Contact() {
                 </Link>
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="mt-20">
           <GoogleMaps />
