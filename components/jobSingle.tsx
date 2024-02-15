@@ -75,7 +75,7 @@ const JobSingle = async ({
                   bewerbung@novotec-koeln.de
                 </a>
               </p>
-              <Link href="/jobs" className="w-full">
+              <Link href="/jobs/festanstellung" className="w-full">
                 <Button
                   asChild
                   variant="outline"

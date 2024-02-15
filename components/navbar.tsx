@@ -31,6 +31,10 @@ const routes = [
     link: "/jobs",
   },
   {
+    label: "Projektanfragen",
+    link: "/projektanfragen",
+  },
+  {
     label: "Kontakt",
     link: "/kontakt",
   },
