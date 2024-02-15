@@ -116,7 +116,7 @@ export default function Page() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Name*</FormLabel>
                   <FormControl>
                     <Input placeholder="Name" {...field} />
                   </FormControl>
@@ -130,7 +130,7 @@ export default function Page() {
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Mobilfunknummer</FormLabel>
+                  <FormLabel>Mobilfunknummer*</FormLabel>
                   <FormControl>
                     <Input placeholder="Mobilfunknummer" {...field} />
                   </FormControl>
@@ -144,7 +144,7 @@ export default function Page() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email Adresse</FormLabel>
+                  <FormLabel>Email Adresse*</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="meineEmailAdresse@beispiel.com"
@@ -161,7 +161,7 @@ export default function Page() {
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Beschreiben Sie ihr Projekt</FormLabel>
+                  <FormLabel>Beschreiben Sie ihr Projekt*</FormLabel>
                   <FormControl>
                     <Textarea rows={3} {...field} />
                   </FormControl>
@@ -175,7 +175,7 @@ export default function Page() {
               name="fileUrls"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Fotos/Dokumente hochladen</FormLabel>
+                  <FormLabel>Fotos/Dokumente hochladen**</FormLabel>
                   <FormControl>
                     <MultiFileDropzone
                       {...form.register("fileUrls")}
@@ -258,8 +258,9 @@ export default function Page() {
                   </FormControl>
                   <FormMessage />
                   <FormDescription>
-                    *Fotos und/oder Dokumente wie z.B. eine Baugenehmigung o.ä.,
-                    damit wir einen besseren Eindruck für ihr Projekt gewinnen.
+                    ** Fotos und/oder Dokumente wie z.B. eine Baugenehmigung
+                    o.ä., damit wir einen besseren Eindruck für ihr Projekt
+                    gewinnen.
                   </FormDescription>
                 </FormItem>
               )}
@@ -272,6 +273,7 @@ export default function Page() {
             >
               Abschicken
             </FormButton>
+            <FormDescription>* Erforderlich.</FormDescription>
             <FormDescription>
               Wir verwenden Ihre Angaben zur Beantwortung Ihrer Anfrage. Weitere
               Informationen finden Sie in unseren{" "}
