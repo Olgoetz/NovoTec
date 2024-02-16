@@ -29,20 +29,7 @@ export const FormSchema = z.object({
 
   zipCode: z.string().optional(),
   location: z.string().optional(),
-  fileStates: z
-    .array(
-      z.object({
-        file: z.instanceof(File),
-        key: z.string(),
-        progress: z.union([
-          z.literal("PENDING"),
-          z.literal("COMPLETE"),
-          z.literal("ERROR"),
-          z.number(),
-        ]), // Union of allowed values
-      })
-    )
-    .optional(),
+
   fileUrls: z
     .array(z.string())
     .min(2, { message: "Bitte laden Sie mindestens 2 Dateien hoch" })
@@ -52,7 +39,6 @@ export const FormSchema = z.object({
 export type TFormSchema = z.infer<typeof FormSchema>;
 
 export const EmailFormSchema = FormSchema.omit({
-  fileStates: true,
   fileUrls: true,
 }).and(z.object({ fileUrlsString: z.string() }));
 
