@@ -5,6 +5,8 @@ import { Raleway } from "next/font/google";
 import { Footer } from "@/components/footer";
 import CookieConsent from "@/components/cookieConsent";
 import { getDomain } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
+import { EdgeStoreProvider } from "@/lib/edgestore";
 
 const raleway = Raleway({ subsets: ["latin"] });
 const url = getDomain() as string;
@@ -49,11 +51,14 @@ export default function RootLayout({
   return (
     <html className="scroll-smooth" lang="en">
       <body className={raleway.className}>
-        <Navbar />
-        <div className="overflow-auto flex flex-col h-screen justify-between">
-          {children}
-          <Footer />
-        </div>
+        <EdgeStoreProvider>
+          <Navbar />
+          <div className="flex flex-col h-screen justify-between">
+            {children}
+            <Footer />
+          </div>
+          <Toaster />
+        </EdgeStoreProvider>
         <CookieConsent />
       </body>
     </html>
