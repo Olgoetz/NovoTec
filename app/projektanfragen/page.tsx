@@ -22,15 +22,25 @@ import { FormSchema, TFormSchema, submitSafeInquiry } from "./_lib/actions";
 import { FileState, MultiFileDropzone } from "@/components/multi-file-dropzone";
 import { EdgeStoreApiClientError } from "@edgestore/react/shared";
 import { formatFileSize } from "@edgestore/react/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useEdgeStore } from "@/lib/edgestore";
 
 import Link from "next/link";
+import { Check } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/button";
 
 export default function Page() {
   const [fileStates, setFileStates] = useState<FileState[]>([]);
   const { edgestore } = useEdgeStore();
 
+  const [isAccepted, setIsAccepted] = useState(false);
+  const [uploadRes, setUploadRes] = useState<
+    {
+      url: string;
+      filename: string;
+    }[]
+  >([]);
   function updateFileProgress(key: string, progress: FileState["progress"]) {
     setFileStates((fileStates) => {
       const newFileStates = structuredClone(fileStates);
@@ -52,7 +62,8 @@ export default function Page() {
       phone: "",
       email: "",
       description: "",
-
+      zipCode: "",
+      location: "",
       fileUrls: [],
     },
   });
@@ -73,6 +84,13 @@ export default function Page() {
   //     });
   //   }
 
+  // useEffect(() => {
+  //   if (form.formState.errors) {
+  //     // do the your logic here
+  //     console.log("formState", form.formState.errors);
+  //   }
+  // }, [form.formState]); // ✅
+
   const { execute, result, status } = useAction(submitSafeInquiry, {
     onSuccess() {
       toast({
@@ -80,9 +98,11 @@ export default function Page() {
           <ToastMessage status="success">Nachricht verschickt!</ToastMessage>
         ),
       });
+      form.reset();
+      setFileStates([]);
+      setUploadRes([]);
     },
     onError(data) {
-      console.error(data);
       toast({
         description: (
           <ToastMessage status="fail">
@@ -99,6 +119,8 @@ export default function Page() {
       phone: values.phone,
       email: values.email,
       description: values.description,
+      location: values.location,
+      zipCode: values.zipCode,
     };
     execute({ ...payload, fileUrlsString: values.fileUrls.toString() });
   }
@@ -109,6 +131,7 @@ export default function Page() {
         Starten sie ihre Projektanfrage
       </h2>
       <div className="max-w-xl mx-auto">
+        <h3 className="pb-4 font-semibold">Persönliche Daten</h3>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
@@ -156,12 +179,14 @@ export default function Page() {
               )}
             />
 
+            <h3 className="font-semibold">Projektinformationen</h3>
+
             <FormField
               control={form.control}
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Beschreiben Sie ihr Projekt*</FormLabel>
+                  <FormLabel>Beschreibung*</FormLabel>
                   <FormControl>
                     <Textarea rows={3} {...field} />
                   </FormControl>
@@ -170,6 +195,39 @@ export default function Page() {
               )}
             />
 
+            <div className="grid md:grid-cols-2 gap-4">
+              <FormField
+                control={form.control}
+                name="location"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Standort</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Projektstandort" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="zipCode"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>PLZ</FormLabel>
+                    <FormControl>
+                      <Input placeholder="12345" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormDescription className="col-span-2">
+                Anmerkung: Wir schränken zunächst einen Umkreis von max. 80 km
+                von unserem Standort 51377 Leverkusen ein.
+              </FormDescription>
+            </div>
             <FormField
               control={form.control}
               name="fileUrls"
@@ -190,101 +248,132 @@ export default function Page() {
                         setFileStates(files);
                       }}
                       onFilesAdded={async (addedFiles) => {
-                        // form.setValue("fileStates", [
-                        //   ...field.value,
-                        //   ...addedFiles,
-                        // ]);
                         setFileStates([...fileStates, ...addedFiles]);
-                        await Promise.all(
-                          addedFiles.map(async (addedFileState) => {
-                            try {
-                              const res = await edgestore.publicFiles.upload({
-                                file: addedFileState.file,
-
-                                onProgressChange: async (progress) => {
-                                  updateFileProgress(
-                                    addedFileState.key,
-                                    progress
-                                  );
-                                  if (progress === 100) {
-                                    // wait 1 second to set it to complete
-                                    // so that the user can see the progress bar at 100%
-                                    await new Promise((resolve) =>
-                                      setTimeout(resolve, 1000)
-                                    );
-                                    updateFileProgress(
-                                      addedFileState.key,
-                                      "COMPLETE"
-                                    );
-                                  }
-                                },
-                              });
-                              await new Promise((resolve) =>
-                                setTimeout(resolve, 1000)
-                              );
-
-                              const currentFileUrls =
-                                form.getValues("fileUrls");
-                              const newFileUrls = [...currentFileUrls, res.url];
-                              form.setValue("fileUrls", newFileUrls);
-                            } catch (error) {
-                              updateFileProgress(addedFileState.key, "ERROR");
-                              // All errors are typed and you will get intellisense for them
-                              if (error instanceof EdgeStoreApiClientError) {
-                                // if it fails due to the `maxSize` set in the router config
-                                if (error.data.code === "FILE_TOO_LARGE") {
-                                  alert(
-                                    `Datei zu groß. Sie darf maximal ${formatFileSize(
-                                      error.data.details.maxFileSize
-                                    )} groß sein`
-                                  );
-                                }
-                                // if it fails due to the `accept` set in the router config
-                                if (
-                                  error.data.code === "MIME_TYPE_NOT_ALLOWED"
-                                ) {
-                                  alert(
-                                    `Dateityp nicht erlaubt. Erlaubte Typen sind  ${error.data.details.allowedMimeTypes.join(
-                                      ", "
-                                    )}`
-                                  );
-                                }
-                              }
-                            }
-                          })
-                        );
                       }}
                     />
                   </FormControl>
+
+                  <Button
+                    className="mt-2 bg-novo-red hover:bg-novo-red/50 text-white"
+                    onClick={async () => {
+                      await Promise.all(
+                        fileStates.map(async (fileState) => {
+                          try {
+                            if (fileState.progress !== "PENDING") return;
+                            const res = await edgestore.publicFiles.upload({
+                              file: fileState.file,
+                              onProgressChange: async (progress) => {
+                                updateFileProgress(fileState.key, progress);
+                                if (progress === 100) {
+                                  // wait 1 second to set it to complete
+                                  // so that the user can see the progress bar
+                                  await new Promise((resolve) =>
+                                    setTimeout(resolve, 1000)
+                                  );
+                                  updateFileProgress(fileState.key, "COMPLETE");
+                                }
+                              },
+                            });
+                            setUploadRes((uploadRes) => [
+                              ...uploadRes,
+                              {
+                                url: res.url,
+                                filename: fileState.file.name,
+                              },
+                            ]);
+                            const currentFileUrls = form.getValues("fileUrls");
+                            const newFileUrls = [...currentFileUrls, res.url];
+                            form.setValue("fileUrls", newFileUrls, {
+                              shouldValidate: true,
+                              shouldDirty: true,
+                            });
+                            console.log("fileUrls", newFileUrls);
+                          } catch (error) {
+                            updateFileProgress(fileState.key, "ERROR");
+                            // All errors are typed and you will get intellisense for them
+                            if (error instanceof EdgeStoreApiClientError) {
+                              // if it fails due to the `maxSize` set in the router config
+                              if (error.data.code === "FILE_TOO_LARGE") {
+                                alert(
+                                  `Datei zu groß. Sie darf maximal ${formatFileSize(
+                                    error.data.details.maxFileSize
+                                  )} groß sein`
+                                );
+                              }
+                              // if it fails due to the `accept` set in the router config
+                              if (error.data.code === "MIME_TYPE_NOT_ALLOWED") {
+                                alert(
+                                  `Dateityp nicht erlaubt. Erlaubte Typen sind  ${error.data.details.allowedMimeTypes.join(
+                                    ", "
+                                  )}`
+                                );
+                              }
+                            }
+                          }
+                        })
+                      );
+                    }}
+                    disabled={
+                      !fileStates.filter(
+                        (fileState) => fileState.progress === "PENDING"
+                      ).length
+                    }
+                  >
+                    Upload
+                  </Button>
+
                   <FormMessage />
                   <FormDescription>
                     ** Fotos und/oder Dokumente wie z.B. eine Baugenehmigung
                     o.ä., damit wir einen besseren Eindruck für ihr Projekt
-                    gewinnen.
+                    gewinnen - min. 2, max. 5 Dateien mit je einer Größe von
+                    max. 2MB
                   </FormDescription>
                 </FormItem>
               )}
             />
 
-            <FormButton
-              className="bg-novo-red hover:bg-novo-red/50 text-white"
-              type="submit"
-              hookStatus={status}
-            >
-              Abschicken
-            </FormButton>
-            <FormDescription>* Erforderlich.</FormDescription>
-            <FormDescription>
-              Wir verwenden Ihre Angaben zur Beantwortung Ihrer Anfrage. Weitere
-              Informationen finden Sie in unseren{" "}
-              <Link
-                className="text-novo-red"
-                href="/datenschutz"
-                target="_blank"
+            <FormDescription>* Erforderlich</FormDescription>
+
+            <div className="flex items-top space-x-4 ">
+              <Checkbox
+                checked={isAccepted}
+                onCheckedChange={() => setIsAccepted(!isAccepted)}
+                className="mt-1 data-[state=checked]:bg-novo-red border-muted-foreground data-[state=checked]:text-white"
+              />
+              <FormDescription className="text-sm">
+                Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur
+                Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die
+                Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage
+                gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für
+                die Zukunft per E-Mail an{" "}
+                <a
+                  className="text-novo-red"
+                  href="mailto:info@novotec-koeln.de"
+                >
+                  info@novotec-koeln.de
+                </a>{" "}
+                widerrufen. Detaillierte Informationen zum Umgang mit
+                Nutzerdaten finden Sie in unseren{" "}
+                <Link
+                  className="text-novo-red"
+                  href="/datenschutz"
+                  target="_blank"
+                >
+                  Datenschutzhinweisen.
+                </Link>
+              </FormDescription>
+            </div>
+
+            {isAccepted && (
+              <FormButton
+                className="bg-novo-red hover:bg-novo-red/50 text-white"
+                type="submit"
+                hookStatus={status}
               >
-                Datenschutzhinweisen.
-              </Link>
-            </FormDescription>
+                Abschicken
+              </FormButton>
+            )}
           </form>
         </Form>
       </div>

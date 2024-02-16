@@ -27,6 +27,22 @@ export const FormSchema = z.object({
       message: "Beschreibung (min. 50 Zeichen) ist zu kurz",
     }),
 
+  zipCode: z.string().optional(),
+  location: z.string().optional(),
+  fileStates: z
+    .array(
+      z.object({
+        file: z.instanceof(File),
+        key: z.string(),
+        progress: z.union([
+          z.literal("PENDING"),
+          z.literal("COMPLETE"),
+          z.literal("ERROR"),
+          z.number(),
+        ]), // Union of allowed values
+      })
+    )
+    .optional(),
   fileUrls: z
     .array(z.string())
     .min(2, { message: "Bitte laden Sie mindestens 2 Dateien hoch" })
@@ -49,5 +65,5 @@ export const submitSafeInquiry = action(EmailFormSchema, async (data) => {
   //   await timeout(3000);
   console.log("data", data);
   const res = await sendMail(data);
-  return "success";
+  return res;
 });

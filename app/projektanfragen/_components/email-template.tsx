@@ -4,7 +4,8 @@ import { Html, Body, Container, Tailwind } from "@react-email/components";
 import { TEmailFormSchema, TFormSchema } from "../_lib/actions";
 
 export const EmailTemplate = (body: TEmailFormSchema) => {
-  const { name, email, phone, description, fileUrlsString } = body;
+  const { name, email, phone, description, fileUrlsString, location, zipCode } =
+    body;
   const fileUrls = fileUrlsString.split(",");
   return (
     <Html>
@@ -23,10 +24,17 @@ export const EmailTemplate = (body: TEmailFormSchema) => {
               <p>{phone}</p>
               <p className="text-lg font-semibold">Projektbeschreibung</p>
               <p>{description}</p>
+              <p className="text-lg font-semibold">Standort</p>
+              <p>{location ? location : "nicht angegeben"}</p>
+              <p className="text-lg font-semibold">PLZ</p>
+              <p>{zipCode ? zipCode : "nicht angegeben"}</p>
               <p className="text-lg font-semibold">Anhänge</p>
 
               {fileUrls?.map((fileUrl) => <p key={fileUrl}>- {fileUrl}</p>)}
             </div>
+            <p className="text-sm">
+              Info: Die Datein werden nach 4 Wochen gelöscht.
+            </p>
           </Container>
         </Body>
       </Tailwind>

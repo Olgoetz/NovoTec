@@ -9,7 +9,7 @@ export default function Contact() {
     <div id="kontakt" className="py-20 mt-10 md:mt-20">
       <div className="container ">
         <h2 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
-          So erreichen Sie uns
+          Kontakt - So erreichen Sie uns
         </h2>
 
         <div className="grid md:grid-cols-2 gap-x-6  mx-auto">
@@ -17,9 +17,6 @@ export default function Contact() {
             <Image fill src="/contact.jpg" alt="contanct" />
           </div> */}
           <div className="flex flex-col justify-center">
-            <h3 className="text-4xl font-bold justify-left w-full mb-10">
-              Kontakt
-            </h3>
             <ul className="flex flex-col w-full space-y-10 text-sm">
               <li className="flex items-center">
                 <Phone size={30} className="mr-5" />
