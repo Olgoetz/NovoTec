@@ -53,7 +53,7 @@ export default function RootLayout({
       <body className={raleway.className}>
         <EdgeStoreProvider>
           <Navbar />
-          <div className="overflow-auto flex flex-col h-screen justify-between">
+          <div className="flex flex-col h-screen justify-between">
             {children}
             <Footer />
           </div>
