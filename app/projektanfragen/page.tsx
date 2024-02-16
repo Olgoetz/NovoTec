@@ -126,7 +126,7 @@ export default function Page() {
   }
 
   return (
-    <>
+    <div>
       <h2 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
         Starten sie ihre Projektanfrage
       </h2>
@@ -377,6 +377,6 @@ export default function Page() {
           </form>
         </Form>
       </div>
-    </>
+    </div>
   );
 }
