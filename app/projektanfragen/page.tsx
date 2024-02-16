@@ -198,12 +198,12 @@ export default function Page() {
             <div className="grid md:grid-cols-2 gap-4">
               <FormField
                 control={form.control}
-                name="location"
+                name="zipCode"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Standort</FormLabel>
+                    <FormLabel>PLZ</FormLabel>
                     <FormControl>
-                      <Input placeholder="Projektstandort" {...field} />
+                      <Input placeholder="12345" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -211,12 +211,12 @@ export default function Page() {
               />
               <FormField
                 control={form.control}
-                name="zipCode"
+                name="location"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>PLZ</FormLabel>
+                    <FormLabel>Standort</FormLabel>
                     <FormControl>
-                      <Input placeholder="12345" {...field} />
+                      <Input placeholder="Projektstandort" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
