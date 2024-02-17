@@ -83,12 +83,12 @@ export default function Page() {
   //     });
   //   }
 
-  useEffect(() => {
-    if (form.formState.errors) {
-      // do the your logic here
-      console.log("formState", form.formState.errors);
-    }
-  }, [form.formState]); // ✅
+  // useEffect(() => {
+  //   if (form.formState.errors) {
+  //     // do the your logic here
+  //     console.log("formState", form.formState.errors);
+  //   }
+  // }, [form.formState]); // ✅
 
   const { execute, result, status } = useAction(submitSafeInquiry, {
     onSuccess() {
