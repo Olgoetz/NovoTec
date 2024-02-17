@@ -34,7 +34,7 @@ const References: React.FC = async () => {
   return (
     <div className="w-full mt-10 md:mt-20 py-20">
       <div className="container">
-        <h1 className="text-2xl h- uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
+        <h1 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
           Referenzen
         </h1>
 
@@ -54,7 +54,7 @@ const References: React.FC = async () => {
                   alt={el.fields.title}
                 />
               </div>
-              
+
               <h4 className="text-left text-lg md:text-2xl py-3 text-black font-semibold">
                 {/* {console.log(el)} */}
                 {el.fields.location}, {el.fields.title}
