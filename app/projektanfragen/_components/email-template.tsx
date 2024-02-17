@@ -32,8 +32,8 @@ export const EmailTemplate = (body: TEmailFormSchema) => {
 
               {fileUrls?.map((fileUrl) => <p key={fileUrl}>- {fileUrl}</p>)}
             </div>
-            <p className="text-sm">
-              Info: Die Datein werden nach 4 Wochen gelöscht.
+            <p className="text-sm font-serif mt-4">
+              Info: Die Dateien werden nach 4 Wochen gelöscht.
             </p>
           </Container>
         </Body>

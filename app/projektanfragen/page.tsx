@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-
+import { useDebouncedCallback } from "use-debounce";
 import {
   Form,
   FormControl,
@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import FormButton from "@/components/form-button";
-import { useToast } from "@/components/ui/use-toast";
+import toast from "react-hot-toast";
 import { useAction } from "next-safe-action/hooks";
 import ToastMessage from "@/components/toast-message";
 import { FormSchema, TFormSchema, submitSafeInquiry } from "./_lib/actions";
@@ -24,7 +24,7 @@ import { EdgeStoreApiClientError } from "@edgestore/react/shared";
 import { formatFileSize } from "@edgestore/react/utils";
 import { useEffect, useState } from "react";
 import { useEdgeStore } from "@/lib/edgestore";
-
+import axios from "axios";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -54,7 +54,6 @@ export default function Page() {
     });
   }
 
-  const { toast } = useToast();
   const form = useForm<TFormSchema>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -67,6 +66,26 @@ export default function Page() {
       fileUrls: [],
     },
   });
+
+  const fetchCityByZipCode = useDebouncedCallback(async (zipCode: string) => {
+    if (!zipCode) return;
+    try {
+      const response = await axios.get(
+        `https://api.zippopotam.us/de/${zipCode}`
+      );
+      const data = response.data;
+      const city = data.places[0]["place name"];
+
+      //  setCity(city); // Update the city state
+      form.setValue("location", city); // Update the location form field (optional
+      return city;
+    } catch (error) {
+      form.setError("zipCode", { message: "Ungültige PLZ" });
+      form.setValue("location", ""); // Update the location form field (optional
+
+      //   setCity(''); // Clear the city state in case of an error
+    }
+  }, 1000);
 
   //   function updateFormFileProgress(
   //     key: string,
@@ -93,22 +112,17 @@ export default function Page() {
 
   const { execute, result, status } = useAction(submitSafeInquiry, {
     onSuccess() {
-      toast({
-        description: (
-          <ToastMessage status="success">Nachricht verschickt!</ToastMessage>
-        ),
+      toast.success("Nachricht erfolgreich verschickt!", {
+        duration: 3000,
+        position: "bottom-right",
       });
       form.reset();
       setFileStates([]);
       setUploadRes([]);
     },
     onError(data) {
-      toast({
-        description: (
-          <ToastMessage status="fail">
-            Fehler beim Verschicken. Versuche es später nochmal!
-          </ToastMessage>
-        ),
+      toast.error("Nachricht erfolgreich verschickt!", {
+        position: "bottom-right",
       });
     },
   });
@@ -203,7 +217,16 @@ export default function Page() {
                   <FormItem>
                     <FormLabel>PLZ</FormLabel>
                     <FormControl>
-                      <Input placeholder="12345" {...field} />
+                      <Input
+                        placeholder="12345"
+                        {...field}
+                        value={field.value}
+                        onChange={(e) => {
+                          field.onChange(e); // Update the form field value
+
+                          fetchCityByZipCode(e.target.value); // Fetch city based on ZIP code
+                        }}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -216,7 +239,7 @@ export default function Page() {
                   <FormItem>
                     <FormLabel>Standort</FormLabel>
                     <FormControl>
-                      <Input placeholder="Projektstandort" {...field} />
+                      <Input disabled {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -241,6 +264,7 @@ export default function Page() {
                       value={fileStates}
                       dropzoneOptions={{
                         maxFiles: 5,
+                        maxSize: 3 * 1024 * 1024,
                       }}
                       //value={field.value}
                       //   onChange={field.onChange}
@@ -326,8 +350,8 @@ export default function Page() {
                   <FormDescription>
                     ** Fotos und/oder Dokumente wie z.B. eine Baugenehmigung
                     o.ä., damit wir einen besseren Eindruck für ihr Projekt
-                    gewinnen - min. 2, max. 5 Dateien mit je einer Größe von
-                    max. 2MB
+                    gewinnen - min. 1, max. 5 Dateien mit je einer Größe von
+                    max. 3MB
                   </FormDescription>
                 </FormItem>
               )}

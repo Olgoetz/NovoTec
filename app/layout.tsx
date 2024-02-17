@@ -5,7 +5,7 @@ import { Raleway } from "next/font/google";
 import { Footer } from "@/components/footer";
 import CookieConsent from "@/components/cookieConsent";
 import { getDomain } from "@/lib/utils";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "react-hot-toast";
 import { EdgeStoreProvider } from "@/lib/edgestore";
 
 const raleway = Raleway({ subsets: ["latin"] });
@@ -51,13 +51,13 @@ export default function RootLayout({
   return (
     <html className="scroll-smooth" lang="en">
       <body className={raleway.className}>
+        <Toaster />
         <EdgeStoreProvider>
           <Navbar />
           <div className="flex flex-col h-screen justify-between">
             {children}
             <Footer />
           </div>
-          <Toaster />
         </EdgeStoreProvider>
         <CookieConsent />
       </body>
