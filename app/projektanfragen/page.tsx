@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-
+import { useDebouncedCallback } from "use-debounce";
 import {
   Form,
   FormControl,
@@ -24,7 +24,7 @@ import { EdgeStoreApiClientError } from "@edgestore/react/shared";
 import { formatFileSize } from "@edgestore/react/utils";
 import { useEffect, useState } from "react";
 import { useEdgeStore } from "@/lib/edgestore";
-
+import axios from "axios";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -66,6 +66,26 @@ export default function Page() {
       fileUrls: [],
     },
   });
+
+  const fetchCityByZipCode = useDebouncedCallback(async (zipCode: string) => {
+    if (!zipCode) return;
+    try {
+      const response = await axios.get(
+        `https://api.zippopotam.us/de/${zipCode}`
+      );
+      const data = response.data;
+      const city = data.places[0]["place name"];
+
+      //  setCity(city); // Update the city state
+      form.setValue("location", city); // Update the location form field (optional
+      return city;
+    } catch (error) {
+      form.setError("zipCode", { message: "Ungültige PLZ" });
+      form.setValue("location", ""); // Update the location form field (optional
+
+      //   setCity(''); // Clear the city state in case of an error
+    }
+  }, 1000);
 
   //   function updateFormFileProgress(
   //     key: string,
@@ -197,7 +217,16 @@ export default function Page() {
                   <FormItem>
                     <FormLabel>PLZ</FormLabel>
                     <FormControl>
-                      <Input placeholder="12345" {...field} />
+                      <Input
+                        placeholder="12345"
+                        {...field}
+                        value={field.value}
+                        onChange={(e) => {
+                          field.onChange(e); // Update the form field value
+
+                          fetchCityByZipCode(e.target.value); // Fetch city based on ZIP code
+                        }}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -210,7 +239,7 @@ export default function Page() {
                   <FormItem>
                     <FormLabel>Standort</FormLabel>
                     <FormControl>
-                      <Input placeholder="Projektstandort" {...field} />
+                      <Input disabled {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
