@@ -9,9 +9,9 @@ export async function sendMail(emailProps: any) {
   const { email } = emailProps;
   try {
     const { data, error } = await resend.emails.send({
-      from: `Projektanfrage novotec-koeln.de <${process.env.RESEND_FROM_EMAIL}>`,
+      from: `Projektanfrage | NovoTec <${process.env.RESEND_FROM_EMAIL}>`,
       to: [process.env.RESEND_TO_EMAIL as string],
-      subject: `Neue Nachricht von ${email}`,
+      subject: `Anfrage über NovoTec Webseite`,
       react: EmailTemplate(emailProps) as React.ReactElement,
     });
 
