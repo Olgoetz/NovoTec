@@ -35,14 +35,16 @@ locals {
     CONTENTFUL_ACCESS_TOKEN         = var.CONTENTFUL_ACCESS_TOKEN
     RESEND_API_KEY                  = var.RESEND_API_KEY
     RESEND_FROM_EMAIL               = var.RESEND_FROM_EMAIL
+    EDGE_STORE_ACCESS_KEY           = var.EDGE_STORE_ACCESS_KEY
+    EDGE_STORE_SECRET_KEY           = var.EDGE_STORE_SECRET_KEY
   }
   env_variables_nonprod = {
-    RESEND_TO_EMAIL_NONPROD = var.RESEND_TO_EMAIL_NONPROD
-    URL_NONPROD             = var.URL_NONPROD
+    RESEND_TO_EMAIL = var.RESEND_TO_EMAIL_NONPROD
+    URL_NONPROD     = var.URL_NONPROD
   }
   env_variables_prod = {
-    RESEND_TO_EMAIL_PROD = var.RESEND_TO_EMAIL_PROD
-    URL_PROD             = var.URL_PROD
+    RESEND_TO_EMAIL = var.RESEND_TO_EMAIL_PROD
+    URL_PROD        = var.URL_PROD
   }
 }
 

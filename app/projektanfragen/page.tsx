@@ -215,7 +215,7 @@ export default function Page() {
                 name="zipCode"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>PLZ</FormLabel>
+                    <FormLabel>PLZ*</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="12345"
@@ -239,17 +239,16 @@ export default function Page() {
                   <FormItem>
                     <FormLabel>Standort</FormLabel>
                     <FormControl>
-                      <Input disabled {...field} />
+                      <Input
+                        disabled
+                        {...field}
+                        placeholder="wird automatisch gesetzt"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-
-              <FormDescription className="col-span-2">
-                Anmerkung: Wir schränken zunächst einen Umkreis von max. 80 km
-                von unserem Standort 51377 Leverkusen ein.
-              </FormDescription>
             </div>
             <FormField
               control={form.control}
@@ -348,10 +347,9 @@ export default function Page() {
 
                   <FormMessage />
                   <FormDescription>
-                    ** Fotos und/oder Dokumente wie z.B. eine Baugenehmigung
-                    o.ä., damit wir einen besseren Eindruck für ihr Projekt
-                    gewinnen - min. 1, max. 5 Dateien mit je einer Größe von
-                    max. 3MB
+                    ** Fotos und Dokumente wie Leistungsverzeichnis,
+                    Baugenehmigung o.ä. <br />
+                    Max. 5 Dateien mit je einer Größe von max. 3MB
                   </FormDescription>
                 </FormItem>
               )}

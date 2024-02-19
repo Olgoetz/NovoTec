@@ -37,6 +37,12 @@ variable "RESEND_TO_EMAIL_NONPROD" {
 variable "RESEND_TO_EMAIL_PROD" {
   type = string
 }
+variable "EDGE_STORE_ACCESS_KEY" {
+  type = string
+}
+variable "EDGE_STORE_SECRET_KEY" {
+  type = string
+}
 
 
 variable "ngrok_url" {
