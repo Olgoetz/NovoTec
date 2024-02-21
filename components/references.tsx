@@ -44,21 +44,23 @@ const References: React.FC = async () => {
               key={el.sys.id}
               className="space-y-6 border relative p-3 pb-2 h-auto"
             >
-              <div
-                key={el.sys.id}
-                className="relative w-full h-[260px] md:h-[400px]"
-              >
-                <Image
-                  fill
-                  src={`https:${el.fields.photos[0].fields.file.url}`}
-                  alt={el.fields.title}
-                />
-              </div>
+              <Link href={`/referenzen/${el.sys.id}`}>
+                <div
+                  key={el.sys.id}
+                  className="relative w-full h-[260px] md:h-[400px]"
+                >
+                  <Image
+                    fill
+                    src={`https:${el.fields.photos[0].fields.file.url}`}
+                    alt={el.fields.title}
+                  />
+                </div>
 
-              <h4 className="text-left text-lg md:text-2xl py-3 text-black font-semibold">
-                {/* {console.log(el)} */}
-                {el.fields.location}, {el.fields.title}
-              </h4>
+                <h4 className="text-left text-lg md:text-2xl py-3 text-black font-semibold">
+                  {/* {console.log(el)} */}
+                  {el.fields.location}, {el.fields.title}
+                </h4>
+              </Link>
 
               <Button
                 asChild
