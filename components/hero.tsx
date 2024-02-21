@@ -3,6 +3,8 @@ import { Star, ThumbsUp } from "lucide-react";
 import Image from "next/image";
 import coreCompetencies from "@/data/coreCompetencies";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import CrawlingText from "./banner";
 export const Hero = () => {
   const box_style =
     "bg-slate-800/40 flex flex-col border border-white p-5 items-center space-y-3 justify-center";
@@ -51,7 +53,8 @@ export const Hero = () => {
           </div>
         </div>
       </div> */}
-      <section className="py-20">
+      <section className="py-10">
+        <CrawlingText text="Wir ziehen um" />
         <div className="flex flex-col justify-center items-center font-bold text-3xl gap-y-8">
           <h1 className="text-2xl md:text-5xl text-center">
             Herzlich Willkommen bei{" "}
@@ -77,30 +80,32 @@ export const Hero = () => {
 
         <div className="mt-10 font-semibold grid md:grid-cols-3 gap-7 px-2 text-center md:max-w-[1000px] mx-auto ">
           {coreCompetencies.map((c) => (
-            <div
-              key={c.title}
-              className="h-[80px] bg-slate-100 flex items-center justify-center px-1  border rounded-md shadow-lg"
-            >
+            <Link href="/leistungen">
               <div
-                className={cn(
-                  "flex items-center justify-start w-[270px]",
-                  c.containerStyles
-                )}
+                key={c.title}
+                className="h-[80px] bg-slate-100 flex items-center justify-center px-1  border rounded-md shadow-lg"
               >
-                {c.icon && <c.icon className={cn("mr-5", c.iconStyles1)} />}
-                {c.image && (
-                  <c.image
-                    src="/fenster.png"
-                    alt="Fenster Icon"
-                    width={28}
-                    height={28}
-                    className="ml-[4px] mr-5"
-                  />
-                )}
+                <div
+                  className={cn(
+                    "flex items-center justify-start w-[270px]",
+                    c.containerStyles
+                  )}
+                >
+                  {c.icon && <c.icon className={cn("mr-5", c.iconStyles1)} />}
+                  {c.image && (
+                    <c.image
+                      src="/fenster.png"
+                      alt="Fenster Icon"
+                      width={28}
+                      height={28}
+                      className="ml-[4px] mr-5"
+                    />
+                  )}
 
-                <p>{c.title}</p>
+                  <p>{c.title}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
