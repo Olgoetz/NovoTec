@@ -54,7 +54,7 @@ export const Hero = () => {
         </div>
       </div> */}
       <section className="py-10">
-        <CrawlingText text="Wir ziehen um" />
+        <CrawlingText />
         <div className="flex flex-col justify-center items-center font-bold text-3xl gap-y-8">
           <h1 className="text-2xl md:text-5xl text-center">
             Herzlich Willkommen bei{" "}
