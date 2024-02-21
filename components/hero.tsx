@@ -80,11 +80,8 @@ export const Hero = () => {
 
         <div className="mt-10 font-semibold grid md:grid-cols-3 gap-7 px-2 text-center md:max-w-[1000px] mx-auto ">
           {coreCompetencies.map((c) => (
-            <Link href="/leistungen">
-              <div
-                key={c.title}
-                className="h-[80px] bg-slate-100 flex items-center justify-center px-1  border rounded-md shadow-lg"
-              >
+            <Link key={c.title} href="/leistungen">
+              <div className="h-[80px] bg-slate-100 flex items-center justify-center px-1  border rounded-md shadow-lg">
                 <div
                   className={cn(
                     "flex items-center justify-start w-[270px]",
