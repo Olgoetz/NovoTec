@@ -20,6 +20,15 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    animation: {
+      crawl: "crawl 20s linear infinite",
+    },
+    keyframes: {
+      crawl: {
+        "0%": { transform: "translateX(50%)" },
+        "100%": { transform: "translateX(-100%)" },
+      },
+    },
 
     extend: {
       colors: {
