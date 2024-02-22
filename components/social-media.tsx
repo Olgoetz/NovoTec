@@ -11,10 +11,7 @@ const SocialMedia = ({ classes }: Styles) => {
   return (
     <>
       <div className={cn("flex space-x-4 justify-start", classes)}>
-        <Link
-          href="https://www.instagram.com/novotec_koeln/?hl=de"
-          target="_blank"
-        >
+        <Link href="https://www.instagram.com/novotec_gruppe" target="_blank">
           <Instagram className="h-6 w-6" />
         </Link>
         <Link
