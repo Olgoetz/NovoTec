@@ -62,7 +62,7 @@ export const Hero = () => {
           {/* <NovoTec classes="ml-2" /> */}
 
           <Image
-            src="/novotec_logo.png"
+            src="/novotec_logo.jpg"
             alt="NovoTec Logo Hero"
             width={400}
             height={400}
