@@ -127,7 +127,8 @@ export const Navbar = () => {
                   width={250}
                   height={20}
                   alt="Logo"
-                  src="/novotec_logo.png"
+                  src="/novotec_logo.jpg"
+                  quality={100}
                 />
               </Link>
             </div>
@@ -158,13 +159,13 @@ export const Navbar = () => {
           {!nav ? (
             <div className="flex justify-between items-center">
               <Menu onClick={() => setNav(!nav)} />
-              <div className="">
+              <div className="relative w-[200px] h-[50px]">
                 <Link href="/">
                   <Image
-                    width={150}
-                    height={10}
+                    className="object-contain"
+                    fill
                     alt="Logo"
-                    src="/novotec_logo.png"
+                    src="/novotec_logo.jpg"
                     quality={100}
                   />
                 </Link>
@@ -179,7 +180,7 @@ export const Navbar = () => {
                     width={150}
                     height={10}
                     alt="Logo"
-                    src="/novotec_logo.png"
+                    src="/novotec_logo.jpg"
                     quality={100}
                   />
                 </Link>
