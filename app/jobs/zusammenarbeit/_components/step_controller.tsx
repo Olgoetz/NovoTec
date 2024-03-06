@@ -99,23 +99,38 @@ const StepController = () => {
   };
   return (
     <div>
-      <div className="grid md:grid-cols-4 gap-4">
-        <div className="md:col-span-3">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              {renderStepContent(form)}
-            </form>
-          </Form>
-        </div>
-        <div className="md:col-span-1">
-          <StepNav
-            nextStep={nextStep}
-            prevStep={prevStep}
-            currentStep={currentStep}
-            numberOfSteps={NUMBER_OF_STEPS}
-          />
-        </div>
-      </div>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex justify-between">
+              {/* Basic information */}
+              <div>
+                <h2 className="mb-10">
+                  Schritt 1: Beantworte die folgenden 8 Fragen
+                </h2>
+                {renderStepContent(form)}
+              </div>
+              <div className="md:col-span-1">
+                <StepNav
+                  nextStep={nextStep}
+                  prevStep={prevStep}
+                  currentStep={currentStep}
+                  numberOfSteps={NUMBER_OF_STEPS}
+                />
+              </div>
+            </div>
+
+            {/* calendar */}
+            <div>
+              <h2 className="mb-3">Schritt 2: Wählen Sie einen Termin aus</h2>
+              <p className="mb-7 text-xs text-muted-foreground">
+                WICHTIG: Sie erhalten eine separate Email von uns als
+                Bestätigung. Erst dann ist der Termin verbindlich.
+              </p>
+            </div>
+          </div>
+        </form>
+      </Form>
 
       <div className="flex flex-col gap-4 mt-10">
         <p>Aktueller Fortschritt</p>

@@ -12,7 +12,7 @@ export const FormSchema = z.object({
     }),
   // Experience
   step2: z.string(),
-  step3_location: z.string(),
+  step3_location: z.string().optional(),
   step3_zipCode: z.string().min(5, { message: "PLZ muss gesetzt werden" }),
   // Area
   step4: z.array(z.number()),
