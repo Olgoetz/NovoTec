@@ -28,9 +28,9 @@ export default function Step_4({ form }: Step4Props) {
   return (
     <div>
       <div className="mb-8">
-        <FormLabel className="text-base">Einsatzgebiet</FormLabel>
+        <FormLabel className="text-base">Einsatzgebiet?</FormLabel>
         <FormDescription>
-          Bitte wählen Sie den Umkreis von Ihrem Standort aus.
+          Bitte wähle den Umkreis von deinem Standort aus.
         </FormDescription>
       </div>
       <div className="w-full">
@@ -44,7 +44,7 @@ export default function Step_4({ form }: Step4Props) {
                   <p>25 km</p>
                   <FormControl>
                     <Slider
-                      //{...field}
+                      value={field.value}
                       onValueChange={field.onChange}
                       max={250}
                       min={25}
@@ -56,7 +56,11 @@ export default function Step_4({ form }: Step4Props) {
                 <FormMessage />
               </FormItem>
               <p className="text-sm">
-                Der gewählte Umkreis beträgt: {field.value} km
+                Der gewählte Umkreis beträgt:{" "}
+                <span className="font-bold text-lg text-novo-red">
+                  {" "}
+                  {field.value} km
+                </span>
               </p>
             </div>
           )}

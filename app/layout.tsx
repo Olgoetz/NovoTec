@@ -7,7 +7,6 @@ import CookieConsent from "@/components/cookieConsent";
 import { getDomain } from "@/lib/utils";
 import { Toaster } from "react-hot-toast";
 import { EdgeStoreProvider } from "@/lib/edgestore";
-
 const raleway = Raleway({ subsets: ["latin"] });
 const url = getDomain() as string;
 export const metadata: Metadata = {

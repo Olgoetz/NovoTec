@@ -30,8 +30,8 @@ export const FormSchema = z.object({
   step7_phone: z.string().min(6, { message: "Die Mobilnummer ist zu kurz" }),
   step8: z
     .array(z.string())
-    .min(1, { message: "Bitte laden Sie mindestens 1 Datei(en) hoch" })
-    .max(5, { message: "Maximal 5 Dateien erlaubt" }),
+    .max(5, { message: "Maximal 5 Dateien erlaubt" })
+    .optional(),
 });
 
 export type TFormSchema = z.infer<typeof FormSchema>;

@@ -1,10 +1,8 @@
-import Jobs from "@/components/jobs";
-import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
-import getContentByType from "@/lib/getContentByType";
-import { ArrowRight, DoorOpenIcon, MessageCircle } from "lucide-react";
-import Link from "next/link";
+"use client";
+
 import StepController from "./_components/step_controller";
 import { Suspense } from "react";
+import { MsalProvider } from "@azure/msal-react";
 
 export default async function Page() {
   return (
@@ -14,6 +12,7 @@ export default async function Page() {
       </h1>
       <div className=" max-w-6xl mx-auto ">
         {/* Festanstellung */}
+
         <Suspense
           fallback={
             <div className="flex items-center justify-center h-screen">

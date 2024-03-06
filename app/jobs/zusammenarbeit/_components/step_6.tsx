@@ -28,9 +28,9 @@ export default function Step_6({ form }: Step6Props) {
   return (
     <div>
       <div className="mb-8">
-        <FormLabel className="text-base">Stundenlohn</FormLabel>
+        <FormLabel className="text-base">Stundensatz</FormLabel>
         <FormDescription>
-          Bitte geben einen Stundenlohn in Brutto ein.
+          Bitte gib die Kosten pro Stunde für dich oder deine Handwerker an.
         </FormDescription>
       </div>
       <div className="w-1/2">

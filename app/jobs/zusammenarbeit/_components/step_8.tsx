@@ -56,8 +56,7 @@ export default function Step_8({ form }: Step8Props) {
       <div className="mb-8">
         <FormLabel className="text-base">Fotos</FormLabel>
         <FormDescription>
-          Bitte laden Sie Fotos Ihrer letzten Projekte (max. 5, höchstens 3 MB)
-          hoch.
+          Lade Fotos deiner letzten Projekte hoch (max. 5, höchstens 3 MB)
         </FormDescription>
       </div>
 
@@ -116,7 +115,8 @@ export default function Step_8({ form }: Step8Props) {
                         },
                       ]);
                       const currentFileUrls = form.getValues("step8");
-                      const newFileUrls = [...currentFileUrls, res.url];
+
+                      const newFileUrls = [...(currentFileUrls || []), res.url];
                       form.setValue("step8", newFileUrls, {
                         shouldValidate: true,
                         shouldDirty: true,

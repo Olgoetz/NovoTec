@@ -27,10 +27,8 @@ export default function Step_5({ form }: Step5Props) {
   return (
     <div>
       <div className="mb-8">
-        <FormLabel className="text-base">Anzahl der Mitarbeiter</FormLabel>
-        <FormDescription>
-          Bitte geben Sie die Anzahl der Mitarbeiter an, die Sie beschäftigen.
-        </FormDescription>
+        <FormLabel className="text-base">Anzahl deiner Teamstärke</FormLabel>
+        <FormDescription>Bitte gebe an wie groß dein Team ist.</FormDescription>
       </div>
       <div className="w-1/2">
         <FormField
@@ -41,7 +39,7 @@ export default function Step_5({ form }: Step5Props) {
               <Input
                 type="number"
                 min={1}
-                max={50}
+                max={100}
                 {...field}
                 placeholder="z.B. 10"
                 className="border h-10 p-2 rounded-md "

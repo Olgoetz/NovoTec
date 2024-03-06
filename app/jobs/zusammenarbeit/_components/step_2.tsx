@@ -31,7 +31,8 @@ export default function Step_2({ form }: Step2Props) {
     replace(`${pathname}?${params.toString()}`);
   }, []);
   const years: number[] = [];
-  for (let year = 1970; year <= 2015; year++) {
+  const currentYear = new Date().getFullYear();
+  for (let year = 1970; year <= currentYear; year++) {
     years.push(year);
   }
   return (
@@ -43,10 +44,10 @@ export default function Step_2({ form }: Step2Props) {
           <FormItem>
             <div className="mb-4">
               <FormLabel className="text-base">
-                Seit wann sind Sie tätig?
+                Seit wann bist du als Handwerker tätig?
               </FormLabel>
               <FormDescription>
-                Wählen Sie das Jahr aus, in dem Sie Ihre Tätigkeit aufgenommen.
+                Wähle das Jahr aus, in dem du deine Tätigkeit aufgenommen hast.{" "}
               </FormDescription>
             </div>
             <div className="w-28">
@@ -70,26 +71,6 @@ export default function Step_2({ form }: Step2Props) {
           </FormItem>
         )}
       />
-      {/* <Card className="p-8">
-        <CardTitle className="text-lg text-novo-red pb-4">
-          Was ist dein Hauptgewerk?
-        </CardTitle>
-        <CardContent className="p-0">
-          <div className="flex flex-col gap-4">
-            {checkboxes.map((e) => (
-              <div key={e.label} className="flex  items-center space-x-2">
-                <Checkbox id={e.label.toLocaleLowerCase()} />
-                <label
-                  htmlFor={e.label.toLocaleLowerCase()}
-                  className="text-sm  font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  {e.label}
-                </label>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card> */}
     </div>
   );
 }

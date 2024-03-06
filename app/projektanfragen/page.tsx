@@ -357,44 +357,48 @@ export default function Page() {
 
             <FormDescription>* Erforderlich</FormDescription>
 
-            <div className="flex items-top space-x-4 ">
-              <Checkbox
-                checked={isAccepted}
-                onCheckedChange={() => setIsAccepted(!isAccepted)}
-                className="mt-1 data-[state=checked]:bg-novo-red border-muted-foreground data-[state=checked]:text-white"
-              />
-              <FormDescription className="text-sm">
-                Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur
-                Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die
-                Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage
-                gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für
-                die Zukunft per E-Mail an{" "}
-                <a
-                  className="text-novo-red"
-                  href="mailto:info@novotec-koeln.de"
-                >
-                  info@novotec-koeln.de
-                </a>{" "}
-                widerrufen. Detaillierte Informationen zum Umgang mit
-                Nutzerdaten finden Sie in unseren{" "}
-                <Link
-                  className="text-novo-red"
-                  href="/datenschutz"
-                  target="_blank"
-                >
-                  Datenschutzhinweisen.
-                </Link>
-              </FormDescription>
-            </div>
+            {form.formState.isValid && (
+              <>
+                <div className="flex items-top space-x-4 ">
+                  <Checkbox
+                    checked={isAccepted}
+                    onCheckedChange={() => setIsAccepted(!isAccepted)}
+                    className="mt-1 data-[state=checked]:bg-novo-red border-muted-foreground data-[state=checked]:text-white"
+                  />
+                  <FormDescription className="text-sm">
+                    Ich stimme zu, dass meine Angaben aus dem Kontaktformular
+                    zur Beantwortung meiner Anfrage erhoben und verarbeitet
+                    werden. Die Daten werden nach abgeschlossener Bearbeitung
+                    Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre
+                    Einwilligung jederzeit für die Zukunft per E-Mail an{" "}
+                    <a
+                      className="text-novo-red"
+                      href="mailto:info@novotec-koeln.de"
+                    >
+                      info@novotec-koeln.de
+                    </a>{" "}
+                    widerrufen. Detaillierte Informationen zum Umgang mit
+                    Nutzerdaten finden Sie in unseren{" "}
+                    <Link
+                      className="text-novo-red"
+                      href="/datenschutz"
+                      target="_blank"
+                    >
+                      Datenschutzhinweisen.
+                    </Link>
+                  </FormDescription>
+                </div>
 
-            {isAccepted && (
-              <FormButton
-                className="bg-novo-red hover:bg-novo-red/50 text-white"
-                type="submit"
-                hookStatus={status}
-              >
-                Abschicken
-              </FormButton>
+                {isAccepted && (
+                  <FormButton
+                    className="bg-novo-red hover:bg-novo-red/50 text-white"
+                    type="submit"
+                    hookStatus={status}
+                  >
+                    Abschicken
+                  </FormButton>
+                )}
+              </>
             )}
           </form>
         </Form>
