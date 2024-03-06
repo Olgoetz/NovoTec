@@ -121,7 +121,7 @@ export default function Page() {
       setUploadRes([]);
     },
     onError(data) {
-      toast.error("Nachricht erfolgreich verschickt!", {
+      toast.error("Fehlgeschlagen!", {
         position: "bottom-right",
       });
     },

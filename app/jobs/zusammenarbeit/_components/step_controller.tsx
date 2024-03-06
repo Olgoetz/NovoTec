@@ -1,14 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import Step_1 from "./step_1";
-import StepNav from "./step_nav";
-import { UseFormReturn, useForm } from "react-hook-form";
+import { UseFormReturn, set, useForm } from "react-hook-form";
+
+import { NUMBER_OF_STEPS } from "../_lib/constants";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormDescription } from "@/components/ui/form";
 import { FormSchema, TFormSchema } from "../_lib/validations";
-import { NUMBER_OF_STEPS } from "../_lib/constants";
-import { MsalProvider, useMsal } from "@azure/msal-react";
+
+import StepNav from "./step_nav";
+import Step_1 from "./step_1";
 import Step_2 from "./step_2";
 import Step_3 from "./step_3";
 import Step_4 from "./step_4";
@@ -16,19 +18,23 @@ import Step_5 from "./step_5";
 import Step_6 from "./step_6";
 import Step_7 from "./step_7";
 import Step_8 from "./step_8";
+import Step_9 from "./step_9";
+
 import { Progress } from "@/components/ui/progress";
 import { useSearchParams } from "next/navigation";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
+
 import FormButton from "@/components/form-button";
 
 import { fetchOutlookEvents } from "../actions";
+
 const StepController = () => {
-  // Manage steps and their state
+  // Manage steps and their state //
+
+  // Step validation
   const searchParams = useSearchParams();
   const [currentStep, setCurrentStep] = useState(1);
-  const [isAccepted, setIsAccepted] = useState(false);
-
   const step = searchParams.get("step")?.toString();
   const nextStep = async () => {
     let isValid = false;
@@ -41,10 +47,17 @@ const StepController = () => {
         "step7_email",
         "step7_phone",
       ]);
+
+      if (isValid) {
+        setShowCalendar(true);
+      } else {
+        setShowCalendar(false);
+      }
     } else {
       isValid = await form.trigger(`step${step}` as any);
     }
     if (!isValid) return;
+
     setCurrentStep(currentStep + 1);
   };
 
@@ -54,7 +67,6 @@ const StepController = () => {
 
   // Manage progress
   const [progress, setProgress] = useState(0);
-
   useEffect(() => {
     setProgress(parseInt(step || "0"));
   }, [step]);
@@ -84,7 +96,11 @@ const StepController = () => {
     }
   };
 
-  // Form validation
+  // Render calendar
+  const [showCalendar, setShowCalendar] = useState(false);
+
+  // Form //
+  // Validation
   const currentYear = new Date().getFullYear();
   const form = useForm<TFormSchema>({
     resolver: zodResolver(FormSchema),
@@ -100,6 +116,7 @@ const StepController = () => {
       step7_email: "",
       step7_phone: "",
       step8: [],
+      step9: "",
     },
   });
 
@@ -119,16 +136,20 @@ const StepController = () => {
   //   },
   // });
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      await fetchOutlookEvents();
-    };
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     await fetchOutlookEvents();
+  //   };
 
-    fetchEvents();
-  }, []);
+  //   fetchEvents();
+  // }, []);
+
+  // Handle form submission
+  const [isAccepted, setIsAccepted] = useState(false);
 
   const onSubmit = (values: TFormSchema) => {
-    console.log(values);
+    const content = JSON.stringify(values, null, 2); // Convert object to string with pretty formatting
+    alert(content);
   };
 
   return (
@@ -163,14 +184,7 @@ const StepController = () => {
                 WICHTIG: Du erhältst eine separate E-Mail von uns als
                 Bestätigung. Erst dann ist der Termin verbindlich.
               </p>
-              {/* <ul>
-                  {events.map((event) => (
-                    <li key={event.id}>
-                      {event.subject} -{" "}
-                      {new Date(event.start.dateTime).toLocaleString()}
-                    </li>
-                  ))}
-                </ul> */}
+              {showCalendar && <Step_9 form={form} />}
             </div>
           </div>
 

@@ -17,21 +17,22 @@ export const FormSchema = z.object({
   // Area
   step4: z.array(z.number()),
   // Number of employees
-  step5: z.coerce.number({ required_error: "Bitte geben Sie eine Zahl ein" }),
+  step5: z.coerce.number({ required_error: "Bitte gebe eine Zahl ein" }),
   // Wage per hour
   step6: z.coerce.number({
-    required_error: "Bitte geben Sie Ihren Stundenlohn im Format xx,xx ein.",
+    required_error: "Bitte gebe deinen Stundenlohn im Format xx,xx ein.",
   }),
   step7_firstName: z.string().min(2, { message: "Der Vorname ist zu kurz" }),
   step7_lastName: z.string().min(2, { message: "Der Nachname ist zu kurz" }),
   step7_email: z
     .string()
-    .email({ message: "Bitte geben Sie eine gültige E-Mail-Adresse ein" }),
+    .email({ message: "Bitte gebe eine gültige E-Mail-Adresse ein" }),
   step7_phone: z.string().min(6, { message: "Die Mobilnummer ist zu kurz" }),
   step8: z
     .array(z.string())
     .max(5, { message: "Maximal 5 Dateien erlaubt" })
     .optional(),
+  step9: z.string().min(1, { message: "Bitte wähle einen Termin aus." }),
 });
 
 export type TFormSchema = z.infer<typeof FormSchema>;
