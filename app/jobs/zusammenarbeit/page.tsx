@@ -4,6 +4,7 @@ import getContentByType from "@/lib/getContentByType";
 import { ArrowRight, DoorOpenIcon, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import StepController from "./_components/step_controller";
+import { Suspense } from "react";
 
 export default async function Page() {
   return (
@@ -17,7 +18,15 @@ export default async function Page() {
             Schritt 1: Beantworte die folgenden 8 Fragen
           </h2>
           {/* Festanstellung */}
-          <StepController />
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center h-screen">
+                Loading...
+              </div>
+            }
+          >
+            <StepController />
+          </Suspense>
         </div>
 
         {/* Calendar */}

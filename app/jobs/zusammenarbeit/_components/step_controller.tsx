@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Step_1 from "./step_1";
 import StepNav from "./step_nav";
@@ -17,10 +17,10 @@ import Step_7 from "./step_7";
 import Step_8 from "./step_8";
 import { Progress } from "@/components/ui/progress";
 import { useSearchParams } from "next/navigation";
-const searchParams = useSearchParams();
 
 const StepController = () => {
   // Step Controller
+  const searchParams = useSearchParams();
   const [currentStep, setCurrentStep] = useState(1);
 
   const step = searchParams.get("step")?.toString();
@@ -38,8 +38,6 @@ const StepController = () => {
     } else {
       isValid = await form.trigger(`step${step}` as any);
     }
-    console.log(isValid);
-    console.log(form.formState.errors);
     if (!isValid) return;
     setCurrentStep(currentStep + 1);
   };
@@ -54,20 +52,6 @@ const StepController = () => {
   useEffect(() => {
     setProgress(parseInt(step || "0"));
   }, [step]);
-
-  const [checkboxes, setCheckboxes] = useState({
-    checkbox1: false,
-    checkbox2: false,
-    checkbox3: false,
-    checkbox4: false,
-    checkbox5: false,
-  });
-
-  // Function to handle checkbox state changes
-  const handleCheckboxChange = (event: any) => {
-    const { name, checked } = event.target;
-    setCheckboxes({ ...checkboxes, [name]: checked });
-  };
 
   const renderStepContent = (form: UseFormReturn<TFormSchema>) => {
     switch (currentStep) {
