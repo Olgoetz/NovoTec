@@ -22,9 +22,9 @@ const StepController = () => {
   // Step Controller
   const [currentStep, setCurrentStep] = useState(1);
 
-  const searchParams = useSearchParams();
-  const step = searchParams.get("step")?.toString();
   const nextStep = async () => {
+    const searchParams = useSearchParams();
+    const step = searchParams.get("step")?.toString();
     let isValid = false;
     if (step === "3") {
       isValid = await form.trigger("step3_zipCode");
