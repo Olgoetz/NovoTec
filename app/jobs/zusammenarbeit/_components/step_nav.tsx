@@ -15,16 +15,18 @@ export default function StepNav({
   numberOfSteps,
 }: StepNavProps) {
   return (
-    <div className="flex items-center p-4 bg-slate-100">
+    <div className="flex justify-center items-center h-14 p-2 bg-slate-100 rounded-md">
       {currentStep !== 1 && (
         <button onClick={prevStep}>
-          <ChevronLeft className="text-novo-red h-8 w-8" />
+          <ChevronLeft className="text-novo-red h-7 w-7" />
         </button>
       )}
-      {currentStep} von {numberOfSteps}
-      {currentStep < 3 && (
+      <p className="whitespace-nowrap">
+        {currentStep} von {numberOfSteps}
+      </p>
+      {currentStep < numberOfSteps && (
         <button onClick={nextStep}>
-          <ChevronRight className="text-novo-red h-8 w-8" />
+          <ChevronRight className="text-novo-red h-6 w-7" />
         </button>
       )}
     </div>

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+"use client";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   FormControl,
@@ -8,14 +8,28 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import React from "react";
+import React, { useEffect } from "react";
 import { UseFormReturn } from "react-hook-form";
 import { TFormSchema } from "../_lib/validations";
+import { usePathname, useRouter } from "next/navigation";
 
 interface Step1Props {
   form: UseFormReturn<TFormSchema>;
 }
 export default function Step_1({ form }: Step1Props) {
+  const { replace } = useRouter();
+  const pathname = usePathname();
+  useEffect(() => {
+    const params = new URLSearchParams();
+    params.set("step", "1");
+    replace(`${pathname}?${params.toString()}`);
+  }, []);
+
+  // useEffect(() => {
+  //   const params = new URLSearchParams();
+  //   console.log(params);
+  //   params.set("step", "1");
+  // }, []);
   const checkboxes = [
     {
       label: "Allrounder",
@@ -62,9 +76,11 @@ export default function Step_1({ form }: Step1Props) {
         render={() => (
           <FormItem>
             <div className="mb-4">
-              <FormLabel className="text-base">Sidebar</FormLabel>
+              <FormLabel className="text-base">
+                Was sind Ihre Haupttätigkeiten?
+              </FormLabel>
               <FormDescription>
-                Select the items you want to display in the sidebar.
+                Wähle zwischen 1 bis max. 3 Gewerke
               </FormDescription>
             </div>
             {checkboxes.map((item) => (
@@ -80,6 +96,7 @@ export default function Step_1({ form }: Step1Props) {
                     >
                       <FormControl>
                         <Checkbox
+                          className="data-[state=checked]:bg-white"
                           checked={field.value?.includes(item.label)}
                           onCheckedChange={(checked) => {
                             return checked
@@ -104,26 +121,6 @@ export default function Step_1({ form }: Step1Props) {
           </FormItem>
         )}
       />
-      {/* <Card className="p-8">
-        <CardTitle className="text-lg text-novo-red pb-4">
-          Was ist dein Hauptgewerk?
-        </CardTitle>
-        <CardContent className="p-0">
-          <div className="flex flex-col gap-4">
-            {checkboxes.map((e) => (
-              <div key={e.label} className="flex  items-center space-x-2">
-                <Checkbox id={e.label.toLocaleLowerCase()} />
-                <label
-                  htmlFor={e.label.toLocaleLowerCase()}
-                  className="text-sm  font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  {e.label}
-                </label>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card> */}
     </div>
   );
 }

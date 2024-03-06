@@ -124,11 +124,12 @@ export const Navbar = () => {
             <div className=" mr-4 ">
               <Link href="/">
                 <Image
-                  width={250}
+                  width={275}
                   height={20}
                   alt="Logo"
                   src="/novotec_logo.jpg"
                   quality={100}
+                  sizes="100vw"
                 />
               </Link>
             </div>
