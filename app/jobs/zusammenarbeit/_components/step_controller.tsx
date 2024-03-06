@@ -17,14 +17,14 @@ import Step_7 from "./step_7";
 import Step_8 from "./step_8";
 import { Progress } from "@/components/ui/progress";
 import { useSearchParams } from "next/navigation";
+const searchParams = useSearchParams();
 
 const StepController = () => {
   // Step Controller
   const [currentStep, setCurrentStep] = useState(1);
 
+  const step = searchParams.get("step")?.toString();
   const nextStep = async () => {
-    const searchParams = useSearchParams();
-    const step = searchParams.get("step")?.toString();
     let isValid = false;
     if (step === "3") {
       isValid = await form.trigger("step3_zipCode");
