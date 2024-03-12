@@ -15,7 +15,7 @@ export default function StepNav({
   numberOfSteps,
 }: StepNavProps) {
   return (
-    <div className="flex justify-center items-center h-14 p-2 bg-slate-100 rounded-md">
+    <div className="flex md:w-48 justify-center items-center h-14 p-2 bg-slate-100 rounded-md">
       {currentStep !== 1 && (
         <button type="button" onClick={prevStep}>
           <ChevronLeft className="text-novo-red h-7 w-7" />

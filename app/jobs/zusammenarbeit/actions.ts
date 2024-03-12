@@ -33,15 +33,6 @@ const tokenCredential = new ClientSecretCredential(
   "VXP8Q~Vt5LDFgtcgL5QigV8uZbV7LqefuKPzhcaB"
 );
 
-tokenCredential
-  .getToken("https://graph.microsoft.com/.default")
-  .then((tokenResponse) => {
-    console.log("Access token:", tokenResponse.token);
-    console.log("Token expires at:", tokenResponse.expiresOnTimestamp);
-  })
-  .catch((error) => {
-    console.error("Failed to get token:", error);
-  });
 const authProvider = new TokenCredentialAuthenticationProvider(
   tokenCredential,
   { scopes: ["https://graph.microsoft.com/.default"] }
@@ -53,11 +44,6 @@ const client = Client.initWithMiddleware({
 });
 
 export const fetchOutlookEvents = async () => {
-  //   const client = Client.init({
-  //     authProvider: (done) => {
-  //       done(null, msalConfig.auth);
-  //     },
-  //   });
   try {
     const events = await client
       .api("/users/84c2fdbe-c42d-455a-a1ec-45115387217f/calendar")

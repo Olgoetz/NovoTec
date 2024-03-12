@@ -10,7 +10,7 @@ export default async function Page() {
       <h1 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
         Terminvereinbarung
       </h1>
-      <div className=" max-w-6xl mx-auto ">
+      <div className=" max-w-5xl mx-auto ">
         {/* Festanstellung */}
 
         <Suspense

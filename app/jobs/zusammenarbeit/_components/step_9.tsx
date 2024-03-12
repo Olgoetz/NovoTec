@@ -6,6 +6,7 @@ import { UseFormReturn } from "react-hook-form";
 import { TFormSchema } from "../_lib/validations";
 
 import clsx from "clsx";
+import { FormDescription, FormLabel } from "@/components/ui/form";
 
 interface Step9Props {
   form: UseFormReturn<TFormSchema>;
@@ -87,6 +88,14 @@ export default function Step_9({ form }: Step9Props) {
 
   return (
     <div className="">
+      <div className="mb-8">
+        <FormLabel className="text-base">Termin</FormLabel>
+        <FormDescription>Bitte wähle einen Termin aus.</FormDescription>
+        <p className="text-xs text-muted-foreground pt-3">
+          WICHTIG: Sie erhalten eine separate Email von uns als Bestätigung.
+          Erst dann ist der Termin verbindlich.
+        </p>
+      </div>
       <div className="flex justify-between mb-4">
         <Button
           type="button"
@@ -105,9 +114,20 @@ export default function Step_9({ form }: Step9Props) {
       </div>
       <div className="flex text-center items-center justify-between mb-4">
         {getWeekDays(currentWeek).map((day, index) => (
-          <div key={index} className="p-2">
-            <div className=" border-b py-2">
-              {day.toLocaleDateString("de-DE")}
+          <div key={index} className="p-1 md:p-2">
+            <div className="border-b py-2">
+              <div className="flex flex-col gap-2 text-xs md:text-sm">
+                <p>
+                  {day.toLocaleDateString("de-DE", {
+                    dateStyle: "long",
+                  })}
+                </p>
+                <p className="font-bold">
+                  {day.toLocaleDateString("de-DE", {
+                    weekday: "long",
+                  })}
+                </p>
+              </div>
             </div>
             {renderTimeSlots(day.toLocaleDateString("de-DE"))}
           </div>
@@ -118,7 +138,7 @@ export default function Step_9({ form }: Step9Props) {
         {form.getValues("step9") !== "" && (
           <p>
             Gewählter Termin:{" "}
-            <span className="font-bold text-lg text-novo-red">
+            <span className="font-bold text-md md:text-lg text-novo-red">
               {" "}
               {form.watch("step9")} Uhr
             </span>

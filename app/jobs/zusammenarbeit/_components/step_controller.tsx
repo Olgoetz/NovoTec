@@ -90,6 +90,8 @@ const StepController = () => {
         return <Step_7 form={form} />;
       case 8:
         return <Step_8 form={form} />;
+      case 9:
+        return <Step_9 form={form} />;
 
       default:
         return null;
@@ -153,30 +155,29 @@ const StepController = () => {
   };
 
   return (
-    <div>
+    <div className="max-w-5xl">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex justify-between">
-              {/* Basic information */}
-              <div>
-                <h2 className="mb-10">
-                  Schritt 1: Beantworte die folgenden 8 Fragen
-                </h2>
-                {renderStepContent(form)}
-              </div>
-              <div className="md:col-span-1">
-                <StepNav
-                  nextStep={nextStep}
-                  prevStep={prevStep}
-                  currentStep={currentStep}
-                  numberOfSteps={NUMBER_OF_STEPS}
-                />
-              </div>
+          <div className="flex flex-col md:flex-row-reverse justify-center gap-4">
+            <div className="">
+              <StepNav
+                nextStep={nextStep}
+                prevStep={prevStep}
+                currentStep={currentStep}
+                numberOfSteps={NUMBER_OF_STEPS}
+              />
             </div>
+            {/* Basic information */}
+            <div className="w-full">
+              {/* <h2 className="mb-10">
+                Schritt 1: Beantworte die folgenden 8 Fragen
+              </h2> */}
+              {renderStepContent(form)}
+            </div>
+          </div>
 
-            {/* calendar */}
-            <div>
+          {/* calendar */}
+          {/* <div>
               <h2 className="mb-3">
                 Schritt 2: Wähle einen Termin für ein erstes Kennenlernen aus.
               </h2>
@@ -185,8 +186,7 @@ const StepController = () => {
                 Bestätigung. Erst dann ist der Termin verbindlich.
               </p>
               {showCalendar && <Step_9 form={form} />}
-            </div>
-          </div>
+            </div> */}
 
           <div className="flex flex-col gap-4 mt-10">
             <p>Aktueller Fortschritt</p>
@@ -202,11 +202,11 @@ const StepController = () => {
                   className="mt-1 data-[state=checked]:bg-novo-red border-muted-foreground data-[state=checked]:text-white"
                 />
                 <FormDescription className="text-sm">
-                  Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur
-                  Beantwortung meiner Anfrage erhoben und verarbeitet werden.
-                  Die Daten werden nach abgeschlossener Bearbeitung Ihrer
-                  Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung
-                  jederzeit für die Zukunft per E-Mail an{" "}
+                  Ich stimme zu, dass meine Angaben aus zur Beantwortung meiner
+                  Anfrage erhoben und verarbeitet werden. Die Daten werden nach
+                  abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis:
+                  Sie können Ihre Einwilligung jederzeit für die Zukunft per
+                  E-Mail an{" "}
                   <a
                     className="text-novo-red"
                     href="mailto:info@novotec-koeln.de"
