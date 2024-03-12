@@ -129,7 +129,11 @@ export default function Step_9({ form }: Step9Props) {
                 </p>
               </div>
             </div>
-            {renderTimeSlots(day.toLocaleDateString("de-DE"))}
+            {renderTimeSlots(
+              day.toLocaleDateString("de-DE", {
+                dateStyle: "long",
+              })
+            )}
           </div>
         ))}
       </div>
@@ -138,7 +142,7 @@ export default function Step_9({ form }: Step9Props) {
         {form.getValues("step9") !== "" && (
           <p>
             Gewählter Termin:{" "}
-            <span className="font-bold text-md md:text-lg text-novo-red">
+            <span className="font-bold text-sm md:text-lg text-novo-red">
               {" "}
               {form.watch("step9")} Uhr
             </span>
