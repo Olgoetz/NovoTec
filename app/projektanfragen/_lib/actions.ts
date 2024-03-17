@@ -1,9 +1,8 @@
 "use sever";
 import { action } from "@/lib/safe-action-clients";
 import { z } from "zod";
-import { FileState } from "@/components/multi-file-dropzone";
+
 import { sendMail } from "./resend";
-import { Form } from "react-hook-form";
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
@@ -49,11 +48,6 @@ export const EmailFormSchema = FormSchema.omit({
 export type TEmailFormSchema = z.infer<typeof EmailFormSchema>;
 
 export const submitSafeInquiry = action(EmailFormSchema, async (data) => {
-  //   const timeout = (ms: number) => {
-  //     return new Promise((resolve) => setTimeout(resolve, ms));
-  //   };
-  //   await timeout(3000);
-  console.log("data", data);
   const res = await sendMail(data);
   return res;
 });

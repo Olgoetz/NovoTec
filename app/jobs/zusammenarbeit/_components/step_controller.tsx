@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 
 import { UseFormReturn, set, useForm } from "react-hook-form";
 
@@ -7,7 +7,11 @@ import { NUMBER_OF_STEPS } from "../_lib/constants";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormDescription } from "@/components/ui/form";
-import { FormSchema, TFormSchema } from "../_lib/validations";
+import {
+  FormSchema,
+  TFormSchema,
+  submitSafeInquiry,
+} from "../_lib/validations";
 
 import StepNav from "./step_nav";
 import Step_1 from "./step_1";
@@ -21,15 +25,18 @@ import Step_8 from "./step_8";
 import Step_9 from "./step_9";
 
 import { Progress } from "@/components/ui/progress";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 
 import FormButton from "@/components/form-button";
 
-import { fetchOutlookEvents } from "../actions";
+import { fetchOutlookEvents } from "../_lib/actions";
+import { useAction } from "next-safe-action/hooks";
+import toast from "react-hot-toast";
 
 const StepController = () => {
+  const router = useRouter();
   // Manage steps and their state //
 
   // Step validation
@@ -149,10 +156,55 @@ const StepController = () => {
   // Handle form submission
   const [isAccepted, setIsAccepted] = useState(false);
 
-  const onSubmit = (values: TFormSchema) => {
-    const content = JSON.stringify(values, null, 2); // Convert object to string with pretty formatting
-    alert(content);
-  };
+  const { execute, result, status } = useAction(submitSafeInquiry, {
+    onSuccess() {
+      toast.success("Nachricht erfolgreich verschickt!", {
+        duration: 3000,
+        position: "bottom-right",
+      });
+      // form.reset();
+      router.push("/jobs");
+      // setFileStates([]);
+      // setUploadRes([]);
+    },
+    onError(data) {
+      console.error(data);
+      toast.error("Fehlgeschlagen!", {
+        position: "bottom-right",
+      });
+    },
+  });
+  function onSubmit(values: TFormSchema) {
+    const payload = {
+      // areasOfWork: values.step1.toString(),
+      // startOfWork: values.step2,
+      // location: values.step3_location,
+      // operationArea: values.step4,
+      // teamSize: values.step5,
+      // wage: values.step6,
+      // email: values.step7_email,
+      // firstName: values.step7_firstName,
+      // lastName: values.step7_lastName,
+      // phone: values.step7_phone,
+      // fileUrlsString: values.step8?.toString(),
+      // appointement: values.step9
+      step1: values.step1.toString(),
+      step2: values.step2,
+      step3_location: values.step3_location?.toString(),
+      step3_zipCode: values.step3_zipCode,
+      step4: values.step4.toString(),
+      step5: values.step5,
+      step6: values.step6,
+      step7_email: values.step7_email,
+      step7_firstName: values.step7_firstName,
+      step7_lastName: values.step7_lastName,
+      step7_phone: values.step7_phone,
+      step8: values.step8?.toString(),
+      step9: values.step9,
+    };
+    //   console.log(payload);
+    execute(payload);
+  }
 
   return (
     <div className="max-w-5xl">

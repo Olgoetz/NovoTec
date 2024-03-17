@@ -1,4 +1,6 @@
+import { action } from "@/lib/safe-action-clients";
 import { z } from "zod";
+import { sendMail } from "./resend";
 
 export const FormSchema = z.object({
   // Area of work
@@ -36,3 +38,31 @@ export const FormSchema = z.object({
 });
 
 export type TFormSchema = z.infer<typeof FormSchema>;
+
+export const EmailFormSchema = FormSchema.omit({
+  step1: true,
+  step4: true,
+  step8: true,
+}).and(
+  z.object({
+    step1: z.string(),
+    step4: z.string(),
+    step8: z.string().optional(),
+  })
+);
+
+export type TEmailFormSchema = z.infer<typeof EmailFormSchema>;
+
+export const submitSafeInquiry = action(EmailFormSchema, async (data) => {
+  //   const timeout = (ms: number) => {
+  //     return new Promise((resolve) => setTimeout(resolve, ms));
+  //   };
+  //   await timeout(3000);
+  // console.log("data", data);
+
+  const res = await sendMail(data);
+
+  //console.log("res", res);
+  //return JSON.stringify(res);
+  return res;
+});

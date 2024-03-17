@@ -58,7 +58,7 @@ export default function Step_9({ form }: Step9Props) {
       shouldDirty: true,
     });
   };
-  const timeSlots = ["08:00 - 09:00", "09:00 - 10:00"];
+  const timeSlots = ["09:00 - 09:40", "09:45 - 10:25", "10:30 - 11:10"];
   const renderTimeSlots = (timeSlot: string) => {
     // Render time slots here
     // You can customize this function to render your time slots
