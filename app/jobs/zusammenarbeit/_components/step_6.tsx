@@ -26,7 +26,7 @@ export default function Step_6({ form }: Step6Props) {
     replace(`${pathname}?${params.toString()}`);
   }, []);
   return (
-    <div>
+    <div className="md:h-[150px]">
       <div className="mb-8">
         <FormLabel className="text-base">Stundensatz</FormLabel>
         <FormDescription>

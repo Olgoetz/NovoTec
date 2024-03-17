@@ -39,16 +39,30 @@ export default function Step_9({ form }: Step9Props) {
     const days = [];
     const currentDate = new Date(date);
     const dayOfWeek = currentDate.getDay();
-    const monday = new Date(currentDate);
-    monday.setDate(
-      currentDate.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1)
+    const tuesday = new Date(currentDate);
+    const thursday = new Date(currentDate);
+
+    // Find Tuesday and Thursday of the current week
+    tuesday.setDate(
+      currentDate.getDate() -
+        dayOfWeek +
+        (dayOfWeek === 0 ? 2 : dayOfWeek === 1 ? -5 : 1)
+    );
+    thursday.setDate(
+      currentDate.getDate() -
+        dayOfWeek +
+        (dayOfWeek === 0 ? 4 : dayOfWeek === 1 ? -3 : 3)
     );
 
-    for (let i = 0; i < 5; i++) {
-      const day = new Date(monday);
-      day.setDate(monday.getDate() + i);
-      days.push(day);
+    // Ensure that only future dates are included
+    if (tuesday.getTime() >= Date.now()) {
+      days.push(tuesday);
     }
+    if (thursday.getTime() >= Date.now()) {
+      days.push(thursday);
+    }
+
+    days.push(tuesday, thursday);
     return days;
   };
 
@@ -58,7 +72,7 @@ export default function Step_9({ form }: Step9Props) {
       shouldDirty: true,
     });
   };
-  const timeSlots = ["09:00 - 09:40", "09:45 - 10:25", "10:30 - 11:10"];
+  const timeSlots = ["08:00 - 08:40", "08:45 - 09:25", "09:30 - 10:10"];
   const renderTimeSlots = (timeSlot: string) => {
     // Render time slots here
     // You can customize this function to render your time slots
@@ -97,13 +111,15 @@ export default function Step_9({ form }: Step9Props) {
         </p>
       </div>
       <div className="flex justify-between mb-4">
-        <Button
-          type="button"
-          className="bg-novo-red hover:bg-novo-red/70 text-white font-bold py-2 px-4 rounded"
-          onClick={goToPreviousWeek}
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </Button>
+        {currentWeek.getTime() >= Date.now() && (
+          <Button
+            type="button"
+            className="bg-novo-red hover:bg-novo-red/70 text-white font-bold py-2 px-4 rounded"
+            onClick={goToPreviousWeek}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </Button>
+        )}
         <Button
           type="button"
           className="bg-novo-red hover:bg-novo-red/70 text-white font-bold py-2 px-4 rounded"
@@ -112,11 +128,11 @@ export default function Step_9({ form }: Step9Props) {
           <ChevronRight className="w-5 h-5" />
         </Button>
       </div>
-      <div className="flex text-center items-center justify-between mb-4">
+      <div className="flex text-center items-center justify-center gap-x-20 mb-4">
         {getWeekDays(currentWeek).map((day, index) => (
           <div key={index} className="p-1 md:p-2">
             <div className="border-b py-2">
-              <div className="flex flex-col gap-2 text-xs md:text-sm">
+              <div className="flex flex-col gap-2 w-40 text-xs md:text-sm">
                 <p>
                   {day.toLocaleDateString("de-DE", {
                     dateStyle: "long",

@@ -54,7 +54,7 @@ export default function Step_3({ form }: Step3Props) {
     }
   }, 1000);
   return (
-    <div>
+    <div className="md:h-[150px]">
       <div className="mb-4">
         <FormLabel className="text-base">Wo ist dein Standort?</FormLabel>
         <FormDescription>Bitte gebe deine Postleitzahl ein.</FormDescription>

@@ -36,7 +36,7 @@ export default function Step_2({ form }: Step2Props) {
     years.push(year);
   }
   return (
-    <div>
+    <div className="md:h-[150px]">
       <FormField
         control={form.control}
         name="step2"

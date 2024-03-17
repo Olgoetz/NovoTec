@@ -210,7 +210,7 @@ const StepController = () => {
     <div className="max-w-5xl">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="flex flex-col md:flex-row-reverse justify-center gap-4">
+          <div className="flex flex-col w-full justify-center gap-4">
             <div className="">
               <StepNav
                 nextStep={nextStep}

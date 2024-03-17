@@ -56,7 +56,9 @@ export default function Step_8({ form }: Step8Props) {
       <div className="mb-8">
         <FormLabel className="text-base">Fotos</FormLabel>
         <FormDescription>
-          Lade Fotos deiner letzten Projekte hoch (max. 5, höchstens 3 MB)
+          Hier hast die Möglichkeit, bis zu fünf Fotos deiner neuesten Projekte
+          hochzuladen (max. 5, höchstens 3 MB) . Das Hochladen der Fotos ist
+          nicht verpflichtend.
         </FormDescription>
       </div>
 
@@ -74,6 +76,9 @@ export default function Step_8({ form }: Step8Props) {
                 dropzoneOptions={{
                   maxFiles: 5,
                   maxSize: 3 * 1024 * 1024,
+                  accept: {
+                    "image/*": [".png", ".jpg", ".jpeg"],
+                  },
                 }}
                 //value={field.value}
                 //   onChange={field.onChange}
