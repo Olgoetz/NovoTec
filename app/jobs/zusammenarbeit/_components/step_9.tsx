@@ -39,20 +39,22 @@ export default function Step_9({ form }: Step9Props) {
     const days = [];
     const currentDate = new Date(date);
     const dayOfWeek = currentDate.getDay();
+
+    // Calculate Tuesday and Thursday of the current week
     const tuesday = new Date(currentDate);
     const thursday = new Date(currentDate);
-
-    // Find Tuesday and Thursday of the current week
-    tuesday.setDate(
-      currentDate.getDate() -
-        dayOfWeek +
-        (dayOfWeek === 0 ? 2 : dayOfWeek === 1 ? -5 : 1)
-    );
-    thursday.setDate(
-      currentDate.getDate() -
-        dayOfWeek +
-        (dayOfWeek === 0 ? 4 : dayOfWeek === 1 ? -3 : 3)
-    );
+    const offset =
+      dayOfWeek === 0
+        ? 1
+        : dayOfWeek === 1
+          ? -1
+          : dayOfWeek === 2
+            ? 0
+            : dayOfWeek === 3
+              ? -1
+              : -2;
+    tuesday.setDate(currentDate.getDate() + offset);
+    thursday.setDate(currentDate.getDate() + offset + 2);
 
     // Ensure that only future dates are included
     if (tuesday.getTime() >= Date.now()) {
@@ -62,7 +64,6 @@ export default function Step_9({ form }: Step9Props) {
       days.push(thursday);
     }
 
-    days.push(tuesday, thursday);
     return days;
   };
 
@@ -132,7 +133,7 @@ export default function Step_9({ form }: Step9Props) {
         {getWeekDays(currentWeek).map((day, index) => (
           <div key={index} className="p-1 md:p-2">
             <div className="border-b py-2">
-              <div className="flex flex-col gap-2 w-40 text-xs md:text-sm">
+              <div className="flex flex-col gap-2 md:w-40 text-xs md:text-sm">
                 <p>
                   {day.toLocaleDateString("de-DE", {
                     dateStyle: "long",
