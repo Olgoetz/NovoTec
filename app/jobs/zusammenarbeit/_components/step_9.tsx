@@ -130,29 +130,36 @@ export default function Step_9({ form }: Step9Props) {
         </Button>
       </div>
       <div className="flex text-center items-center justify-center gap-x-20 mb-4">
-        {getWeekDays(currentWeek).map((day, index) => (
-          <div key={index} className="p-1 md:p-2">
-            <div className="border-b py-2">
-              <div className="flex flex-col gap-2 md:w-40 text-xs md:text-sm">
-                <p>
-                  {day.toLocaleDateString("de-DE", {
-                    dateStyle: "long",
-                  })}
-                </p>
-                <p className="font-bold">
-                  {day.toLocaleDateString("de-DE", {
-                    weekday: "long",
-                  })}
-                </p>
+        {getWeekDays(currentWeek).length > 0 ? (
+          getWeekDays(currentWeek).map((day, index) => (
+            <div key={index} className="p-1 md:p-2">
+              <div className="border-b py-2">
+                <div className="flex flex-col gap-2 md:w-40 text-xs md:text-sm">
+                  <p>
+                    {day.toLocaleDateString("de-DE", {
+                      dateStyle: "long",
+                    })}
+                  </p>
+                  <p className="font-bold">
+                    {day.toLocaleDateString("de-DE", {
+                      weekday: "long",
+                    })}
+                  </p>
+                </div>
               </div>
+              {renderTimeSlots(
+                day.toLocaleDateString("de-DE", {
+                  dateStyle: "long",
+                })
+              )}
             </div>
-            {renderTimeSlots(
-              day.toLocaleDateString("de-DE", {
-                dateStyle: "long",
-              })
-            )}
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="text-sm py-5">
+            In der aktuellen Woche sind keine Termine mehr verfügbar. Wir bieten
+            Dienstags und Donnerstags vormittags Termine an.
+          </p>
+        )}
       </div>
 
       <div>

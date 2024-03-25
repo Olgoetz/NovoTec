@@ -1,6 +1,7 @@
 import { action } from "@/lib/safe-action-clients";
 import { z } from "zod";
 import { sendMail } from "./resend";
+import { File } from "buffer";
 
 export const FormSchema = z.object({
   // Area of work
@@ -30,6 +31,7 @@ export const FormSchema = z.object({
     .string()
     .email({ message: "Bitte gebe eine gültige E-Mail-Adresse ein" }),
   step7_phone: z.string().min(6, { message: "Die Mobilnummer ist zu kurz" }),
+  step8_fileStates: z.array(z.any()),
   step8: z
     .array(z.string())
     .max(5, { message: "Maximal 5 Dateien erlaubt" })
@@ -43,6 +45,7 @@ export const EmailFormSchema = FormSchema.omit({
   step1: true,
   step4: true,
   step8: true,
+  step8_fileStates: true,
 }).and(
   z.object({
     step1: z.string(),

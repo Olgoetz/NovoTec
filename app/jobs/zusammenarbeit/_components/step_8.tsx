@@ -32,7 +32,6 @@ export default function Step_8({ form }: Step8Props) {
   const [fileStates, setFileStates] = useState<FileState[]>([]);
   const { edgestore } = useEdgeStore();
 
-  const [isAccepted, setIsAccepted] = useState(false);
   const [uploadRes, setUploadRes] = useState<
     {
       url: string;
@@ -42,12 +41,15 @@ export default function Step_8({ form }: Step8Props) {
   function updateFileProgress(key: string, progress: FileState["progress"]) {
     setFileStates((fileStates) => {
       const newFileStates = structuredClone(fileStates);
+
       const fileState = newFileStates.find(
         (fileState) => fileState.key === key
       );
       if (fileState) {
         fileState.progress = progress;
       }
+
+      form.setValue("step8_fileStates", newFileStates);
       return newFileStates;
     });
   }
@@ -72,7 +74,7 @@ export default function Step_8({ form }: Step8Props) {
               <MultiFileDropzone
                 {...form.register("step8")}
                 className="w-full"
-                value={fileStates}
+                value={form.getValues("step8_fileStates")}
                 dropzoneOptions={{
                   maxFiles: 5,
                   maxSize: 3 * 1024 * 1024,
@@ -84,9 +86,14 @@ export default function Step_8({ form }: Step8Props) {
                 //   onChange={field.onChange}
                 onChange={(files) => {
                   setFileStates(files);
+                  form.setValue("step8_fileStates", files);
                 }}
                 onFilesAdded={async (addedFiles) => {
                   setFileStates([...fileStates, ...addedFiles]);
+                  form.setValue("step8_fileStates", [
+                    ...fileStates,
+                    ...addedFiles,
+                  ]);
                 }}
               />
             </FormControl>
@@ -126,7 +133,6 @@ export default function Step_8({ form }: Step8Props) {
                         shouldValidate: true,
                         shouldDirty: true,
                       });
-                      console.log("fileUrls", newFileUrls);
                     } catch (error) {
                       updateFileProgress(fileState.key, "ERROR");
                       // All errors are typed and you will get intellisense for them
@@ -160,13 +166,6 @@ export default function Step_8({ form }: Step8Props) {
             >
               Upload
             </Button>
-
-            <FormMessage />
-            {/* <FormDescription>
-              ** Fotos und Dokumente wie Leistungsverzeichnis, Baugenehmigung
-              o.ä. <br />
-              Max. 5 Dateien mit je einer Größe von max. 3MB
-            </FormDescription> */}
           </FormItem>
         )}
       />

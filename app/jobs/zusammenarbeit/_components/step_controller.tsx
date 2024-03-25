@@ -211,20 +211,25 @@ const StepController = () => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="flex flex-col w-full justify-center gap-4">
-            <div className="">
-              <StepNav
-                nextStep={nextStep}
-                prevStep={prevStep}
-                currentStep={currentStep}
-                numberOfSteps={NUMBER_OF_STEPS}
-              />
-            </div>
             {/* Basic information */}
             <div className="w-full">
               {/* <h2 className="mb-10">
                 Schritt 1: Beantworte die folgenden 8 Fragen
               </h2> */}
               {renderStepContent(form)}
+            </div>
+            <div className="flex flex-col gap-4 mt-10">
+              <p>Aktueller Fortschritt</p>
+              <Progress value={(currentStep / NUMBER_OF_STEPS) * 100} />
+            </div>
+
+            <div className="mt-6">
+              <StepNav
+                nextStep={nextStep}
+                prevStep={prevStep}
+                currentStep={currentStep}
+                numberOfSteps={NUMBER_OF_STEPS}
+              />
             </div>
           </div>
 
@@ -239,11 +244,6 @@ const StepController = () => {
               </p>
               {showCalendar && <Step_9 form={form} />}
             </div> */}
-
-          <div className="flex flex-col gap-4 mt-10">
-            <p>Aktueller Fortschritt</p>
-            <Progress value={(currentStep / NUMBER_OF_STEPS) * 100} />
-          </div>
 
           {form.formState.isValid && (
             <>
