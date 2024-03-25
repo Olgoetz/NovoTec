@@ -46,8 +46,8 @@ export default async function Page() {
             <p>
               Du bist bereits selbstständiger Handwerker oder möchtest es
               werden? Du möchtest regelmäßige und sichere Aufträge erhalten und
-              gleichzeit deinen administrativen Aufwand reduzieren? Dann
-              vereinbe jetzt ein persönliches Kennenlerngespräch.
+              gleichzeitig deinen administrativen Aufwand reduzieren? Dann
+              vereinbare jetzt ein persönliches Kennenlerngespräch.
             </p>
           </CardContent>
           <CardFooter>
