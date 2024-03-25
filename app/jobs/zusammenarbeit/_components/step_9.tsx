@@ -35,32 +35,25 @@ export default function Step_9({ form }: Step9Props) {
   };
 
   // Helper function to get days of the week from Monday to Friday
-  const getWeekDays = (date: any) => {
+  const getWeekDays = (date: Date) => {
     const days = [];
     const currentDate = new Date(date);
-    const dayOfWeek = currentDate.getDay();
+
+    // Find the start of the current week (Monday)
+    const startOfWeek = new Date(currentDate);
+    startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay() + 1);
 
     // Calculate Tuesday and Thursday of the current week
-    const tuesday = new Date(currentDate);
-    const thursday = new Date(currentDate);
-    const offset =
-      dayOfWeek === 0
-        ? 1
-        : dayOfWeek === 1
-          ? -1
-          : dayOfWeek === 2
-            ? 0
-            : dayOfWeek === 3
-              ? -1
-              : -2;
-    tuesday.setDate(currentDate.getDate() + offset);
-    thursday.setDate(currentDate.getDate() + offset + 2);
+    const tuesday = new Date(startOfWeek);
+    tuesday.setDate(tuesday.getDate() + 1); // Tuesday is one day after Monday
+    const thursday = new Date(startOfWeek);
+    thursday.setDate(thursday.getDate() + 3); // Thursday is three days after Monday
 
     // Ensure that only future dates are included
-    if (tuesday.getTime() >= Date.now()) {
+    if (tuesday >= currentDate && tuesday.getTime() >= Date.now()) {
       days.push(tuesday);
     }
-    if (thursday.getTime() >= Date.now()) {
+    if (thursday >= currentDate && thursday.getTime() >= Date.now()) {
       days.push(thursday);
     }
 
@@ -73,7 +66,7 @@ export default function Step_9({ form }: Step9Props) {
       shouldDirty: true,
     });
   };
-  const timeSlots = ["08:00 - 08:40", "08:45 - 09:25", "09:30 - 10:10"];
+  const timeSlots = ["09:00 - 09:40", "09:45 - 10:25", "10:30 - 11:10"];
   const renderTimeSlots = (timeSlot: string) => {
     // Render time slots here
     // You can customize this function to render your time slots
