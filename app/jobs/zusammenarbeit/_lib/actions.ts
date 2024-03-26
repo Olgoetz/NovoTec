@@ -11,11 +11,9 @@ import axios from "axios";
 
 const msalConfig = {
   auth: {
-    authority:
-      "https://login.microsoftonline.com/3f3115e8-d1f7-47ea-b311-b190f1203cbc",
-    clientId: "59315f6c-831e-4c09-a2b0-542bba1e9964",
-
-    clientSecret: "VXP8Q~Vt5LDFgtcgL5QigV8uZbV7LqefuKPzhcaB",
+    authority: process.env.AZ_AUTHORITY as string,
+    clientId: process.env.AZ_CLIENT_ID as string,
+    clientSecret: process.env.AZ_CLIENT_SECRET as string,
   },
 };
 
