@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UseFormReturn } from "react-hook-form";
 import { TFormSchema } from "../_lib/validations";
 
@@ -15,9 +15,6 @@ interface Step9Props {
 export default function Step_9({ form }: Step9Props) {
   const [currentWeek, setCurrentWeek] = useState(new Date());
 
-  //   useEffect(() => {
-  //     console.log(form.getValues("step9"));
-  //   }, [form.getValues("step9")]);
   const goToPreviousWeek = () => {
     setCurrentWeek((prevWeek) => {
       const newDate = new Date(prevWeek);
@@ -60,7 +57,7 @@ export default function Step_9({ form }: Step9Props) {
     return days;
   };
 
-  const setTimeslot = async (timeslot: string) => {
+  const setTimeslot = (timeslot: string) => {
     form.setValue("step9", timeslot, {
       shouldValidate: true,
       shouldDirty: true,

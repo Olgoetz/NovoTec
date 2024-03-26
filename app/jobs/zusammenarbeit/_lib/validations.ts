@@ -31,7 +31,7 @@ export const FormSchema = z.object({
     .string()
     .email({ message: "Bitte gebe eine gültige E-Mail-Adresse ein" }),
   step7_phone: z.string().min(6, { message: "Die Mobilnummer ist zu kurz" }),
-  step8_fileStates: z.array(z.any()),
+  step8_fileStates: z.array(z.any()).optional(),
   step8: z
     .array(z.string())
     .max(5, { message: "Maximal 5 Dateien erlaubt" })

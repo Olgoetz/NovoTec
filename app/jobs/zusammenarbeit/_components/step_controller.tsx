@@ -117,6 +117,7 @@ const StepController = () => {
       step1: [],
       step2: currentYear.toString(),
       step3_zipCode: "",
+      step3_location: "",
       step4: [25],
       step5: 1,
       step6: 25,
