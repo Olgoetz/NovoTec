@@ -29,7 +29,7 @@ export default function Step_7({ form }: Step7Props) {
     <div>
       <div className="mb-8">
         <FormLabel className="text-base">Kontaktdaten</FormLabel>
-        <FormDescription>Bitte gebe deine Kontaktdaten ein.</FormDescription>
+        <FormDescription>Bitte gib deine Kontaktdaten ein.</FormDescription>
       </div>
 
       <div className="flex flex-col gap-y-4">

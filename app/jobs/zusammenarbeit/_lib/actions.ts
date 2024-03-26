@@ -19,39 +19,10 @@ const msalConfig = {
   },
 };
 
-// const getAccessToken = async () => {
-//   try {
-//     const authResult = await cleint.acquireTokenByClientCredential({
-//       scopes: ["https://graph.microsoft.com/.default"],
-//     });
-//     console.log(authResult);
-//     const accessToken = authResult?.accessToken;
-//     return accessToken;
-//   } catch (error) {
-//     console.error("Failed to acquire token:", error);
-//   }
-// };
-// Create an instance of the TokenCredential class that is imported
-// const tokenCredential = new ClientSecretCredential(
-//   "3f3115e8-d1f7-47ea-b311-b190f1203cbc",
-//   "59315f6c-831e-4c09-a2b0-542bba1e9964",
-//   "VXP8Q~Vt5LDFgtcgL5QigV8uZbV7LqefuKPzhcaB"
-// );
-
-// const authProvider = new TokenCredentialAuthenticationProvider(
-//   tokenCredential,
-//   { scopes: ["https://graph.microsoft.com/.default"] }
-// );
-
 const tokenRequest = {
   scopes: ["https://graph.microsoft.com/.default"],
 };
 const cca = new client.ConfidentialClientApplication(msalConfig);
-//const tokenResponse =  cca.acquireTokenByClientCredential(tokenRequest);
-// const client = Client.initWithMiddleware({
-//   debugLogging: true,
-//   authProvider,
-// });
 
 async function getToken(tokenRequest: any) {
   return await cca.acquireTokenByClientCredential(tokenRequest);
@@ -59,9 +30,6 @@ async function getToken(tokenRequest: any) {
 
 export const fetchOutlookEvents = async () => {
   try {
-    // const events = await client
-    //   .api("/users/84c2fdbe-c42d-455a-a1ec-45115387217f/calendar")
-    //   .get();
     const token = await getToken(tokenRequest);
 
     const options = {
@@ -70,12 +38,15 @@ export const fetchOutlookEvents = async () => {
       },
     };
     const events = await axios.get(
-      "https://graph.microsoft.com/v1.0/users/84c2fdbe-c42d-455a-a1ec-45115387217f/calendar",
+      // "https://graph.microsoft.com/v1.0/users/84c2fdbe-c42d-455a-a1ec-45115387217f/calendar",
+      "https://graph.microsoft.com/v1.0/users",
       options
     );
-    return events;
+    console.log(events.data);
+    return events.data;
   } catch (error) {
-    console.log(error);
+    console.log("here");
+    // console.log(error);
   }
 };
 

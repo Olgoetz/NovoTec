@@ -28,7 +28,7 @@ export default function Step_5({ form }: Step5Props) {
     <div className="md:h-[150px]">
       <div className="mb-8">
         <FormLabel className="text-base">Anzahl deiner Teamstärke</FormLabel>
-        <FormDescription>Bitte gebe an wie groß dein Team ist.</FormDescription>
+        <FormDescription>Bitte gib an wie groß dein Team ist.</FormDescription>
       </div>
       <div className="w-1/2">
         <FormField

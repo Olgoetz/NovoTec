@@ -148,7 +148,8 @@ const StepController = () => {
 
   // useEffect(() => {
   //   const fetchEvents = async () => {
-  //     await fetchOutlookEvents();
+  //     const result = await fetchOutlookEvents();
+  //     console.log(result);
   //   };
 
   //   fetchEvents();
