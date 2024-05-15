@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "NovoTec - Ausbau- & Sanierungsmanagement",
     short_name: "NovoTec",
     description:
-      "NovoTec - Ausbau- & Sanierungsmanagement im Raum Köln und Umgebung",
+      "NovoTec - Wir sind ein Qualitätsdienstleister aus dem Rheinland im Bereich Ausbau- und Sanierungsmanagement mit über 10 Jahren Erfahrung",
     start_url: "/",
     display: "standalone",
     background_color: "#fff",

@@ -29,22 +29,22 @@ async function getToken(tokenRequest: any) {
 export const fetchOutlookEvents = async () => {
   try {
     const token = await getToken(tokenRequest);
-
+    console.log(token?.accessToken);
     const options = {
       headers: {
         Authorization: `Bearer ${token?.accessToken}`,
       },
     };
     const events = await axios.get(
-      // "https://graph.microsoft.com/v1.0/users/84c2fdbe-c42d-455a-a1ec-45115387217f/calendar",
-      "https://graph.microsoft.com/v1.0/users",
+      // "https://graph.microsoft.com/v1.0/users/goetz.oliver_outlook.com/calendars",
+      //"https://graph.microsoft.com/v1.0/users",
+      "https://graph.microsoft.com/v1.0/users/goetz.oliver_outlook.com/calendars",
       options
     );
     console.log(events.data);
     return events.data;
-  } catch (error) {
-    console.log("here");
-    // console.log(error);
+  } catch (error: any) {
+    console.log(error.response.data);
   }
 };
 

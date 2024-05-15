@@ -76,7 +76,7 @@ export const Navbar = () => {
               <div className="grid grid-cols-2">
                 <div className="flex justify-end mr-5">
                   <Phone className="mr-3" />
-                  <p> 0221 292 4250</p>
+                  <p> (+49) 214 875 497 - 72</p>
                 </div>
                 <div className="flex justify-start">
                   <Mail className="mr-3" />

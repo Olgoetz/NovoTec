@@ -146,14 +146,14 @@ const StepController = () => {
   //   },
   // });
 
-  // useEffect(() => {
-  //   const fetchEvents = async () => {
-  //     const result = await fetchOutlookEvents();
-  //     console.log(result);
-  //   };
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const result = await fetchOutlookEvents();
+      console.log(result);
+    };
 
-  //   fetchEvents();
-  // }, []);
+    fetchEvents();
+  }, []);
 
   // Handle form submission
   const [isAccepted, setIsAccepted] = useState(false);

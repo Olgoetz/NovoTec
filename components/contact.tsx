@@ -20,7 +20,7 @@ export default function Contact() {
             <ul className="flex flex-col w-full space-y-10 text-sm">
               <li className="flex items-center">
                 <Phone size={30} className="mr-5" />
-                0221 292 4250
+                (+49) 214 875 497 - 72
               </li>
               <li className="flex items-center">
                 <Mail size={30} className="mr-5" />
@@ -28,7 +28,8 @@ export default function Contact() {
               </li>
               <li className="flex items-center">
                 <MapPin size={30} className="mr-5" />
-                NovoTec GmbH & Co. KG, Walter-Meckauer-Str. 33a, 51067 Köln
+                NovoTec GmbH & Co. KG, Friedrich-Sertürner-Str. 18, 51377
+                Leverkusen
               </li>
             </ul>
           </div>

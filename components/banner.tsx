@@ -11,8 +11,8 @@ const CrawlingText = () => {
 
         <div className=" text-white absolute whitespace-nowrap font-semibold animate-crawl">
           <p>
-            +++ Wir ziehen um! Unsere neue Adresse ab dem 01.05.2024 lautet:
-            Friedrich-Sertürner-Straße 18, 51377 Leverkusen +++
+            +++Wir sind umgezogen! Unsere Adresse lautet ab sofort:
+            Friedrich-Sertürner-Straße 18, 51377 Leverkusen+++
           </p>
         </div>
       </div>
