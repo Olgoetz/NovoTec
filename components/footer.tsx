@@ -55,7 +55,7 @@ export const Footer = () => {
           <ul className="space-y-5 text-sm">
             <li className="flex items-center">
               <Phone size={24} className="mr-5" />
-              +49 (0)221 2924250
+              +49 214 875 497 - 72
             </li>
             <li className="flex items-center">
               <Mail size={24} className="mr-5" />
@@ -64,8 +64,8 @@ export const Footer = () => {
             <li className="flex items-center">
               <MapPin size={24} className="mr-5" />
               NovoTec GmbH & Co. KG <br />
-              Walter-Meckauer-Str. 33a <br />
-              51067 Köln
+              Friedrich-Sertürner-Str. 18 <br />
+              51377 Leverkusen
             </li>
             <li className="flex items-center">
               <Clock size={24} className="mr-5" />

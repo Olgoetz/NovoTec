@@ -72,8 +72,8 @@ export const Hero = () => {
         </div>
         <div className="text-center px-6 leading-8 my-10">
           <p>
-            Wir sind ein Kölner Qualitätsdienstleister im Bereich Ausbau- und
-            Sanierungsmanagement mit über 10 Jahren Erfahrung.
+            Wir sind ein Qualitätsdienstleister aus dem Rheinland im Bereich
+            Ausbau- und Sanierungsmanagement mit über 10 Jahren Erfahrung.
           </p>
           <p>Unser Angebot umfasst 6 Kernkompetenzen:</p>
         </div>

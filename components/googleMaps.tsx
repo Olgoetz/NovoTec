@@ -4,6 +4,8 @@ import {
   Marker,
   useJsApiLoader,
   DirectionsRenderer,
+  InfoBox,
+  InfoWindow,
 } from "@react-google-maps/api";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
@@ -31,7 +33,7 @@ function GoogleMaps() {
   });
   const [startAddress, setStartAddress] = useState<any>("");
   const [targetAddress, setTargetAddress] = useState<any>(
-    "Walter-Meckauer-Str. 33a, 51067 Köln"
+    "Friedrich-Sertürner-Str. 18, 51377 Leverkusen"
   );
 
   const handleOnChangeStart = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -117,20 +119,34 @@ function GoogleMaps() {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={{
-          lat: 50.973138,
-          lng: 7.052829,
+          lat: 51.04663420355581,
+          lng: 7.017510718680619,
         }}
         zoom={18}
         onLoad={onLoad}
       >
         <Marker
           position={{
-            lat: 50.972969,
-            lng: 7.052836,
+            lat: 51.04663420355581,
+            lng: 7.017510718680619,
           }}
           visible={true}
           clickable={false}
+          title="NovoTec GmbH & Co. KG"
         />
+        <InfoWindow
+          position={{
+            lat: 51.04665,
+            lng: 7.01751071,
+          }}
+        >
+          <div className="text-xs">
+            <p className="font-bold">NovoTec GmbH & Co. KG</p>
+            <p>Friedrich-Sertürner-Str. 18 </p>
+            <p>51377 Leverkusen</p>
+          </div>
+        </InfoWindow>
+
         {directions && <DirectionsRenderer directions={directions} />}
       </GoogleMap>
     </div>

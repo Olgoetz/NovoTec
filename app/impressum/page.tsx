@@ -9,14 +9,15 @@ const page = () => {
         </h1>
         <p className="font-semibold mt-5">Angaben gemäß § 5 TMG:</p>
         <p>
-          NovoTec GmbH & Co. KG Walter-Meckauer-Str. 33a 51067 Köln <br />{" "}
-          vertreten durch: Thomas Jaworski
+          NovoTec GmbH & Co. KG Friedrich-Sertürner-Str. 18 51377 Leverkusen{" "}
+          <br /> vertreten durch: Thomas Jaworski
         </p>
         <p className="font-semibold mt-5">Kontakt:</p>
         <p>
-          Telefon: +49 0221 292 425-0 <br />
-          Telefax: +49 0221 292 425-79 <br />
+          Telefon: +49 214 875 497 - 72 <br />
+          Telefax: +49 214 875 497 - 99 <br />
           E-Mail: info@novotec-koeln.de <br />
+          Web: www.novotec-gruppe.de <br />
         </p>
         <p className="font-semibold mt-5">Registereintrag:</p>
         <p>
