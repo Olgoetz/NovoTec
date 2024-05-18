@@ -119,16 +119,16 @@ function GoogleMaps() {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={{
-          lat: 51.04663420355581,
-          lng: 7.017510718680619,
+          lat: 51.040023361961985,
+          lng: 7.017935010509205,
         }}
         zoom={18}
         onLoad={onLoad}
       >
         <Marker
           position={{
-            lat: 51.04663420355581,
-            lng: 7.017510718680619,
+            lat: 51.040023361961985,
+            lng: 7.017935010509205,
           }}
           visible={true}
           clickable={false}
@@ -136,8 +136,8 @@ function GoogleMaps() {
         />
         <InfoWindow
           position={{
-            lat: 51.04665,
-            lng: 7.01751071,
+            lat: 51.04005,
+            lng: 7.01794,
           }}
         >
           <div className="text-xs">

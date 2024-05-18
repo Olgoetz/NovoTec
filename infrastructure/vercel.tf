@@ -17,14 +17,14 @@ resource "vercel_project" "novotec" {
 
 resource "vercel_project_domain" "prod" {
   project_id           = vercel_project.novotec.id
-  domain               = "novotec-gruppe.de"
+  domain               = "novotec-koeln.de"
   redirect             = vercel_project_domain.prod2.domain
   redirect_status_code = 301
 }
 
 resource "vercel_project_domain" "prod2" {
   project_id = vercel_project.novotec.id
-  domain     = "www.novotec-gruppe.de"
+  domain     = "www.novotec-koeln.de"
 }
 
 locals {
