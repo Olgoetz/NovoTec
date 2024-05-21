@@ -76,13 +76,13 @@ export const Navbar = () => {
               <div className="grid grid-cols-2">
                 <div className="flex justify-end mr-5">
                   <Phone className="mr-3" />
-                  <p> (+49) 214 875 497 - 72</p>
+                  <p> (+49) 214 875 497 0</p>
                 </div>
                 <div className="flex justify-start">
                   <Mail className="mr-3" />
                   <p>
-                    <a href="mailto:info@novotec-koeln.de">
-                      info@novotec-koeln.de
+                    <a href="mailto:info@novotec-gruppe.de">
+                      info@novotec-gruppe.de
                     </a>
                   </p>
                 </div>

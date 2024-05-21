@@ -55,11 +55,11 @@ export const Footer = () => {
           <ul className="space-y-5 text-sm">
             <li className="flex items-center">
               <Phone size={24} className="mr-5" />
-              +49 214 875 497 - 72
+              +49 214 875 497 0
             </li>
             <li className="flex items-center">
               <Mail size={24} className="mr-5" />
-              <a href="mailto:info@novotec-koeln.de">info@novotec-koeln.de</a>
+              <a href="mailto:info@novotec-gruppe.de">info@novotec-gruppe.de</a>
             </li>
             <li className="flex items-center">
               <MapPin size={24} className="mr-5" />
