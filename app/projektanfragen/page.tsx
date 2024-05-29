@@ -373,9 +373,9 @@ export default function Page() {
                     Einwilligung jederzeit für die Zukunft per E-Mail an{" "}
                     <a
                       className="text-novo-red"
-                      href="mailto:info@novotec-koeln.de"
+                      href="mailto:info@novotec-gruppe.de"
                     >
-                      info@novotec-koeln.de
+                      info@novotec-gruppe.de
                     </a>{" "}
                     widerrufen. Detaillierte Informationen zum Umgang mit
                     Nutzerdaten finden Sie in unseren{" "}
