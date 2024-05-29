@@ -70,9 +70,9 @@ const JobSingle = async ({
                 Bewerbung an{" "}
                 <a
                   className="text-novo-red"
-                  href="mailto:bewerbung@novotec-koeln.de"
+                  href="mailto:bewerbung@novotec-gruppe.de"
                 >
-                  bewerbung@novotec-koeln.de
+                  bewerbung@novotec-gruppe.de
                 </a>
               </p>
               <Link href="/jobs" className="w-full">
