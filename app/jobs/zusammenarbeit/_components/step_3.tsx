@@ -34,10 +34,10 @@ export default function Step_3({ form }: Step3Props) {
     replace(`${pathname}?${params.toString()}`);
   }, []);
   const fetchCityByZipCode = useDebouncedCallback(async (zipCode: string) => {
-    if (!zipCode) return;
+    if (!zipCode.trim()) return;
     try {
       const response = await axios.get(
-        `https://api.zippopotam.us/de/${zipCode}`
+        `https://api.zippopotam.us/de/${zipCode.trim()}`
       );
       const data = response.data;
       const city = data.places[0]["place name"];
@@ -45,6 +45,7 @@ export default function Step_3({ form }: Step3Props) {
       //  setCity(city); // Update the city state
 
       form.setValue("step3_location", city); // Update the location form field (optional
+      form.clearErrors("step3_zipCode"); // Clear the ZIP code error (if any)
       return city;
     } catch (error) {
       form.setError("step3_zipCode", { message: "Die PLZ existiert nicht." });

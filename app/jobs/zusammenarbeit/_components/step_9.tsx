@@ -35,8 +35,9 @@ export default function Step_9({ form }: Step9Props) {
   const getWeekDays = (date: Date) => {
     const days = [];
     const currentDate = new Date(date);
+    currentDate.setHours(0, 0, 0, 0); // Set to start of the day for comparison
 
-    // Find the start of the current week (Monday)
+    // Find the start of the week (Monday)
     const startOfWeek = new Date(currentDate);
     startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay() + 1);
 
@@ -47,10 +48,13 @@ export default function Step_9({ form }: Step9Props) {
     thursday.setDate(thursday.getDate() + 3); // Thursday is three days after Monday
 
     // Ensure that only future dates are included
-    if (tuesday >= currentDate && tuesday.getTime() >= Date.now()) {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0); // Set to start of the day for comparison
+
+    if (tuesday.getTime() >= now.getTime()) {
       days.push(tuesday);
     }
-    if (thursday >= currentDate && thursday.getTime() >= Date.now()) {
+    if (thursday.getTime() >= now.getTime()) {
       days.push(thursday);
     }
 

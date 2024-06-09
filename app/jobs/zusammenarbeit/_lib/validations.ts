@@ -8,10 +8,10 @@ export const FormSchema = z.object({
   step1: z
     .array(z.string())
     .refine((value) => value.some((item) => item), {
-      message: "Mindestens 1 Element muss ausgewählt werden",
+      message: "Mindestens 1 Tätigkeit muss ausgewählt werden",
     })
-    .refine((value) => value.length <= 3, {
-      message: "Maximal 3 Elemente erlaubt",
+    .refine((value) => value.length <= 6, {
+      message: "Maximal 6 Tätigkeiten erlaubt",
     }),
   // Experience
   step2: z.string(),
@@ -22,9 +22,7 @@ export const FormSchema = z.object({
   // Number of employees
   step5: z.coerce.number({ required_error: "Bitte gebe eine Zahl ein" }),
   // Wage per hour
-  step6: z.coerce.number({
-    required_error: "Bitte gebe deinen Stundenlohn im Format xx,xx ein.",
-  }),
+  step6: z.string().min(1, { message: "Bitte gebe einen Stundensatz ein" }),
   step7_firstName: z.string().min(2, { message: "Der Vorname ist zu kurz" }),
   step7_lastName: z.string().min(2, { message: "Der Nachname ist zu kurz" }),
   step7_email: z
