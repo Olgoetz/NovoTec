@@ -80,7 +80,7 @@ export default function Step_1({ form }: Step1Props) {
                 Was sind deine Haupttätigkeiten?
               </FormLabel>
               <FormDescription>
-                Wähle zwischen 1 bis max. 3 Gewerke, in denen du stark bist.
+                Wähle zwischen 1 bis max. 6 Gewerke, in denen du stark bist.
               </FormDescription>
             </div>
             {checkboxes.map((item) => (

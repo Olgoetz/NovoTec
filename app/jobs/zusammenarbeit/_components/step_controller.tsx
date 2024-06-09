@@ -120,7 +120,7 @@ const StepController = () => {
       step3_location: "",
       step4: [25],
       step5: 1,
-      step6: 25,
+      step6: "",
       step7_firstName: "",
       step7_lastName: "",
       step7_email: "",
@@ -146,14 +146,14 @@ const StepController = () => {
   //   },
   // });
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const result = await fetchOutlookEvents();
-      console.log(result);
-    };
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     const result = await fetchOutlookEvents();
+  //     console.log(result);
+  //   };
 
-    fetchEvents();
-  }, []);
+  //   fetchEvents();
+  // }, []);
 
   // Handle form submission
   const [isAccepted, setIsAccepted] = useState(false);

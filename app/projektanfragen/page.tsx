@@ -68,16 +68,17 @@ export default function Page() {
   });
 
   const fetchCityByZipCode = useDebouncedCallback(async (zipCode: string) => {
-    if (!zipCode) return;
+    if (!zipCode.trim()) return;
     try {
       const response = await axios.get(
-        `https://api.zippopotam.us/de/${zipCode}`
+        `https://api.zippopotam.us/de/${zipCode.trim()}`
       );
       const data = response.data;
       const city = data.places[0]["place name"];
 
       //  setCity(city); // Update the city state
       form.setValue("location", city); // Update the location form field (optional
+      form.clearErrors("zipCode"); // Clear the error if the request is successful
       return city;
     } catch (error) {
       form.setError("zipCode", { message: "Ungültige PLZ" });

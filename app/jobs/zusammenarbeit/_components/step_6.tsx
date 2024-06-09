@@ -36,16 +36,16 @@ export default function Step_6({ form }: Step6Props) {
       <div className="w-1/2">
         <FormField
           control={form.control}
-          name="step5"
+          name="step6"
           render={({ field }) => (
             <FormItem>
               <div className="flex gap-2  items-center">
                 <Input
-                  type="number"
-                  min={1}
-                  max={50}
+                  type="text"
+                  // min={1}
+                  // max={50}
                   {...field}
-                  placeholder="z.B. 10"
+                  placeholder="z.B. 25,50"
                   className="border h-10 p-2 rounded-md "
                 />
                 <div className="h-10 border p-2 rounded-md">
