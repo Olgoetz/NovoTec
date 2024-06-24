@@ -8,15 +8,40 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { Button } from "@/components/ui/button";
 import { ChevronRightCircle } from "lucide-react";
 
-import { ListItemRenderer } from "@/lib/helpers";
+const Bold = ({ children }: { children: any }) => (
+  <p className="font-bold">{children}</p>
+);
+
+const Text = ({ children }: { children: any }) => (
+  <p className="align-center">{children}</p>
+);
+
+const renderOptions = {
+  preserveWhitespace: true,
+  renderMark: {
+    [MARKS.BOLD]: (text: any) => <Bold>{text}</Bold>,
+  },
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
+      <p className="py-2">{children}</p>
+    ),
+    [BLOCKS.UL_LIST]: (node: any, children: any) => (
+      <ul className="list-disc pl-4 py-2">{children}</ul>
+    ),
+    [BLOCKS.LIST_ITEM]: (node: any, children: any) => <li>{children}</li>,
+  },
+  renderText: (text: any) => text.replace("!", "?"),
+};
 const JobSingle = async ({
   titleUrlFriendly,
   jobs,
 }: {
-  titleUrlFriendly: string;
+  titleUrlFriendly: any;
   jobs: any;
 }) => {
   console.log("[ui.jobSingle]", jobs);
@@ -24,7 +49,7 @@ const JobSingle = async ({
   const job: any = jobs.find(
     (j: any) => j.fields.titleUrlFriendly === titleUrlFriendly
   );
-  console.log("[ui.jobSingle]", job);
+  console.log("[ui.jobSingle]", job.fields);
   if (!job) {
     // Handle the case when the job with the specified id is not found
     return (
@@ -58,15 +83,18 @@ const JobSingle = async ({
           </CardHeader>
           <CardContent>
             <p className="font-bold py-3">Beschreibung:</p>
-            <p>{job.fields.longDescription}</p>
+            {documentToReactComponents(
+              job.fields.descriptionLong,
+              renderOptions
+            )}
             <p className="font-bold py-3">Aufgaben:</p>
-            {ListItemRenderer({ content: job.fields.tasks })}
+            {documentToReactComponents(job.fields.tasks, renderOptions)}
             <p className="font-bold py-3">Profil:</p>
-            {ListItemRenderer({ content: job.fields.profile })}
+            {documentToReactComponents(job.fields.profile, renderOptions)}
           </CardContent>
           <CardFooter>
             <div className="flex flex-col space-y-3">
-              <p>
+              {/* <p>
                 Bewerbung an{" "}
                 <a
                   className="text-novo-red"
@@ -74,7 +102,7 @@ const JobSingle = async ({
                 >
                   bewerbung@novotec-gruppe.de
                 </a>
-              </p>
+              </p> */}
               <Link href="/jobs" className="w-full">
                 <Button
                   asChild
