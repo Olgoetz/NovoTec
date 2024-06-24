@@ -18,6 +18,9 @@ variable "CONTENTFUL_SPACE_ID" {
 variable "CONTENTFUL_CMA_TOKEN" {
   type = string
 }
+variable "CONTENTFUL_ENVIRONMENT" {
+  type = string
+}
 
 variable "CONTENTFUL_ACCESS_TOKEN" {
   type = string
