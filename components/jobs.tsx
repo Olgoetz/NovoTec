@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronRightCircle } from "lucide-react";
 import Image from "next/image";
 
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import pino from "../logger";
 import type { Logger } from "pino";
 
@@ -80,7 +81,7 @@ export default async function Jobs({ jobs }: { jobs: any }) {
             </CardHeader>
             <CardContent>
               <p className="font-bold py-3">Beschreibung:</p>
-              <p>{j.fields.description}</p>
+              {documentToReactComponents(j.fields.descriptionShort)}
               {/* <p className="font-bold py-3">Verantworlichkeiten:</p>
             <p>
               <ol>

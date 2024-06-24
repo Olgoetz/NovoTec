@@ -1,0 +1,570 @@
+InvalidEntry: {
+  "status": 422,
+  "statusText": "Unprocessable Entity",
+  "message": "Validation error",
+  "details": {
+    "errors": [
+      {
+        "name": "in",
+        "details": "Value must be one of expected values",
+        "path": [
+          "fields",
+          "descriptionShort",
+          "en-US",
+          "content",
+          0,
+          "nodeType"
+        ],
+        "value": "text",
+        "expected": [
+          "blockquote",
+          "embedded-asset-block",
+          "embedded-entry-block",
+          "embedded-resource-block",
+          "heading-1",
+          "heading-2",
+          "heading-3",
+          "heading-4",
+          "heading-5",
+          "heading-6",
+          "hr",
+          "ordered-list",
+          "paragraph",
+          "table",
+          "unordered-list"
+        ]
+      }
+    ]
+  },
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/4wZEVTk6d4yG8H0ard3PPU",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "41",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Content-Length": "2025",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put",
+    "payloadData": "{\"sys\":{\"id\":\"4wZEVTk6d4yG8H0ard3PPU\",\"version\":41,\"publishedVersion\":40,\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"job\"}}},\"fields\":{\"title\":{\"en-US\":\"Fliesenleger (m/w/d)\"},\"titleUrlFriendly\":{\"en-US\":\"fliesenleger\"},\"location\":{\"en-US\":\"Standort Leverkusen, Vollzeit\"},\"description\":{\"en-US\":\"Leidenschaftlicher Fliesenleger (m/w/d) mit Sinn für Präzision und handwerkliches Geschick, der unser Team bei anspruchsvollen Projekten im Innenausbau verstärkt und maßgeschneiderte Fliesenlösungen gestaltet.\\n\"},\"longDescription\":{\"en-US\":\"Wir suchen einen vielseitigen Fliesenleger (m/w/d) mit Fähigkeiten in verschiedenen Gewerken, der unsere Projekte mit handwerklichem Können und kreativen Lösungen bereichert. Wenn Sie neben Fliesenarbeiten auch andere Baugewerke beherrschen, sind Sie bei uns genau richtig!\\\"\"},\"tasks\":{\"en-US\":\"- Verlegung von Fliesen, Platten und Natursteinen in verschiedenen Räumen und auf verschiedenen Oberflächen\\n- Durchführung von Sanierungsmaßnahmen bei Wasser- oder Brandschäden, sowie im Bereich Innenausbau\\n- Verantwortungsvolle Baustellenabwicklung gemeinsam mit dem Projektleiter\\n- Dokumentation der Aufträge sowie die Bestellung von Materialien\"},\"profile\":{\"en-US\":\"- Abgeschlossene Berufsausbildung in dem Gewerk Fliesen-, Platten- und Mosaikleger/in oder in einem vergleichbaren Gewerk\\n- Bei mehrjähriger Berufserfahrung ist eine abgeschlossene Ausbildung nicht zwingend erforderlich\\n- Selbstständige, Kunden- und Serviceorientierte Arbeitsweise\\n- Präzision, Sorgfalt und ein Auge für Details\\n- Ein Führerschein Klasse B ist erwünscht\\n- Eigenständiges Arbeiten\\n\"},\"descriptionShort\":{\"en-US\":{\"nodeType\":\"document\",\"data\":{},\"content\":[{\"nodeType\":\"text\",\"value\":\"Leidenschaftlicher Fliesenleger (m/w/d) mit Sinn für Präzision und handwerkliches Geschick, der unser Team bei anspruchsvollen Projekten im Innenausbau verstärkt und maßgeschneiderte Fliesenlösungen gestaltet.\\n\",\"marks\":[],\"data\":{}}]}}},\"metadata\":{\"tags\":[]}}"
+  },
+  "requestId": "7b9e45dd-da36-45ef-be79-a04030f70399"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22VersionMismatch: {
+  "status": 409,
+  "statusText": "Conflict",
+  "message": "",
+  "details": {},
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/4wZEVTk6d4yG8H0ard3PPU/published",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "42",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put"
+  },
+  "requestId": "864285f2-351d-43db-bd82-05f803217976"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22InvalidEntry: {
+  "status": 422,
+  "statusText": "Unprocessable Entity",
+  "message": "Validation error",
+  "details": {
+    "errors": [
+      {
+        "name": "in",
+        "details": "Value must be one of expected values",
+        "path": [
+          "fields",
+          "descriptionShort",
+          "en-US",
+          "content",
+          0,
+          "nodeType"
+        ],
+        "value": "text",
+        "expected": [
+          "blockquote",
+          "embedded-asset-block",
+          "embedded-entry-block",
+          "embedded-resource-block",
+          "heading-1",
+          "heading-2",
+          "heading-3",
+          "heading-4",
+          "heading-5",
+          "heading-6",
+          "hr",
+          "ordered-list",
+          "paragraph",
+          "table",
+          "unordered-list"
+        ]
+      }
+    ]
+  },
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/6lM9hldyoJNdBX53nRjmyB",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "19",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Content-Length": "2040",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put",
+    "payloadData": "{\"sys\":{\"id\":\"6lM9hldyoJNdBX53nRjmyB\",\"version\":19,\"publishedVersion\":18,\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"job\"}}},\"fields\":{\"title\":{\"en-US\":\"Allrounder (m/w/d)\"},\"titleUrlFriendly\":{\"en-US\":\"allrounder\"},\"location\":{\"en-US\":\"Standort Leverkusen, Vollzeit\"},\"description\":{\"en-US\":\"Ein Allrounder (m/w/d) für die Bereiche Fliesenleger-, Bodenbelags- und Trockenbauarbeiten, der ein breites Spektrum handwerklicher Fähigkeiten mitbringt und in der Lage ist, vielfältige Projekte mit Fachkenntnis und höhster Qualität umzusetzen.\\\"\"},\"longDescription\":{\"en-US\":\"Wir suchen einen vielseitigen Allrounder (m/w/d) für Fliesenleger-, Bodenbelags- und Trockenbauarbeiten, der unser Team mit seinem handwerklichen Können bereichert und für höchste Qualität in unseren Projekten sorgt. Wenn Sie in diesen Bereichen versiert sind und gerne herausfordernde Aufgaben anpacken, freuen wir uns auf Ihre Bewerbung!\"},\"tasks\":{\"en-US\":\"- Durchführung von Reparaturen und Montagen in verschiedenen Gewerken, insbesondere in Fliesenleger-, Bodenbelags- und Trockenbauarbeiten\\n- Durchführung von Sanierungsmaßnahmen bei Wasser- oder Brandschäden, sowie im Bereich Innenausbau\\n- Verantwortungsvolle Baustellenabwicklung gemeinsam mit dem Projektleiter\\n- Dokumentation der Aufträge sowie die Bestellung von Materialien.\"},\"profile\":{\"en-US\":\"- Mehrjähriger Berufserfahrung im Bereich Sanierungen und Innenausbauten\\n- Selbstständige, Kunden- und Serviceorientierte Arbeitsweise\\n- Präzision, Sorgfalt und ein Auge für Details\\n- Ein Führerschein Klasse B ist erwünscht.\\n- Eigenständiges Arbeiten\"},\"descriptionShort\":{\"en-US\":{\"nodeType\":\"document\",\"data\":{},\"content\":[{\"nodeType\":\"text\",\"value\":\"Ein Allrounder (m/w/d) für die Bereiche Fliesenleger-, Bodenbelags- und Trockenbauarbeiten, der ein breites Spektrum handwerklicher Fähigkeiten mitbringt und in der Lage ist, vielfältige Projekte mit Fachkenntnis und höhster Qualität umzusetzen.\\\"\",\"marks\":[],\"data\":{}}]}}},\"metadata\":{\"tags\":[]}}"
+  },
+  "requestId": "dd8ecf43-a2bb-48e3-998e-eb7cce441a20"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22VersionMismatch: {
+  "status": 409,
+  "statusText": "Conflict",
+  "message": "",
+  "details": {},
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/6lM9hldyoJNdBX53nRjmyB/published",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "20",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put"
+  },
+  "requestId": "1f33fd32-8326-4e4b-8df0-d291167fff08"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22InvalidEntry: {
+  "status": 422,
+  "statusText": "Unprocessable Entity",
+  "message": "Validation error",
+  "details": {
+    "errors": [
+      {
+        "name": "in",
+        "details": "Value must be one of expected values",
+        "path": [
+          "fields",
+          "descriptionShort",
+          "en-US",
+          "content",
+          0,
+          "nodeType"
+        ],
+        "value": "text",
+        "expected": [
+          "blockquote",
+          "embedded-asset-block",
+          "embedded-entry-block",
+          "embedded-resource-block",
+          "heading-1",
+          "heading-2",
+          "heading-3",
+          "heading-4",
+          "heading-5",
+          "heading-6",
+          "hr",
+          "ordered-list",
+          "paragraph",
+          "table",
+          "unordered-list"
+        ]
+      }
+    ]
+  },
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/5RJ5f4sofLc4qC82BRBhv8",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "28",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Content-Length": "2652",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put",
+    "payloadData": "{\"sys\":{\"id\":\"5RJ5f4sofLc4qC82BRBhv8\",\"version\":28,\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"job\"}}},\"fields\":{\"title\":{\"en-US\":\"Kaufmann/-frau (m/w/d) für Büromanagement mit Schwerpunkt Buchhaltung \"},\"titleUrlFriendly\":{\"en-US\":\"kaufmann\"},\"location\":{\"en-US\":\"Standort Köln, Vollzeit\"},\"description\":{\"en-US\":\"Als engagierte/r und motivierte/r Kaufmann/-frau (m/w/d) für Büromanagement mit Fokus auf Buchhaltung bringen Sie Ihre fundierten Kenntnisse in einer anspruchsvollen Position und in einem sicheren Arbeitsumfeld ein.\"},\"longDescription\":{\"en-US\":\"Wir suchen eine/n engagierte/n Kaufmann/-frau (m/w/d) für Büromanagement mit Fokus auf Buchhaltung. Ihre Aufgaben umfassen die präzise Erfassung finanzieller Transaktionen, die Erstellung und Prüfung von Rechnungen sowie die Mitwirkung in unserer täglichen Arbeit mit unseren Projektleitern, Subunternehmern und Lieferanten. Idealerweise verfügen Sie über fundierte Kenntnisse in der Buchhaltung und sind versiert im Umgang mit gängigen Büroanwendungen. Wir bieten eine anspruchsvolle Position in einem dynamischen Team und gleichzeitig einen sicheren Arbeitsplatz in einer Schlüsselbranche, der auf eine langfristige Zusammenarbeit ausgerichtet ist.\"},\"tasks\":{\"en-US\":\"•\\tErfassung und Buchung aller finanziellen Transaktionen\\n•\\tErstellung, Erfassung und Prüfung von Rechnungsein- und –ausgängen\\n•\\tDurchführung, Erfassung und Prüfung von Zahlungsein- und –ausgängen\\n•\\tEigenverantwortliche Kommunikation und Abstimmungen mit  Kunden, Lieferanten, Projektleitern und Subunternehmern bei rechnungs- und buchungsrelevanten Sachverhalten\\n•\\tUnterstützende Tätigkeiten bei der Berechnung, Ausstellung und Vorbereitung der Gehälter und Löhne für die Übergabe an den Steuerberater\\n\"},\"profile\":{\"en-US\":\"•\\tAbgeschlossene kaufmännische Berufsausbildung und/oder Weiterbildung in der Buchhaltung \\n•\\tBerufserfahrung in der Buchhaltung \\n•\\tErfahrung mit relevanten Buchhaltungssoftware-Anwendungen wie Datev- und Label-Software ist wünschenswert\\n•\\tZahlenaffinität\\n•\\tSelbstständige und strukturierte Arbeitsweise\\n•\\tGute MS Office-Kenntnisse (Word, Excel)\\n•\\tFreude an selbstständiger Arbeit\\n•\\tMotivation und Zuverlässigkeit\\n\"},\"descriptionShort\":{\"en-US\":{\"nodeType\":\"document\",\"data\":{},\"content\":[{\"nodeType\":\"text\",\"value\":\"Als engagierte/r und motivierte/r Kaufmann/-frau (m/w/d) für Büromanagement mit Fokus auf Buchhaltung bringen Sie Ihre fundierten Kenntnisse in einer anspruchsvollen Position und in einem sicheren Arbeitsumfeld ein.\",\"marks\":[],\"data\":{}}]}}},\"metadata\":{\"tags\":[]}}"
+  },
+  "requestId": "13f633e2-a25f-49ca-a0a7-20b3d548f583"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22InvalidEntry: {
+  "status": 422,
+  "statusText": "Unprocessable Entity",
+  "message": "Validation error",
+  "details": {
+    "errors": [
+      {
+        "name": "in",
+        "details": "Value must be one of expected values",
+        "path": [
+          "fields",
+          "descriptionShort",
+          "en-US",
+          "content",
+          0,
+          "nodeType"
+        ],
+        "value": "text",
+        "expected": [
+          "blockquote",
+          "embedded-asset-block",
+          "embedded-entry-block",
+          "embedded-resource-block",
+          "heading-1",
+          "heading-2",
+          "heading-3",
+          "heading-4",
+          "heading-5",
+          "heading-6",
+          "hr",
+          "ordered-list",
+          "paragraph",
+          "table",
+          "unordered-list"
+        ]
+      }
+    ]
+  },
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/6dzf7JjYrrkqGQG7bra25p",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "57",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Content-Length": "3122",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put",
+    "payloadData": "{\"sys\":{\"id\":\"6dzf7JjYrrkqGQG7bra25p\",\"version\":57,\"publishedVersion\":56,\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"job\"}}},\"fields\":{\"title\":{\"en-US\":\"Werkstudent (m/w/d) für digitale Innovationen im Handwerk\"},\"titleUrlFriendly\":{\"en-US\":\"Teilzeit\"},\"location\":{\"en-US\":\"Standort Leverkusen, Teilzeit (Remote und Präsenz)\"},\"description\":{\"en-US\":\"Unser Handwerksbetrieb entwickelt nicht nur Plattformen und Apps, sondern auch eine spannende digitale Zukunft. Wir suchen motivierte Werkstudenten (m/w/d), um gemeinsam Tradition und Innovation zu verbinden.\"},\"longDescription\":{\"en-US\":\"Willkommen in unserem aufstrebenden Handwerksbetrieb, der sich nicht nur auf die Digitalisierung seiner Prozesse und Arbeitsabläufe konzentriert, sondern auch eine eigene Plattform und Apps entwickelt. Wir befinden uns auf einer spannenden Reise von der Stunde 0 und laden motivierte Werkstudenten (m/w/d) dazu ein, Teil unseres Teams zu werden. Zusammen mit unserem Projektmanager, unserem Cloud-Architekten und internationalen Freelancern gestalten wir die Zukunft des Handwerks und schaffen eine Brücke zwischen Tradition und Innovation.\"},\"tasks\":{\"en-US\":\"- Aktive Mitwirkung an der Entwicklung und Umsetzung digitaler Plattformen und Anwendungen für das Handwerk\\n- Zusammenarbeit mit dem IT-Team, um innovative Lösungen zu konzipieren und umzusetzen\\n- Integration von Softwarelösungen in bestehende Systeme und Infrastrukturen\\n- Gestaltung benutzerfreundlicher UX-Designs für unsere Plattformen und Apps\\n- Nutzung von Infrastructure as Code-Prinzipien mit Terraform zur Automatisierung von Prozessen\\n- Einbindung von Cloud-Technologien für skalierbare und flexible Lösungen\\n- Aktive Teilnahme an agilen Arbeitsmethoden und Prozessen, einschließlich GitOps und CI/CD\"},\"profile\":{\"en-US\":\"Hard Skills:\\n- Programmierkenntnisse in React JS (NextJS von Vorteil), Python und SQL\\n- Erfahrung mit Infrastructure as Code-Tools wie Terraform\\n- Grundlegendes Verständnis von Cloud-Technologien, vorzugsweise AWS\\n- Kenntnisse im UX-Design und der Entwicklung von benutzerzentrierten Interfaces\\n- Erfahrung mit Workflow-Management und agilen Methoden\\n- Vertrautheit mit GitOps und Continuous Integration/Continuous Deployment (CI/CD)\\n\\nSoft Skills:\\n- Begeisterung und Neugierde für die digitale Innovation im Handwerk\\n- Teamfähigkeit und Bereitschaft zur aktiven Zusammenarbeit im IT-Team\\n- Kreativität und Problemlösungsfähigkeiten, um innovative Lösungen zu entwickeln\\n- Eigeninitiative und Bereitschaft, Verantwortung zu übernehmen\\n- Kommunikationsstärke und Fähigkeit, komplexe technische Konzepte verständlich zu vermitteln\\n- Flexibilität und Anpassungsfähigkeit in einem sich schnell entwickelnden Umfeld\"},\"descriptionShort\":{\"en-US\":{\"nodeType\":\"document\",\"data\":{},\"content\":[{\"nodeType\":\"text\",\"value\":\"Unser Handwerksbetrieb entwickelt nicht nur Plattformen und Apps, sondern auch eine spannende digitale Zukunft. Wir suchen motivierte Werkstudenten (m/w/d), um gemeinsam Tradition und Innovation zu verbinden.\",\"marks\":[],\"data\":{}}]}}},\"metadata\":{\"tags\":[]}}"
+  },
+  "requestId": "b92af1cc-0fef-47f6-86d8-a59daedc9eb8"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22VersionMismatch: {
+  "status": 409,
+  "statusText": "Conflict",
+  "message": "",
+  "details": {},
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/6dzf7JjYrrkqGQG7bra25p/published",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "58",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put"
+  },
+  "requestId": "c0731ec8-6af1-40ee-92cf-ea34716a507f"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22InvalidEntry: {
+  "status": 422,
+  "statusText": "Unprocessable Entity",
+  "message": "Validation error",
+  "details": {
+    "errors": [
+      {
+        "name": "in",
+        "details": "Value must be one of expected values",
+        "path": [
+          "fields",
+          "descriptionShort",
+          "en-US",
+          "content",
+          0,
+          "nodeType"
+        ],
+        "value": "text",
+        "expected": [
+          "blockquote",
+          "embedded-asset-block",
+          "embedded-entry-block",
+          "embedded-resource-block",
+          "heading-1",
+          "heading-2",
+          "heading-3",
+          "heading-4",
+          "heading-5",
+          "heading-6",
+          "hr",
+          "ordered-list",
+          "paragraph",
+          "table",
+          "unordered-list"
+        ]
+      }
+    ]
+  },
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/2xuoPrpivgcTzuTZwtLfp7",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "46",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Content-Length": "2558",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put",
+    "payloadData": "{\"sys\":{\"id\":\"2xuoPrpivgcTzuTZwtLfp7\",\"version\":46,\"publishedVersion\":45,\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"job\"}}},\"fields\":{\"title\":{\"en-US\":\"Hausmeister und Allrounder (m/w/d)\"},\"titleUrlFriendly\":{\"en-US\":\"hausmeister\"},\"location\":{\"en-US\":\"Standort Leverkusen, Minijob\"},\"description\":{\"en-US\":\"Wir suchen eine zuverlässige und motivierte Person (m/w/d) für Hausmeistertätigkeiten auf Minijob-Basis. Aufgaben umfassen Rasenmähen, Kehren, Reinigung, kleinere Reparaturen und saisonale Arbeiten. Handwerkliches Geschick, Selbstständigkeit, Freundlichkeit und idealerweise ein Führerschein der Klasse B sind uns wichtig. Bei Interesse können Sie uns schreiben oder auch direkt anrufen.\"},\"longDescription\":{\"en-US\":\"Wir suchen zur Verstärkung unseres Teams eine zuverlässige und motivierte Person (m/w/d) für Hausmeistertätigkeiten auf Minijob-Basis. Zu Ihren Aufgaben gehören Rasenmähen, Kehren, Reinigung von Hausfluren, kleinere Reparaturen und saisonale Arbeiten. Handwerkliches Geschick, eine selbstständige Arbeitsweise und ein freundliches Auftreten sind uns wichtig. Ein Führerschein der Klasse B ist notwendig. Wir bieten eine flexible und abwechslungsreiche Tätigkeit in einem freundlichen Arbeitsumfeld. Bewerben Sie sich jetzt und werden Sie Teil unseres Teams! Bei Interesse können Sie uns schreiben oder auch direkt anrufen.\"},\"tasks\":{\"en-US\":\"- Rasenmähen und Pflege der Grünflächen\\n- Kehren von Gehwegen und Zufahrten\\n- Reinigung von Hausfluren und Gemeinschaftsbereichen\\n- Kleinere Reparaturen und Wartungsarbeiten\\n- Unterstützung bei saisonalen Arbeiten (z.B. Laub entfernen, Schneeräumen)\\n- Ausfahren von Materialien zu unseren verschiedenen Baustellen\"},\"profile\":{\"en-US\":\"- Zuverlässigkeit und Pünktlichkeit\\n- Selbstständige und sorgfältige Arbeitsweise\\n- Handwerkliches Geschick und praktische Veranlagung\\n- Körperliche Belastbarkeit\\n- Freundliches und hilfsbereites Auftreten\\n- Führerschein der Klasse B notwendig\"},\"descriptionShort\":{\"en-US\":{\"nodeType\":\"document\",\"data\":{},\"content\":[{\"nodeType\":\"text\",\"value\":\"Wir suchen eine zuverlässige und motivierte Person (m/w/d) für Hausmeistertätigkeiten auf Minijob-Basis. Aufgaben umfassen Rasenmähen, Kehren, Reinigung, kleinere Reparaturen und saisonale Arbeiten. Handwerkliches Geschick, Selbstständigkeit, Freundlichkeit und idealerweise ein Führerschein der Klasse B sind uns wichtig. Bei Interesse können Sie uns schreiben oder auch direkt anrufen.\",\"marks\":[],\"data\":{}}]}}},\"metadata\":{\"tags\":[]}}"
+  },
+  "requestId": "1cf368df-7f88-4d96-ba44-7c30a7147079"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22VersionMismatch: {
+  "status": 409,
+  "statusText": "Conflict",
+  "message": "",
+  "details": {},
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/2xuoPrpivgcTzuTZwtLfp7/published",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "47",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put"
+  },
+  "requestId": "619459da-d931-4cb9-abe6-33e53bc95588"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22InvalidEntry: {
+  "status": 422,
+  "statusText": "Unprocessable Entity",
+  "message": "Validation error",
+  "details": {
+    "errors": [
+      {
+        "name": "in",
+        "details": "Value must be one of expected values",
+        "path": [
+          "fields",
+          "descriptionShort",
+          "en-US",
+          "content",
+          0,
+          "nodeType"
+        ],
+        "value": "text",
+        "expected": [
+          "blockquote",
+          "embedded-asset-block",
+          "embedded-entry-block",
+          "embedded-resource-block",
+          "heading-1",
+          "heading-2",
+          "heading-3",
+          "heading-4",
+          "heading-5",
+          "heading-6",
+          "hr",
+          "ordered-list",
+          "paragraph",
+          "table",
+          "unordered-list"
+        ]
+      }
+    ]
+  },
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/1ONkYUyZHOPRnJEWptsDGf",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "95",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Content-Length": "4177",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put",
+    "payloadData": "{\"sys\":{\"id\":\"1ONkYUyZHOPRnJEWptsDGf\",\"version\":95,\"publishedVersion\":94,\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"job\"}}},\"fields\":{\"title\":{\"en-US\":\"Azubi im Büromanagement (m/w/d)\"},\"titleUrlFriendly\":{\"en-US\":\"azubi-im-bueromanagement\"},\"location\":{\"en-US\":\"Leverkusen\"},\"description\":{\"en-US\":\"Wir suchen einen motivierten Azubi für Büromanagement (m/w/d), der in den zukunftssicheren Bereichen Handwerk, Immobilien und Digitalisierung arbeitet. Du wirst verschiedene kaufmännische Abteilungen durchlaufen, Verantwortung übernehmen und an spannenden Projekten mitwirken. Profitiere von einer praxisnahen Ausbildung mit exzellenten Übernahmechancen und attraktiver Vergütung.\"},\"longDescription\":{\"en-US\":\"Wir sind NovoTec, ein innovatives Unternehmen aus dem Rheinland. Mit über 10 Jahren Erfahrung kombinieren wir Handwerk, Immobilien und Digitalisierung und setzen dabei auf höchste Qualität und Nachhaltigkeit.\\n\\nWir suchen einen motivierten Azubi für Büromanagement (m/w/d), der unser Team verstärkt. In dieser Rolle durchläufst du verschiedene kaufmännische Abteilungen und erhältst Einblicke in die vielfältigen Prozesse unseres Unternehmens. Von der Planung und Terminierung von Projekten über die Mitarbeit im Finanz- und Rechnungswesen bis hin zur Unterstützung bei der Digitalisierung und der Beschaffung von Materialien – bei uns lernst du alle Facetten des Büromanagements kennen.\\n\\nIn den zukunftssicheren Bereichen Handwerk, Immobilien und Digitalisierung erwarten dich überdurchschnittliche Karrierechancen und sehr gute Gehälter. Wenn du motiviert bist, etwas bewegen willst und gerne in einem dynamischen Team arbeitest, dann freuen wir uns auf deine Bewerbung!\\n\\nWas wir dir bieten:\\n\\n- Abwechslung pur: Entdecke die Vielfalt der kaufmännischen Prozesse in unserem Unternehmen und lerne von Anfang an, Verantwortung zu übernehmen. Bei uns lernst du nicht nur Kaffee kochen und kopieren, sondern bist von Anfang an mittendrin!\\n\\n- Digitale Zukunft: Gestalte spannende IT-Projekte mit und bringe deine Ideen ein.\\n\\n- Top Ausbildung: Profitiere von einer praxisnahen Ausbildung mit exzellenten Übernahmechancen in einem modernen Arbeitsumfeld.\\n\\n- Attraktive Vergütung: Freu dich auf eine faire Ausbildungsvergütung und zusätzliche Sozialleistungen.\"},\"tasks\":{\"en-US\":\"Deine Aufgaben:\\n\\n- Vielfältige Einblicke: Arbeite in verschiedenen Abteilungen und unterstütze deine Kolleg*innen bei der Planung und Terminierung von Projekten.\\n\\n- Finanz- und Rechnungswesen: Mitarbeit bei der Buchführung, Erstellung von Rechnungen und Projektkontrolle.\\n\\n- Digitalisierung: Planung und Umsetzung kleiner IT-Projekte.\\n\\n- Einkauf und Logistik: Beschaffung von Materialien und Dienstleistungen sowie Koordination von Lieferterminen und Monteuren.\"},\"profile\":{\"en-US\":\"Dein Profil:\\n\\n- Schulabschluss: Guter Realschulabschluss oder (Fach-)Abitur. Gerne aber auch mit Abitur.\\n\\n- Interesse: Begeisterung für kaufmännische Prozesse und wirtschaftliche Zusammenhänge. Du kennst dich mit Word, Excel und PowerPoint aus.\\n\\n- Kommunikation: Du bist kommunikativ und hast Freude am Umgang mit Menschen.\\n\\n- Organisation: Du arbeitest strukturiert und gewissenhaft, übernimmst gerne organisatorische Aufgaben und hast eine schnelle Auffassungsgabe.\\n\\n- Teamplayer: Du integrierst dich gut in ein bestehendes Team und arbeitest gerne mit anderen zusammen.\\n\\nInteressiert?\\nDann bewirb dich jetzt! Sende deine vollständigen Bewerbungsunterlagen (Anschreiben, Lebenslauf, Zeugnisse) bis zum 30.08.2024 an Frau Ozan per E-Mail an bewerbung@novotec-gruppe.de.\\n\"},\"descriptionShort\":{\"en-US\":{\"nodeType\":\"document\",\"data\":{},\"content\":[{\"nodeType\":\"text\",\"value\":\"Wir suchen einen motivierten Azubi für Büromanagement (m/w/d), der in den zukunftssicheren Bereichen Handwerk, Immobilien und Digitalisierung arbeitet. Du wirst verschiedene kaufmännische Abteilungen durchlaufen, Verantwortung übernehmen und an spannenden Projekten mitwirken. Profitiere von einer praxisnahen Ausbildung mit exzellenten Übernahmechancen und attraktiver Vergütung.\",\"marks\":[],\"data\":{}}]}}},\"metadata\":{\"tags\":[]}}"
+  },
+  "requestId": "b514ae0d-4773-442f-9b7f-8d2e45958bf9"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22VersionMismatch: {
+  "status": 409,
+  "statusText": "Conflict",
+  "message": "",
+  "details": {},
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/1ONkYUyZHOPRnJEWptsDGf/published",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "96",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put"
+  },
+  "requestId": "43d6b4fa-1315-4db1-b4db-e593d863358d"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22InvalidEntry: {
+  "status": 422,
+  "statusText": "Unprocessable Entity",
+  "message": "Validation error",
+  "details": {
+    "errors": [
+      {
+        "name": "in",
+        "details": "Value must be one of expected values",
+        "path": [
+          "fields",
+          "descriptionShort",
+          "en-US",
+          "content",
+          0,
+          "nodeType"
+        ],
+        "value": "text",
+        "expected": [
+          "blockquote",
+          "embedded-asset-block",
+          "embedded-entry-block",
+          "embedded-resource-block",
+          "heading-1",
+          "heading-2",
+          "heading-3",
+          "heading-4",
+          "heading-5",
+          "heading-6",
+          "hr",
+          "ordered-list",
+          "paragraph",
+          "table",
+          "unordered-list"
+        ]
+      }
+    ]
+  },
+  "request": {
+    "url": "https://api.contentful.com/spaces/j2bkpry69ktm/environments/master/entries/IhoeOdHfaEhdZywzpDs4k",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/3.3.2; feature space-migration; sdk contentful-management-plain.js/11.27.0; platform node.js/v22.3.0; os macOS/v22.3.0;",
+      "CF-Sequence": "8fd98f28-37db-4961-a293-438fc8f3c3ff",
+      "Authorization": "Bearer ...WRTVc",
+      "X-Contentful-Version": "9",
+      "X-Contentful-Content-Type": "job",
+      "User-Agent": "axios/1.7.1",
+      "Content-Length": "4824",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "put",
+    "payloadData": "{\"sys\":{\"id\":\"IhoeOdHfaEhdZywzpDs4k\",\"version\":9,\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"job\"}}},\"fields\":{\"title\":{\"en-US\":\"Azubi im Büromanagement (m/w/d)\"},\"titleUrlFriendly\":{\"en-US\":\"Azubi im Büromanagement (m/w/d)\"},\"location\":{\"en-US\":\"Leverkusen\"},\"description\":{\"en-US\":\"Wir suchen einen motivierten Azubi für Büromanagement (m/w/d), der in den zukunftssicheren Bereichen Handwerk, Immobilien und Digitalisierung arbeitet. Du wirst verschiedene kaufmännische Abteilungen durchlaufen, Verantwortung übernehmen und an spannenden Projekten mitwirken. Profitiere von einer praxisnahen Ausbildung mit exzellenten Übernahmechancen und attraktiver Vergütung.\"},\"longDescription\":{\"en-US\":\"Wir sind NovoTec, ein innovatives Unternehmen aus dem Rheinland. Mit über 10 Jahren Erfahrung kombinieren wir Handwerk, Immobilien und Digitalisierung und setzen dabei auf höchste Qualität und Nachhaltigkeit.\\n\\nWir suchen einen motivierten Azubi für Büromanagement (m/w/d), der unser Team verstärkt. In dieser Rolle durchläufst du verschiedene kaufmännische Abteilungen und erhältst Einblicke in die vielfältigen Prozesse unseres Unternehmens. Von der Planung und Terminierung von Projekten über die Mitarbeit im Finanz- und Rechnungswesen bis hin zur Unterstützung bei der Digitalisierung und der Beschaffung von Materialien – bei uns lernst du alle Facetten des Büromanagements kennen.\\n\\nIn den zukunftssicheren Bereichen Handwerk, Immobilien und Digitalisierung erwarten dich überdurchschnittliche Karrierechancen und sehr gute Gehälter. Wenn du motiviert bist, etwas bewegen willst und gerne in einem dynamischen Team arbeitest, dann freuen wir uns auf deine Bewerbung!\\n\\nWas wir dir bieten:\\n\\n- Abwechslung pur: Entdecke die Vielfalt der kaufmännischen Prozesse in unserem Unternehmen und lerne von Anfang an, Verantwortung zu übernehmen. Bei uns lernst du nicht nur Kaffee kochen und kopieren, sondern bist von Anfang an mittendrin!\\n\\n- Digitale Zukunft: Gestalte spannende IT-Projekte mit und bringe deine Ideen ein.\\n\\n- Top Ausbildung: Profitiere von einer praxisnahen Ausbildung mit exzellenten Übernahmechancen in einem modernen Arbeitsumfeld.\\n\\n- Attraktive Vergütung: Freu dich auf eine faire Ausbildungsvergütung und zusätzliche Sozialleistungen.\\n\"},\"tasks\":{\"en-US\":\"Deine Aufgaben:\\n\\n- Vielfältige Einblicke: Arbeite in verschiedenen Abteilungen und unterstütze deine Kolleg*innen bei der Planung und Terminierung von Projekten.\\n\\n- Finanz- und Rechnungswesen: Mitarbeit bei der Buchführung, Erstellung von Rechnungen und Projektkontrolle.\\n\\n- Digitalisierung: Planung und Umsetzung kleiner IT-Projekte.\\n\\n- Einkauf und Logistik: Beschaffung von Materialien und Dienstleistungen sowie Koordination von Lieferterminen und Monteuren.\\n\"},\"profile\":{\"en-US\":\"Dein Profil:\\n\\n- Schulabschluss: Guter Realschulabschluss oder (Fach-)Abitur. Gerne aber auch mit Abitur.\\n\\n- Interesse: Begeisterung für kaufmännische Prozesse und wirtschaftliche Zusammenhänge. Du kennst dich mit Word, Excel und PowerPoint aus.\\n\\n- Kommunikation: Du bist kommunikativ und hast Freude am Umgang mit Menschen.\\n\\n- Organisation: Du arbeitest strukturiert und gewissenhaft, übernimmst gerne organisatorische Aufgaben und hast eine schnelle Auffassungsgabe.\\n\\n- Teamplayer: Du integrierst dich gut in ein bestehendes Team und arbeitest gerne mit anderen zusammen.\\n\\nWarum wir?\\n\\n- Praxisnahe Ausbildung: Du lernst nicht nur Theorie, sondern wendest dein Wissen direkt praktisch an.\\n\\n- Freundliches Umfeld: Arbeite in einem hilfsbereiten und dynamischen Team.\\n\\n- Zukunftsperspektive: Bei uns hast du beste Chancen, nach der Ausbildung übernommen zu werden.\\n\\n- Sichere Branchen: Arbeite in den zukunftssicheren Bereichen Handwerk, Immobilien und Digitalisierung.\\n\\n- Überdurchschnittliche Karrierechancen: Profitiere von sehr guten Gehältern und Karrierechancen in unseren Wachstumsbranchen.\\n\\nInteressiert?\\nDann bewirb dich jetzt! Sende deine vollständigen Bewerbungsunterlagen (Anschreiben, Lebenslauf, Zeugnisse) bis zum 30.08.2024 an Frau Ozan per E-Mail an bewerbung@novotec-gruppe.de oder per Post an:\\n\\nNovoTec GmbH & Co. KG\\nFriedrich-Sertürner-Straße 18\\n51377 Leverkusen\\n\\nWir freuen uns auf dich!\\n\"},\"descriptionShort\":{\"en-US\":{\"nodeType\":\"document\",\"data\":{},\"content\":[{\"nodeType\":\"text\",\"value\":\"Wir suchen einen motivierten Azubi für Büromanagement (m/w/d), der in den zukunftssicheren Bereichen Handwerk, Immobilien und Digitalisierung arbeitet. Du wirst verschiedene kaufmännische Abteilungen durchlaufen, Verantwortung übernehmen und an spannenden Projekten mitwirken. Profitiere von einer praxisnahen Ausbildung mit exzellenten Übernahmechancen und attraktiver Vergütung.\",\"marks\":[],\"data\":{}}]}}},\"metadata\":{\"tags\":[]}}"
+  },
+  "requestId": "35e8e65c-44cc-4438-9b3e-2984a2e2b032"
+}
+    at errorHandler (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:17257:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RestAdapter.makeRequest (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:4162:12)
+    at async Task.task (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:189:29)
+    at async Task.run (/opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/dist/lib/task.js:213:21)
+    at async /opt/homebrew/Cellar/contentful-cli/3.3.2/libexec/lib/node_modules/contentful-cli/node_modules/listr2/node_modules/p-map/index.js:57:22
