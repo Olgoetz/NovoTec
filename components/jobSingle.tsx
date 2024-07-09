@@ -48,7 +48,7 @@ const JobSingle = async ({
   const job: any = jobs.find(
     (j: any) => j.fields.titleUrlFriendly === titleUrlFriendly
   );
-  console.log("[ui.jobSingle]", job.fields.profile.content[2]);
+
   if (!job) {
     // Handle the case when the job with the specified id is not found
     return (

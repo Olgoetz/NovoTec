@@ -5,11 +5,12 @@ import coreCompetencies from "@/data/coreCompetencies";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import CrawlingText from "./banner";
+import BackgroundImage from "./backroundImage";
 export const Hero = () => {
   const box_style =
     "bg-slate-800/40 flex flex-col border border-white p-5 items-center space-y-3 justify-center";
   return (
-    <div className="w-full mt-10 md:mt-36">
+    <div className="w-full py-5 mt-10 md:mt-36">
       {/* <div className="relative min-h-screen text-white ">
         <div className="relative text-white inset-0 animate-ken-burns  bg-blend-overlay bg-slate-200/30 min-h-screen bg-center z-10 bg-cover bg-[url(/novotec_Foto_drei_Transporter.jpg)]">
         <h2 className="text-2xl uppercase  text-right font-semibold mb-10 border-b pb-2">
@@ -53,32 +54,41 @@ export const Hero = () => {
           </div>
         </div>
       </div> */}
-      <section className="py-10">
-        <CrawlingText />
-        <div className="flex flex-col justify-center items-center font-bold text-3xl gap-y-8">
-          <h1 className="text-2xl md:text-5xl text-center">
-            Herzlich Willkommen bei{" "}
-          </h1>
-          {/* <NovoTec classes="ml-2" /> */}
+      <section className="">
+        {/* <CrawlingText /> */}
+        <div className="absolute w-full md:w-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  z-10 text-center">
+          <div className="bg-white/70 p-8 mx-2 rounded-lg flex flex-col items-center justify-center gap-y-4">
+            <h1 className="text-2xl md:text-5xl text-center">
+              Herzlich Willkommen bei{" "}
+            </h1>
 
-          <Image
-            src="/novotec_logo.jpg"
-            alt="NovoTec Logo Hero"
-            width={400}
-            height={400}
-            sizes="100vw"
-            priority
-          />
+            <div className="flex flex-col md:flex-row items-center justify-center gap-x-4">
+              <Image
+                src="/novotec_logo_pic_only.png"
+                alt="NovoTec Logo Hero"
+                width={100}
+                height={100}
+                sizes="100vw"
+                priority
+                className="py-10"
+              />
+              <div>
+                <h2 className="text-2xl md:text-4xl">NovoTec®</h2>
+                <p className="md:text-2xl">Ausbau & Sanierungsmanagement</p>
+              </div>
+            </div>
+            <div className="text-center text-sm md:text-lg px-6 leading-8 ">
+              <p>
+                Wir sind ein Qualitätsdienstleister aus dem Rheinland im Bereich
+                Ausbau- und Sanierungsmanagement mit über 10 Jahren Erfahrung.
+              </p>
+              <p>Unser Angebot umfasst 6 Kernkompetenzen:</p>
+            </div>
+          </div>
         </div>
-        <div className="text-center px-6 leading-8 my-10">
-          <p>
-            Wir sind ein Qualitätsdienstleister aus dem Rheinland im Bereich
-            Ausbau- und Sanierungsmanagement mit über 10 Jahren Erfahrung.
-          </p>
-          <p>Unser Angebot umfasst 6 Kernkompetenzen:</p>
-        </div>
+        <BackgroundImage />
 
-        <div className="mt-10 font-semibold grid md:grid-cols-3 gap-7 px-2 text-center md:max-w-[1000px] mx-auto ">
+        <div className="py-20 font-semibold grid md:grid-cols-3 gap-7 px-2 text-center md:max-w-[1000px] mx-auto ">
           {coreCompetencies.map((c) => (
             <Link key={c.title} href="/leistungen">
               <div className="h-[80px] bg-slate-100 flex items-center justify-center px-1  border rounded-md shadow-lg">
