@@ -82,7 +82,7 @@ export const Hero = () => {
                 Wir sind ein Qualitätsdienstleister aus dem Rheinland im Bereich
                 Ausbau- und Sanierungsmanagement mit über 10 Jahren Erfahrung.
               </p>
-              <p>Unser Angebot umfasst 6 Kernkompetenzen:</p>
+              <p className="py-6">Unser Angebot umfasst 6 Kernkompetenzen:</p>
             </div>
           </div>
         </div>
