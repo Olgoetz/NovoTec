@@ -56,8 +56,8 @@ export const Hero = () => {
       </div> */}
       <section className="">
         {/* <CrawlingText /> */}
-        <div className="absolute w-full md:w-1/2 top-1/3 left-1 z-10 text-center text-white font-bold">
-          <div className="p-8 mx-2 rounded-lg flex flex-col items-center justify-center gap-y-4">
+        <div className="absolute w-full md:w-1/2 top-1/4 md:top-1/3 left-1 z-10 text-center text-white font-bold">
+          <div className="p-1 md:p-8 mx-2 rounded-lg flex flex-col items-center justify-center gap-y-2 md:gap-y-4">
             <h1 className="text-2xl md:text-5xl text-center">
               Herzlich Willkommen bei{" "}
             </h1>
