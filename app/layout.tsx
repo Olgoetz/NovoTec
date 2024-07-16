@@ -53,7 +53,7 @@ export default function RootLayout({
         <Toaster />
         <EdgeStoreProvider>
           <Navbar />
-          <div className="flex flex-col h-screen justify-between">
+          <div className=" h-screen">
             {children}
             <Footer />
           </div>

@@ -4,13 +4,13 @@ import Image from "next/image";
 import coreCompetencies from "@/data/coreCompetencies";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import CrawlingText from "./banner";
-import BackgroundImage from "./backroundImage";
+
+import BackgroundVideo from "./backgroundVideo";
 export const Hero = () => {
   const box_style =
     "bg-slate-800/40 flex flex-col border border-white p-5 items-center space-y-3 justify-center";
   return (
-    <div className="w-full py-5 mt-10 md:mt-36">
+    <div className="w-full  md:py-5  bg-transparent">
       {/* <div className="relative min-h-screen text-white ">
         <div className="relative text-white inset-0 animate-ken-burns  bg-blend-overlay bg-slate-200/30 min-h-screen bg-center z-10 bg-cover bg-[url(/novotec_Foto_drei_Transporter.jpg)]">
         <h2 className="text-2xl uppercase  text-right font-semibold mb-10 border-b pb-2">
@@ -56,8 +56,8 @@ export const Hero = () => {
       </div> */}
       <section className="">
         {/* <CrawlingText /> */}
-        <div className="absolute w-full md:w-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  z-10 text-center">
-          <div className="bg-white/70 p-8 mx-2 rounded-lg flex flex-col items-center justify-center gap-y-4">
+        <div className="absolute w-full md:w-1/2 top-1/3 left-1 z-10 text-center text-white font-bold">
+          <div className="p-8 mx-2 rounded-lg flex flex-col items-center justify-center gap-y-4">
             <h1 className="text-2xl md:text-5xl text-center">
               Herzlich Willkommen bei{" "}
             </h1>
@@ -73,7 +73,9 @@ export const Hero = () => {
                 className="py-10"
               />
               <div>
-                <h2 className="text-2xl md:text-4xl">NovoTec®</h2>
+                <h2 className="text-2xl md:text-4xl text-center md:text-left">
+                  NovoTec®
+                </h2>
                 <p className="md:text-2xl">Ausbau & Sanierungsmanagement</p>
               </div>
             </div>
@@ -82,11 +84,11 @@ export const Hero = () => {
                 Wir sind ein Qualitätsdienstleister aus dem Rheinland im Bereich
                 Ausbau- und Sanierungsmanagement mit über 10 Jahren Erfahrung.
               </p>
-              <p className="py-6">Unser Angebot umfasst 6 Kernkompetenzen:</p>
+              <p className="py-6">Unser Angebot umfasst 6 Kernkompetenzen</p>
             </div>
           </div>
         </div>
-        <BackgroundImage />
+        <BackgroundVideo />
 
         <div className="py-20 font-semibold grid md:grid-cols-3 gap-7 px-2 text-center md:max-w-[1000px] mx-auto ">
           {coreCompetencies.map((c) => (
