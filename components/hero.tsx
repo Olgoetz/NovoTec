@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 import BackgroundVideo from "./backgroundVideo";
+import { ChevronDown } from "lucide-react";
 export const Hero = () => {
   const box_style =
     "bg-slate-800/40 flex flex-col border border-white p-5 items-center space-y-3 justify-center";
@@ -57,12 +58,12 @@ export const Hero = () => {
       <section className="">
         {/* <CrawlingText /> */}
         <div className="absolute w-full md:w-1/2 top-1/4 md:top-1/3 left-1 z-10 text-center text-white font-bold">
-          <div className="p-1 md:p-8 mx-2 rounded-lg flex flex-col items-center justify-center gap-y-2 md:gap-y-4">
-            <h1 className="text-2xl md:text-5xl text-center">
+          <div className="p-1 md:p-8 mx-2 rounded-lg flex flex-col items-center justify-start gap-y-2 md:gap-y-4">
+            <h1 className="text-2xl md:text-5xl w-full text-left">
               Herzlich Willkommen bei{" "}
             </h1>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-x-4">
+            <div className="flex w-full flex-col md:flex-row items-center justify-left gap-x-4">
               <Image
                 src="/novotec_logo_pic_only.png"
                 alt="NovoTec Logo Hero"
@@ -79,12 +80,19 @@ export const Hero = () => {
                 <p className="md:text-2xl">Ausbau & Sanierungsmanagement</p>
               </div>
             </div>
-            <div className="text-center text-sm md:text-lg px-6 leading-8 ">
+            <div className="flex flex-col justify-center text-left text-sm md:text-lg leading-8 ">
               <p>
                 Wir sind ein Qualitätsdienstleister aus dem Rheinland im Bereich
                 Ausbau- und Sanierungsmanagement mit über 10 Jahren Erfahrung.
               </p>
-              <p className="py-6">Unser Angebot umfasst 6 Kernkompetenzen</p>
+            </div>
+
+            <div className="flex flex-col items-start justify-start w-full text-left text-sm md:text-lg leading-8 ">
+              <div>
+                <p className="py-6">Unser Angebot umfasst 6 Kernkompetenzen</p>
+
+                <ChevronDown className="w-full" size={40} />
+              </div>
             </div>
           </div>
         </div>
