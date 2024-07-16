@@ -1,5 +1,5 @@
 import NovoTec from "@/components/novotec";
-import { Star, ThumbsUp } from "lucide-react";
+
 import Image from "next/image";
 import coreCompetencies from "@/data/coreCompetencies";
 import { cn } from "@/lib/utils";
