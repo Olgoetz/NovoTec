@@ -57,37 +57,37 @@ export const Hero = () => {
       </div> */}
       <section className="">
         {/* <CrawlingText /> */}
-        <div className="absolute w-full md:w-1/2 top-1/4 md:top-1/3 left-1 z-10 text-center text-white font-bold">
+        <div className="absolute w-full md:w-1/2 top-1/4 left-1 z-10 text-center md:text-left text-white font-bold">
           <div className="p-1 md:p-8 mx-2 rounded-lg flex flex-col items-center justify-start gap-y-2 md:gap-y-4">
-            <h1 className="text-2xl md:text-5xl w-full text-left">
+            <h1 className="text-2xl md:text-5xl w-full ">
               Herzlich Willkommen bei{" "}
             </h1>
 
             <div className="flex w-full flex-col md:flex-row items-center justify-left gap-x-4">
               <Image
-                src="/novotec_logo_pic_only.png"
+                src="/novotec_logo_nobackground.png"
                 alt="NovoTec Logo Hero"
-                width={100}
-                height={100}
+                width={450}
+                height={450}
                 sizes="100vw"
                 priority
-                className="py-10"
+                className="py-8"
               />
-              <div>
+              {/* <div>
                 <h2 className="text-2xl md:text-4xl text-center md:text-left">
                   NovoTec®
                 </h2>
                 <p className="md:text-2xl">Ausbau & Sanierungsmanagement</p>
-              </div>
+              </div> */}
             </div>
-            <div className="flex flex-col justify-center text-left text-sm md:text-lg leading-8 ">
+            <div className="flex flex-col justify-center text-sm md:text-lg leading-8 ">
               <p>
                 Wir sind ein Qualitätsdienstleister aus dem Rheinland im Bereich
                 Ausbau- und Sanierungsmanagement mit über 10 Jahren Erfahrung.
               </p>
             </div>
 
-            <div className="flex flex-col items-start justify-start w-full text-left text-sm md:text-lg leading-8 ">
+            <div className="flex flex-col md:items-start items-center justify-center w-full text-sm md:text-lg leading-8 ">
               <div>
                 <p className="py-6">Unser Angebot umfasst 6 Kernkompetenzen</p>
 
@@ -98,7 +98,7 @@ export const Hero = () => {
         </div>
         <BackgroundVideo />
 
-        <div className="py-20 font-semibold grid md:grid-cols-3 gap-7 px-2 text-center md:max-w-[1000px] mx-auto ">
+        <div className="py-20 font-semibold grid md:grid-cols-3 gap-7 px-2 md:max-w-[1000px] mx-auto ">
           {coreCompetencies.map((c) => (
             <Link key={c.title} href="/leistungen">
               <div className="h-[80px] bg-slate-100 flex items-center justify-center px-1  border rounded-md shadow-lg">

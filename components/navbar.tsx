@@ -107,7 +107,7 @@ export const Navbar = () => {
                   <Link href="https://novotherm-koeln.de/">
                     <Image
                       fill
-                      src="/novotherm_logo_white.svg"
+                      src="/novotec_logo_nobackground.png"
                       alt="Novotherm Logo"
                       style={{ objectFit: "cover" }}
                       className="pr-1"
@@ -130,22 +130,22 @@ export const Navbar = () => {
             <div className="flex flex-col items-center  mr-4 ">
               <Link href="/">
                 <Image
-                  width={60}
+                  width={220}
                   height={20}
                   alt="Logo"
-                  src="/novotec_logo_pic_only.png"
+                  src="/novotec_logo_nobackground.png"
                   quality={100}
                   sizes="100vw"
                 />
               </Link>
-              <p
+              {/* <p
                 className={cn(
                   "text-white font-bold group-hover:text-gray-600",
                   pathName !== "/" && "text-gray-600"
                 )}
               >
                 NovoTec®
-              </p>
+              </p> */}
             </div>
 
             <div className="text-white group-hover:text-gray-600">
@@ -175,51 +175,72 @@ export const Navbar = () => {
       <div className=" absolute z-[1000] left-0 top-0 w-full md:hidden">
         <div className="text-black w-full  cursor-pointer md:hidden">
           {!nav ? (
-            <div className="flex justify-between p-5 items-center">
-              <Menu
-                className={cn(
-                  " text-white",
-                  pathName !== "/" && "text-gray-600"
-                )}
-                onClick={() => setNav(!nav)}
-              />
-              <div className="flex flex-col items-center justify-center">
+            <div className="relative">
+              <div className="absolute top-4 right-4">
                 <Link href="/">
                   <Image
                     className="object-contain"
-                    width={50}
+                    width={150}
                     height={1}
-                    alt="Logo"
-                    src="/novotec_logo_pic_only.png"
+                    alt="NovoTec Logo"
+                    src="/novotec_logo_nobackground.png"
                     quality={100}
                   />
                 </Link>
-                <p
+              </div>
+              <div className="flex justify-between p-5 items-center">
+                <Menu
                   className={cn(
-                    "font-bold text-white",
+                    " text-white",
                     pathName !== "/" && "text-gray-600"
                   )}
-                >
-                  NovoTec®
-                </p>
+                  onClick={() => setNav(!nav)}
+                />
+                {/* <div className="flex flex-col items-center justify-center">
+                <Link href="/">
+                  <Image
+                    className="object-contain"
+                    width={150}
+                    height={1}
+                    alt="NovoTec Logo"
+                    src="/novotec_logo_nobackground.png"
+                    quality={100}
+                  />
+                </Link>
+   
+              </div> */}
               </div>
             </div>
           ) : (
-            <div className="p-5 flex flex-col w-2/3  items-start    bg-white">
-              <X className="text-gray-600" onClick={() => setNav(!nav)} />
+            <div className="relative">
+              <div className="absolute top-4 right-4">
+                <Link href="/">
+                  <Image
+                    className="object-contain"
+                    width={150}
+                    height={1}
+                    alt="NovoTec Logo"
+                    src="/novotec_logo_nobackground.png"
+                    quality={100}
+                  />
+                </Link>
+              </div>
+              <div className="p-5 flex flex-col w-2/3  items-start    bg-white">
+                <X className="text-gray-600" onClick={() => setNav(!nav)} />
 
-              <ul className="flex flex-col text-lg w-full mt-5 gap-y-4 items-center justify-start h-screen">
-                {routes.map((route) => (
-                  <Link
-                    onClick={() => setNav(!nav)}
-                    key={route.label}
-                    className="group p-3 w-full border-b font-medium hover:text-primary-foreground hover:bg-secondary/10 rounded-lg transition"
-                    href={route.link}
-                  >
-                    {route.label}
-                  </Link>
-                ))}
-              </ul>
+                <ul className="flex flex-col text-lg w-full mt-5 gap-y-4 items-center justify-start h-screen">
+                  {routes.map((route) => (
+                    <Link
+                      onClick={() => setNav(!nav)}
+                      key={route.label}
+                      className="group p-3 w-full border-b font-medium hover:text-primary-foreground hover:bg-secondary/10 rounded-lg transition"
+                      href={route.link}
+                    >
+                      {route.label}
+                    </Link>
+                  ))}
+                </ul>
+              </div>
             </div>
           )}
         </div>
