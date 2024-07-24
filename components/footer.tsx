@@ -70,7 +70,7 @@ export const Footer = () => {
             <li className="flex items-center">
               <Clock size={24} className="mr-5" />
               Öffnungszeiten <br />
-              Mo bis Fr von 8.00 – 16.30 Uhr <br />
+              Mo bis Fr von 7.30 – 16.30 Uhr <br />
             </li>
           </ul>
         </div>
