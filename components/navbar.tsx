@@ -124,7 +124,7 @@ export const Navbar = () => {
           <div
             className={cn(
               "px-5 hidden md:flex flex-1 h-[100px] hover:text-gray-600  hover:bg-white items-center justify-between",
-              pathName === "/" && "group"
+              pathName === "/" ? "group" : "bg-white"
             )}
           >
             <div className="flex flex-col items-center  mr-4 ">
