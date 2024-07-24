@@ -107,7 +107,7 @@ export const Navbar = () => {
                   <Link href="https://novotherm-koeln.de/">
                     <Image
                       fill
-                      src="/novotec_logo_nobackground.png"
+                      src="/novotherm_logo_white.svg"
                       alt="Novotherm Logo"
                       style={{ objectFit: "cover" }}
                       className="pr-1"

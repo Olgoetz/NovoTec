@@ -82,8 +82,9 @@ export const Hero = () => {
             </div>
             <div className="flex flex-col justify-center text-sm md:text-lg leading-8 ">
               <p>
-                Wir sind ein Qualitätsdienstleister aus dem Rheinland im Bereich
-                Ausbau- und Sanierungsmanagement mit über 10 Jahren Erfahrung.
+                Als erfahrener Qualitätsdienstleister aus dem Rheinland bieten
+                wir seit nun fast 15 Jahren erstklassige Leistungen im Ausbau-
+                und Sanierungsmanagement
               </p>
             </div>
 
