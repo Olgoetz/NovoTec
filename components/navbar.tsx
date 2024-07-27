@@ -172,7 +172,7 @@ export const Navbar = () => {
         </div>
         {/* Mobile Menu */}
       </div>
-      <div className=" absolute z-[1000] left-0 top-0 w-full md:hidden">
+      <div className="fixed z-[10000] bg-white left-0 top-0 w-full md:hidden">
         <div className="text-black w-full  cursor-pointer md:hidden">
           {!nav ? (
             <div className="relative">
@@ -189,13 +189,7 @@ export const Navbar = () => {
                 </Link>
               </div>
               <div className="flex justify-between p-5 items-center">
-                <Menu
-                  className={cn(
-                    " text-white",
-                    pathName !== "/" && "text-gray-600"
-                  )}
-                  onClick={() => setNav(!nav)}
-                />
+                <Menu className="text-gray-600" onClick={() => setNav(!nav)} />
                 {/* <div className="flex flex-col items-center justify-center">
                 <Link href="/">
                   <Image

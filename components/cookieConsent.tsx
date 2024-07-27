@@ -19,9 +19,9 @@ const CookieConsent = () => {
   const [acceptedCategories, setAcceptedCategories] = useState([]);
 
   return (
-    <div>
+    <div className="">
       <CookieConsentBanner
-        className="text-green"
+        className="bg-white text-green"
         handlePreferencesUpdated={initConsent}
         handlePreferencesRestored={initConsent}
         btnLabelAcceptAndContinue="Zustimmen und fortfahren"

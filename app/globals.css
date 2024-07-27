@@ -129,8 +129,12 @@
   --cookie-consent-banner-colors-secondary: transparent;
   --cookie-consent-banner-colors-secondary-border: #fff;
   --cookie-consent-banner-colors-secondary-content: #fff;
-  --cookie-consent-banner-colors-background-body: rgba(25, 31, 34, 0.92);
+  /* --cookie-consent-banner-colors-background-body: rgba(25, 31, 34, 0.92); */
+  --cookie-consent-banner-colors-background-body: #000000;
   --cookie-consent-banner-colors-text: #fff;
+
+  /* Z-INDEX */
+  --cookie-consent-banner-z-index-container: 99999;
 
   /* FONTS */
   --cookie-consent-banner-font-family-headline: inherit;
