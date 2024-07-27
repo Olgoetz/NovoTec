@@ -172,7 +172,7 @@ export const Navbar = () => {
         </div>
         {/* Mobile Menu */}
       </div>
-      <div className=" absolute z-[1000] left-0 top-0 w-full md:hidden">
+      <div className="fixed z-[10000] bg-white left-0 top-0 w-full md:hidden">
         <div className="text-black w-full  cursor-pointer md:hidden">
           {!nav ? (
             <div className="relative">
