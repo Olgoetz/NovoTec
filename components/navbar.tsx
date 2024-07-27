@@ -189,13 +189,7 @@ export const Navbar = () => {
                 </Link>
               </div>
               <div className="flex justify-between p-5 items-center">
-                <Menu
-                  className={cn(
-                    " text-white",
-                    pathName !== "/" && "text-gray-600"
-                  )}
-                  onClick={() => setNav(!nav)}
-                />
+                <Menu className="text-gray-600" onClick={() => setNav(!nav)} />
                 {/* <div className="flex flex-col items-center justify-center">
                 <Link href="/">
                   <Image
