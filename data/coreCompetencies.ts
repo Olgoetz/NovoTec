@@ -1,7 +1,8 @@
 import { Competency } from "@/types/competency";
 import { Building, Droplet, Flame, Leaf, Presentation } from "lucide-react";
 import { MdOutlineWindow } from "react-icons/md";
-import Image from "next/image";
+import { FaSwimmingPool, FaBath } from "react-icons/fa";
+
 const coreCompetencies: Competency[] = [
   {
     title: "Wasserschadensanierung",
@@ -77,6 +78,36 @@ const coreCompetencies: Competency[] = [
     ],
     containerStyles: "",
     icon: MdOutlineWindow,
+    iconStyles1: "h-8 w-8 md:w-[180px]",
+    iconStyles2: "h-12 w-12 md:w-[180px]",
+    //  image: Image,
+  },
+  {
+    title: "Masterbäder",
+    description: [
+      "• Luxuriöse Gestaltung und individuelles Design",
+      "• Maßgeschneiderte Planung und Umsetzung",
+      "• Verwendung erstklassiger Materialien",
+      "• Integration modernster Technik",
+      "• Präzise Handwerkskunst für höchste Qualität",
+    ],
+    containerStyles: "",
+    icon: FaBath,
+    iconStyles1: "h-8 w-8 md:w-[180px]",
+    iconStyles2: "h-12 w-12 md:w-[180px]",
+    //  image: Image,
+  },
+  {
+    title: "Schwimmbeckensanierung",
+    description: [
+      "• Fachgerechte Fliesenverlegung und -reparatur",
+      "• Hochwertige Abdichtungsarbeiten für dauerhafte Dichtigkeit",
+      "• Sanierung und Erneuerung von Fliesenbelägen",
+      "• Einsatz langlebiger und ästhetischer Fliesenmaterialien",
+      "• Präzise Fugenarbeiten und Veredelungstechniken",
+    ],
+    containerStyles: "",
+    icon: FaSwimmingPool,
     iconStyles1: "h-8 w-8 md:w-[180px]",
     iconStyles2: "h-12 w-12 md:w-[180px]",
     //  image: Image,

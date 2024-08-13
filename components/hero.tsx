@@ -90,7 +90,7 @@ export const Hero = () => {
 
             <div className="flex flex-col md:items-start items-center justify-center w-full text-sm md:text-lg leading-8 ">
               <div>
-                <p className="py-6">Unser Angebot umfasst 6 Kernkompetenzen</p>
+                <p className="py-6">Unser Angebot umfasst 8 Kernkompetenzen</p>
 
                 <ChevronDown className="w-full" size={40} />
               </div>
@@ -99,13 +99,13 @@ export const Hero = () => {
         </div>
         <BackgroundVideo />
 
-        <div className="py-20 font-semibold grid md:grid-cols-3 gap-7 px-2 md:max-w-[1000px] mx-auto ">
+        <div className="container py-20 font-semibold grid md:grid-cols-4 gap-7  mx-auto ">
           {coreCompetencies.map((c) => (
             <Link key={c.title} href="/leistungen">
               <div className="h-[80px] bg-slate-100 flex items-center justify-center px-1  border rounded-md shadow-lg">
                 <div
                   className={cn(
-                    "flex items-center justify-start w-[270px]",
+                    "flex items-center justify-start ",
                     c.containerStyles
                   )}
                 >

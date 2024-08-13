@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Mail, Menu, Phone, X } from "lucide-react";
 import clsx from "clsx";
@@ -44,26 +44,33 @@ const routes = [
 export const Navbar = () => {
   const [nav, setNav] = useState(false);
   const pathName = usePathname();
-  // const [isScrolling, setIsScrolling] = useState(false);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 70) {
-  //       setIsScrolling(true);
-  //     } else {
-  //       setIsScrolling(false);
-  //     }
-  //   };
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [navbarBg, setNavbarBg] = useState("");
+  const controlNavbar = () => {
+    // Check if the window object is available
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        // Scrolling down
+        setNavbarBg("bg-white text-gray-600");
+      } else {
+        // Scrolling up
+        setNavbarBg("");
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+  useEffect(() => {
+    // Add event listener only if the window object is available
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
 
-  //   // Attach the scroll event listener
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   // Clean up the event listener on unmount
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
+      // Cleanup function to remove the event listener
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
   return (
     <>
       <div
@@ -124,7 +131,7 @@ export const Navbar = () => {
           <div
             className={cn(
               "px-5 hidden md:flex flex-1 h-[100px] hover:text-gray-600  hover:bg-white items-center justify-between",
-              pathName === "/" ? "group" : "bg-white"
+              pathName === "/" ? `group ${navbarBg}` : "bg-white"
             )}
           >
             <div className="flex flex-col items-center  mr-4 ">
@@ -155,7 +162,7 @@ export const Navbar = () => {
                     key={route.label}
                     className={cn(
                       "group p-3 font-bold hover:text-primary-foreground hover:bg-secondary/10 rounded-lg transition",
-                      pathName !== "/" && "text-gray-600"
+                      pathName === "/" ? `${navbarBg}` : "text-gray-600"
                       // {
                       //   "text-primary-foreground bg-secondary/10":
                       //     pathName === route.link,
