@@ -1,7 +1,7 @@
 import { Competency } from "@/types/competency";
 import { Building, Droplet, Flame, Leaf, Presentation } from "lucide-react";
 import { MdOutlineWindow } from "react-icons/md";
-import Image from "next/image";
+import { PiBathtub, PiSwimmingPool } from "react-icons/pi";
 const coreCompetencies: Competency[] = [
   {
     title: "Wasserschadensanierung",
@@ -26,6 +26,50 @@ const coreCompetencies: Competency[] = [
     iconStyles1: "h-8 w-8 md:w-[180px]",
     iconStyles2: "h-12 w-12 md:w-[180px]",
   },
+
+  {
+    title: "Energieeffiziente Sanierung",
+    description: [
+      "• Energieeffiziente Sanierungen nach den Vorgaben eines individuellen Sanierungsfahrplans (iSFP), welcher zuvor durch einen Energieeffizienzberater erstellt wurde",
+      "• Wärmedämmung der Außenwände, des Dachs und des Kellerbereichs",
+    ],
+    externalLink: "https://novotherm-koeln.de/",
+    containerStyles: "",
+    icon: Leaf,
+    iconStyles1: "h-8 w-8",
+    iconStyles2: "h-12 w-12",
+  },
+
+  {
+    title: "Masterbäder",
+    description: [
+      "• Luxuriöse Gestaltung und individuelles Design",
+      "• Maßgeschneiderte Planung und Umsetzung",
+      "• Verwendung erstklassiger Materialien",
+      "• Integration modernster Technik",
+      "• Präzise Handwerkskunst für höchste Qualität",
+    ],
+    containerStyles: "",
+    icon: PiBathtub,
+    iconStyles1: "h-8 w-8 md:w-[180px]",
+    iconStyles2: "h-12 w-12 md:w-[180px]",
+    //  image: Image,
+  },
+  {
+    title: "Schwimmbeckensanierung",
+    description: [
+      "• Fachgerechte Fliesenverlegung und -reparatur",
+      "• Hochwertige Abdichtungsarbeiten für dauerhafte Dichtigkeit",
+      "• Sanierung und Erneuerung von Fliesenbelägen",
+      "• Einsatz langlebiger und ästhetischer Fliesenmaterialien",
+      "• Präzise Fugenarbeiten und Veredelungstechniken",
+    ],
+    containerStyles: "",
+    icon: PiSwimmingPool,
+    iconStyles1: "h-8 w-8 md:w-[180px]",
+    iconStyles2: "h-12 w-12 md:w-[180px]",
+    //  image: Image,
+  },
   {
     title: "Innen- und Dachausbauten",
     description: [
@@ -41,17 +85,17 @@ const coreCompetencies: Competency[] = [
     iconStyles2: "h-12 w-12",
   },
   {
-    title: "Energieeffiziente Sanierung",
+    title: "Bauelemente",
     description: [
-      "• Energieeffiziente Sanierungen nach den Vorgaben eines individuellen Sanierungsfahrplans (iSFP), welcher zuvor durch einen Energieeffizienzberater erstellt wurde",
-      "• Wärmedämmung der Außenwände, des Dachs und des Kellerbereichs",
+      "• Verkauf und Montage von Bauelementen wie Wohnungs- und Zimmertüren, Fenstern, großflächige Fensterelemente für Treppenhäuser",
     ],
-    externalLink: "https://novotherm-koeln.de/",
     containerStyles: "",
-    icon: Leaf,
-    iconStyles1: "h-8 w-8",
-    iconStyles2: "h-12 w-12",
+    icon: MdOutlineWindow,
+    iconStyles1: "h-8 w-8 md:w-[180px]",
+    iconStyles2: "h-12 w-12 md:w-[180px]",
+    //  image: Image,
   },
+
   {
     title: "Projektleitung",
     description: [
@@ -69,17 +113,6 @@ const coreCompetencies: Competency[] = [
     icon: Presentation,
     iconStyles1: "h-8 w-8 md:w-[180px]",
     iconStyles2: "h-12 w-12 md:w-[180px]",
-  },
-  {
-    title: "Bauelemente",
-    description: [
-      "• Verkauf und Montage von Bauelementen wie Wohnungs- und Zimmertüren, Fenstern, großflächige Fensterelemente für Treppenhäuser",
-    ],
-    containerStyles: "",
-    icon: MdOutlineWindow,
-    iconStyles1: "h-8 w-8 md:w-[180px]",
-    iconStyles2: "h-12 w-12 md:w-[180px]",
-    //  image: Image,
   },
 ];
 
