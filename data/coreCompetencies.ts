@@ -39,24 +39,6 @@ const coreCompetencies: Competency[] = [
     iconStyles1: "h-8 w-8",
     iconStyles2: "h-12 w-12",
   },
-  {
-    title: "Projektleitung",
-    description: [
-      "• Nahtlose Koordination aller Gewerke",
-      "• Offene und transparente Kommunikation",
-      "• Erstklassige Qualitätsansprüche",
-      "• Versiertes Projektmanagement mit präziser Zeiteinteilung und fortlaufender Überwachung",
-      "• Ganzheitliche Herangehensweise zur Minimierung von Schnittstellen",
-      "• Individuelle, effiziente und verlässliche Projektdurchführung",
-      "• Kontinuierliche Kostenkontrolle",
-      "• Ressourcenallokation und umfassende Risikosteuerung",
-      "• Ziel: Erfolgreicher Abschluss Ihres Vorhabens",
-    ],
-    containerStyles: "",
-    icon: Presentation,
-    iconStyles1: "h-8 w-8 md:w-[180px]",
-    iconStyles2: "h-12 w-12 md:w-[180px]",
-  },
 
   {
     title: "Masterbäder",
@@ -112,6 +94,25 @@ const coreCompetencies: Competency[] = [
     iconStyles1: "h-8 w-8 md:w-[180px]",
     iconStyles2: "h-12 w-12 md:w-[180px]",
     //  image: Image,
+  },
+
+  {
+    title: "Projektleitung",
+    description: [
+      "• Nahtlose Koordination aller Gewerke",
+      "• Offene und transparente Kommunikation",
+      "• Erstklassige Qualitätsansprüche",
+      "• Versiertes Projektmanagement mit präziser Zeiteinteilung und fortlaufender Überwachung",
+      "• Ganzheitliche Herangehensweise zur Minimierung von Schnittstellen",
+      "• Individuelle, effiziente und verlässliche Projektdurchführung",
+      "• Kontinuierliche Kostenkontrolle",
+      "• Ressourcenallokation und umfassende Risikosteuerung",
+      "• Ziel: Erfolgreicher Abschluss Ihres Vorhabens",
+    ],
+    containerStyles: "",
+    icon: Presentation,
+    iconStyles1: "h-8 w-8 md:w-[180px]",
+    iconStyles2: "h-12 w-12 md:w-[180px]",
   },
 ];
 
