@@ -1,8 +1,7 @@
 import { Competency } from "@/types/competency";
 import { Building, Droplet, Flame, Leaf, Presentation } from "lucide-react";
 import { MdOutlineWindow } from "react-icons/md";
-import { FaSwimmingPool, FaBath } from "react-icons/fa";
-
+import { PiBathtub, PiSwimmingPool } from "react-icons/pi";
 const coreCompetencies: Competency[] = [
   {
     title: "Wasserschadensanierung",
@@ -27,20 +26,7 @@ const coreCompetencies: Competency[] = [
     iconStyles1: "h-8 w-8 md:w-[180px]",
     iconStyles2: "h-12 w-12 md:w-[180px]",
   },
-  {
-    title: "Innen- und Dachausbauten",
-    description: [
-      "• Modernisierung, Sanierung und Revitalisierung von Wohn- und Gewerbeflächen",
-      "• Komplette Innenausbauten",
-      "• Dachausbau und Dachaufstocken",
-      "• Etagenaufstockungen",
-      "• Badneubau und -umbau",
-    ],
-    containerStyles: "",
-    icon: Building,
-    iconStyles1: "h-8 w-8",
-    iconStyles2: "h-12 w-12",
-  },
+
   {
     title: "Energieeffiziente Sanierung",
     description: [
@@ -71,17 +57,7 @@ const coreCompetencies: Competency[] = [
     iconStyles1: "h-8 w-8 md:w-[180px]",
     iconStyles2: "h-12 w-12 md:w-[180px]",
   },
-  {
-    title: "Bauelemente",
-    description: [
-      "• Verkauf und Montage von Bauelementen wie Wohnungs- und Zimmertüren, Fenstern, großflächige Fensterelemente für Treppenhäuser",
-    ],
-    containerStyles: "",
-    icon: MdOutlineWindow,
-    iconStyles1: "h-8 w-8 md:w-[180px]",
-    iconStyles2: "h-12 w-12 md:w-[180px]",
-    //  image: Image,
-  },
+
   {
     title: "Masterbäder",
     description: [
@@ -92,7 +68,7 @@ const coreCompetencies: Competency[] = [
       "• Präzise Handwerkskunst für höchste Qualität",
     ],
     containerStyles: "",
-    icon: FaBath,
+    icon: PiBathtub,
     iconStyles1: "h-8 w-8 md:w-[180px]",
     iconStyles2: "h-12 w-12 md:w-[180px]",
     //  image: Image,
@@ -107,7 +83,32 @@ const coreCompetencies: Competency[] = [
       "• Präzise Fugenarbeiten und Veredelungstechniken",
     ],
     containerStyles: "",
-    icon: FaSwimmingPool,
+    icon: PiSwimmingPool,
+    iconStyles1: "h-8 w-8 md:w-[180px]",
+    iconStyles2: "h-12 w-12 md:w-[180px]",
+    //  image: Image,
+  },
+  {
+    title: "Innen- und Dachausbauten",
+    description: [
+      "• Modernisierung, Sanierung und Revitalisierung von Wohn- und Gewerbeflächen",
+      "• Komplette Innenausbauten",
+      "• Dachausbau und Dachaufstocken",
+      "• Etagenaufstockungen",
+      "• Badneubau und -umbau",
+    ],
+    containerStyles: "",
+    icon: Building,
+    iconStyles1: "h-8 w-8",
+    iconStyles2: "h-12 w-12",
+  },
+  {
+    title: "Bauelemente",
+    description: [
+      "• Verkauf und Montage von Bauelementen wie Wohnungs- und Zimmertüren, Fenstern, großflächige Fensterelemente für Treppenhäuser",
+    ],
+    containerStyles: "",
+    icon: MdOutlineWindow,
     iconStyles1: "h-8 w-8 md:w-[180px]",
     iconStyles2: "h-12 w-12 md:w-[180px]",
     //  image: Image,

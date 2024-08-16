@@ -41,7 +41,7 @@ export const Services = () => {
         <h2 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
           Ausbau- und Sanierungsmanagement - unsere Kernkompetenzen
         </h2>
-        <div className="grid md:grid-cols-3  items-center gap-8 ">
+        <div className="grid md:grid-cols-2  items-center gap-8 ">
           {coreCompetencies.map((c) => (
             <div
               key={c.title}
