@@ -29,7 +29,7 @@ export default function Step_2({ form }: Step2Props) {
     const params = new URLSearchParams();
     params.set("step", "2");
     replace(`${pathname}?${params.toString()}`);
-  }, []);
+  }, [replace, pathname]);
   const years: number[] = [];
   const currentYear = new Date().getFullYear();
   for (let year = 1970; year <= currentYear; year++) {
