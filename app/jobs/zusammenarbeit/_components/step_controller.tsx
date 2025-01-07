@@ -31,7 +31,6 @@ import Link from "next/link";
 
 import FormButton from "@/components/form-button";
 
-import { fetchOutlookEvents } from "../_lib/actions";
 import { useAction } from "next-safe-action/hooks";
 import toast from "react-hot-toast";
 
