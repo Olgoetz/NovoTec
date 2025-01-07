@@ -1,4 +1,4 @@
-import { action } from "@/lib/safe-action-clients";
+import { actionClient } from "@/lib/safe-action-clients";
 import { z } from "zod";
 import { sendMail } from "./resend";
 import { File } from "buffer";
@@ -54,16 +54,18 @@ export const EmailFormSchema = FormSchema.omit({
 
 export type TEmailFormSchema = z.infer<typeof EmailFormSchema>;
 
-export const submitSafeInquiry = action(EmailFormSchema, async (data) => {
-  //   const timeout = (ms: number) => {
-  //     return new Promise((resolve) => setTimeout(resolve, ms));
-  //   };
-  //   await timeout(3000);
-  // console.log("data", data);
+export const submitSafeInquiry = actionClient
+  .schema(EmailFormSchema)
+  .action(async (data) => {
+    //   const timeout = (ms: number) => {
+    //     return new Promise((resolve) => setTimeout(resolve, ms));
+    //   };
+    //   await timeout(3000);
+    // console.log("data", data);
 
-  const res = await sendMail(data);
+    const res = await sendMail(data);
 
-  //console.log("res", res);
-  //return JSON.stringify(res);
-  return res;
-});
+    //console.log("res", res);
+    //return JSON.stringify(res);
+    return res;
+  });

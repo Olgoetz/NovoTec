@@ -31,7 +31,6 @@ import Link from "next/link";
 
 import FormButton from "@/components/form-button";
 
-import { fetchOutlookEvents } from "../_lib/actions";
 import { useAction } from "next-safe-action/hooks";
 import toast from "react-hot-toast";
 
@@ -43,26 +42,46 @@ const StepController = () => {
   const searchParams = useSearchParams();
   const [currentStep, setCurrentStep] = useState(1);
   const step = searchParams.get("step")?.toString();
-  const nextStep = async () => {
+  const nextStep = () => {
     let isValid = false;
     if (step === "3") {
-      isValid = await form.trigger("step3_zipCode");
+      form
+        .trigger("step3_zipCode")
+        .then((valid) => {
+          isValid = valid;
+          handleStep(isValid);
+        })
+        .catch(() => handleStep(false));
     } else if (step === "7") {
-      isValid = await form.trigger([
-        "step7_firstName",
-        "step7_lastName",
-        "step7_email",
-        "step7_phone",
-      ]);
-
-      if (isValid) {
-        setShowCalendar(true);
-      } else {
-        setShowCalendar(false);
-      }
+      form
+        .trigger([
+          "step7_firstName",
+          "step7_lastName",
+          "step7_email",
+          "step7_phone",
+        ])
+        .then((valid) => {
+          isValid = valid;
+          if (isValid) {
+            setShowCalendar(true);
+          } else {
+            setShowCalendar(false);
+          }
+          handleStep(isValid);
+        })
+        .catch(() => handleStep(false));
     } else {
-      isValid = await form.trigger(`step${step}` as any);
+      form
+        .trigger(`step${step}` as any)
+        .then((valid) => handleStep(valid))
+        .catch(() => handleStep(false));
     }
+    if (!isValid) return;
+
+    setCurrentStep(currentStep + 1);
+  };
+
+  const handleStep = (isValid: boolean) => {
     if (!isValid) return;
 
     setCurrentStep(currentStep + 1);
@@ -129,31 +148,6 @@ const StepController = () => {
       step9: "",
     },
   });
-
-  // const { accounts, instance } = useMsal();
-  // console.log(instance);
-  // const account = accounts[0];
-
-  // const graphClient = Client.initWithMiddleware({
-  //   authProvider: {
-  //     getAccessToken: async () => {
-  //       const { accessToken } = await instance.acquireTokenSilent({
-  //         scopes: ["user.read", "calendars.read"],
-  //         account: account,
-  //       });
-  //       return accessToken;
-  //     },
-  //   },
-  // });
-
-  // useEffect(() => {
-  //   const fetchEvents = async () => {
-  //     const result = await fetchOutlookEvents();
-  //     console.log(result);
-  //   };
-
-  //   fetchEvents();
-  // }, []);
 
   // Handle form submission
   const [isAccepted, setIsAccepted] = useState(false);

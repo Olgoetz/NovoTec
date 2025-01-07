@@ -1,10 +1,7 @@
-"use client";
-
 import StepController from "./_components/step_controller";
 import { Suspense } from "react";
-import { MsalProvider } from "@azure/msal-react";
 
-export default async function Page() {
+export default function Page() {
   return (
     <main className="py-20 mt-10 md:mt-20 container">
       <h1 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">

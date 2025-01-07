@@ -12,7 +12,7 @@ const NovoTec = ({ classes }: Styles) => {
           <span className="text-secondary-foreground">Novo</span>
           <span className="text-primary-foreground">Tec</span>
         </p>
-        <AiOutlineTrademark size={10} className="ml-[1px] text-novo-gray" />
+        <AiOutlineTrademark className="ml-[1px] text-novo-gray" />
       </div>
     </div>
   );
