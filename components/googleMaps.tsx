@@ -112,7 +112,7 @@ function GoogleMaps() {
         />
         <InfoWindow position={{ lat: 51.04005, lng: 7.01794 }}>
           <div className="text-xs">
-            <p className="font-bold">NovoTec GmbH & Co. KG</p>
+            <p className="font-bold">NovoTec GmbH</p>
             <p>Friedrich-Sertürner-Str. 18</p>
             <p>51377 Leverkusen</p>
           </div>
