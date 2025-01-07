@@ -9,10 +9,10 @@ const page = () => {
         </h1>
         <p className="font-semibold mt-5">Angaben gemäß § 5 TMG:</p>
         <p>
-          NovoTec GmbH & Co. KG Friedrich-Sertürner-Str. 18 51377 Leverkusen
+          NovoTec GmbH, Friedrich-Sertürner-Str. 18, 51377 Leverkusen
           <br />
-          vertreten durch: Thomas Jaworski <br />
-          Prokuristen: Magdalena Jaworski & Patrick Jaworski
+          vertreten durch: Thomas Jaworski & Patrick Jaworski <br />
+          Prokuristin: Magdalena Jaworski
         </p>
 
         <p className="font-semibold mt-5">Kontakt:</p>
@@ -27,7 +27,7 @@ const page = () => {
         <p>
           Eintragung im Handelsregister <br />
           Registergericht: Amtsgericht Köln <br />
-          Registernummer: HRA 27597 HRB 17914 <br />
+          Registernummer: HRB 17914 <br />
         </p>
         <p className="font-semibold mt-5">Umsatzsteuer-ID:</p>
         <p>
@@ -52,8 +52,8 @@ const page = () => {
           Hinweis zum Verbraucherstreitbeilegungsgesetz (VSBG):
         </p>
         <p>
-          Die Firma NovoTec GmbH & Co. KG ist nicht bereit und nicht
-          verpflichtet, an einem Streitbeilegungsverfahren vor einer
+          Die Firma NovoTec GmbH ist nicht bereit und nicht verpflichtet, an
+          einem Streitbeilegungsverfahren vor einer
           Verbraucherschlichtungsstelle teilzunehmen.
         </p>
         <p className="font-semibold mt-5">Haftungsausschluss:</p>

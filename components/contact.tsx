@@ -30,8 +30,7 @@ export default function Contact() {
               </li>
               <li className="flex items-center">
                 <MapPin size={30} className="mr-5" />
-                NovoTec GmbH & Co. KG, Friedrich-Sertürner-Str. 18, 51377
-                Leverkusen
+                NovoTec GmbH, Friedrich-Sertürner-Str. 18, 51377 Leverkusen
               </li>
             </ul>
           </div>

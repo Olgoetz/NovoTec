@@ -63,7 +63,8 @@ export const Footer = () => {
             </li>
             <li className="flex items-center">
               <MapPin size={24} className="mr-5" />
-              NovoTec GmbH & Co. KG <br />
+              NovoTec GmbH
+              <br />
               Friedrich-Sertürner-Str. 18 <br />
               51377 Leverkusen
             </li>
@@ -88,7 +89,7 @@ export const Footer = () => {
 
       <div className="flex items-center justify-center flex-1 py-10">
         <CopyrightIcon className="h-5 w-5 mr-3" />
-        <p>{currentYear} NovoTec GmbH & Co. KG</p>
+        <p>{currentYear} NovoTec GmbH</p>
       </div>
     </div>
   );
