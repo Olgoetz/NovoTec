@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Html, Body, Container, Tailwind } from "@react-email/components";
-import { TEmailFormSchema, TFormSchema } from "../_lib/actions";
+import { TEmailFormSchema, TFormSchema } from "../_lib/validation";
 
 export const EmailTemplate = (body: TEmailFormSchema) => {
   const { name, email, phone, description, fileUrlsString, location, zipCode } =
