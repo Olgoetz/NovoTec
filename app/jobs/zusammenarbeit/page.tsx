@@ -1,5 +1,3 @@
-"use client";
-
 import StepController from "./_components/step_controller";
 import { Suspense } from "react";
 
