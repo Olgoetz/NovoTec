@@ -47,7 +47,9 @@ export const EmailFormSchema = FormSchema.omit({
 
 export type TEmailFormSchema = z.infer<typeof EmailFormSchema>;
 
-export const submitSafeInquiry = action(EmailFormSchema, async (data) => {
-  const res = await sendMail(data);
-  return res;
-});
+export const submitSafeInquiry = action
+  .schema(EmailFormSchema)
+  .action(async (data: any) => {
+    const res = await sendMail(data);
+    return res;
+  });
