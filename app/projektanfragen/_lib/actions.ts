@@ -1,4 +1,4 @@
-"use sever";
+"use server";
 import { action } from "@/lib/safe-action-clients";
 import { z } from "zod";
 
