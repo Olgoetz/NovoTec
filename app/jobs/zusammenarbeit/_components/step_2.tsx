@@ -1,4 +1,7 @@
 "use client";
+
+import React, { useEffect } from "react";
+import { UseFormReturn } from "react-hook-form";
 import {
   FormControl,
   FormDescription,
@@ -7,9 +10,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import React, { useEffect } from "react";
-import { UseFormReturn } from "react-hook-form";
-import { TFormSchema } from "../_lib/validations";
 import {
   Select,
   SelectContent,
@@ -18,25 +18,30 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { usePathname, useRouter } from "next/navigation";
-import path from "path";
+import { TFormSchema } from "../_lib/validations";
 
 interface Step2Props {
   form: UseFormReturn<TFormSchema>;
 }
 
 export default function Step_2({ form }: Step2Props) {
-  const router = useRouter();
-  const pathname = usePathname();
+  const router = useRouter(); // Use the router object directly
+  const pathname = usePathname(); // Get the current path
+
+  // Update the query parameter for the step
   useEffect(() => {
     const params = new URLSearchParams();
     params.set("step", "2");
     router.replace(`${pathname}?${params.toString()}`);
-  }, [pathname, router]);
-  const years: number[] = [];
+  }, [pathname, router]); // Add dependencies to ensure stable behavior
+
+  // Generate years dynamically
   const currentYear = new Date().getFullYear();
-  for (let year = 1970; year <= currentYear; year++) {
-    years.push(year);
-  }
+  const years = Array.from(
+    { length: currentYear - 1970 + 1 },
+    (_, i) => 1970 + i
+  );
+
   return (
     <div className="md:h-[150px]">
       <FormField
@@ -49,7 +54,7 @@ export default function Step_2({ form }: Step2Props) {
                 Seit wann bist du als Handwerker tätig?
               </FormLabel>
               <FormDescription>
-                Wähle das Jahr aus, in dem du deine Tätigkeit aufgenommen hast.{" "}
+                Wähle das Jahr aus, in dem du deine Tätigkeit aufgenommen hast.
               </FormDescription>
             </div>
             <div className="w-28">
@@ -60,15 +65,14 @@ export default function Step_2({ form }: Step2Props) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {years.map((year, index) => (
-                    <SelectItem key={index} value={year.toString()}>
+                  {years.map((year) => (
+                    <SelectItem key={year} value={year.toString()}>
                       {year}
                     </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
             </div>
-
             <FormMessage />
           </FormItem>
         )}
