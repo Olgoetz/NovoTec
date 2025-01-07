@@ -17,19 +17,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { usePathname, useRouter } from "next/navigation";
+import path from "path";
 
 interface Step2Props {
   form: UseFormReturn<TFormSchema>;
 }
 
 export default function Step_2({ form }: Step2Props) {
-  const { replace } = useRouter();
+  const router = useRouter();
   const pathname = usePathname();
   useEffect(() => {
     const params = new URLSearchParams();
     params.set("step", "2");
-    replace(`${pathname}?${params.toString()}`);
-  }, [replace, pathname]);
+    router.replace(`${pathname}?${params.toString()}`);
+  }, [pathname, router]);
   const years: number[] = [];
   const currentYear = new Date().getFullYear();
   for (let year = 1970; year <= currentYear; year++) {
