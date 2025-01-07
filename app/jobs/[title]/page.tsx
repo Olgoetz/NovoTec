@@ -8,12 +8,16 @@ export async function generateStaticParams() {
     title: job.fields.titleUrlFriendly,
   }));
 }
-export default async function Page({ params }: { params: { title: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ title: string }>;
+}) {
   const jobs = await getContentByType("job");
 
   return (
     <>
-      <JobSingle jobs={jobs} titleUrlFriendly={params.title} />
+      <JobSingle jobs={jobs} titleUrlFriendly={(await params).title} />
     </>
   );
 }
