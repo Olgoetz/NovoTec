@@ -2,7 +2,6 @@
 
 import StepController from "./_components/step_controller";
 import { Suspense } from "react";
-import { MsalProvider } from "@azure/msal-react";
 
 export default async function Page() {
   return (
