@@ -27,12 +27,12 @@ const page = () => {
         <p>
           Eintragung im Handelsregister <br />
           Registergericht: Amtsgericht Köln <br />
-          Registernummer: HRB 17914 <br />
+          Registernummer: HRB 68633 <br />
         </p>
         <p className="font-semibold mt-5">Umsatzsteuer-ID:</p>
         <p>
-          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE
-          270536594
+          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
+          DE440717482
         </p>
         <p className="font-semibold mt-5">Aufsichtsbehörde:</p>
         <p>Handwerkskammer zu Köln</p>
