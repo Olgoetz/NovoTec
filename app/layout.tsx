@@ -7,6 +7,7 @@ import CookieConsent from "@/components/cookieConsent";
 import { getDomain } from "@/lib/utils";
 import { Toaster } from "react-hot-toast";
 import { EdgeStoreProvider } from "@/lib/edgestore";
+import { GoogleTagManager } from "@next/third-parties/google";
 const raleway = Raleway({ subsets: ["latin"] });
 const url = getDomain() as string;
 export const metadata: Metadata = {
@@ -49,6 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html className="scroll-smooth" lang="en">
+      <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID as string} />
       <body className={raleway.className}>
         <Toaster />
         <EdgeStoreProvider>

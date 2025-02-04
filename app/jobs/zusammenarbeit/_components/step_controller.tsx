@@ -159,7 +159,8 @@ const StepController = () => {
         position: "bottom-right",
       });
       // form.reset();
-      router.push("/jobs");
+      router.push("/jobs/zusammenarbeit/geschafft");
+
       // setFileStates([]);
       // setUploadRes([]);
     },
@@ -216,7 +217,10 @@ const StepController = () => {
             </div>
             <div className="flex flex-col gap-4 mt-10">
               <p>Aktueller Fortschritt</p>
-              <Progress value={(currentStep / NUMBER_OF_STEPS) * 100} />
+              <Progress
+                className="bg-transparent"
+                value={(currentStep / NUMBER_OF_STEPS) * 100}
+              />
             </div>
 
             <div className="mt-6">
