@@ -30,9 +30,10 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import router from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+  const router = useRouter();
   const [fileStates, setFileStates] = useState<FileState[]>([]);
   const { edgestore } = useEdgeStore();
 
@@ -115,10 +116,6 @@ export default function Page() {
 
   const { execute, result, status } = useAction(submitSafeInquiry, {
     onSuccess() {
-      toast.success("Nachricht erfolgreich verschickt!", {
-        duration: 3000,
-        position: "bottom-right",
-      });
       form.reset();
       setFileStates([]);
       setUploadRes([]);
@@ -139,6 +136,7 @@ export default function Page() {
       location: values.location,
       zipCode: values.zipCode,
     };
+
     execute({ ...payload, fileUrlsString: values.fileUrls.toString() });
     router.push("/projektanfragen/geschafft");
   }
@@ -204,7 +202,7 @@ export default function Page() {
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Beschreibung*</FormLabel>
+                  <FormLabel>Beschreibung (min. 25 Zeichen)*</FormLabel>
                   <FormControl>
                     <Textarea rows={3} {...field} />
                   </FormControl>
@@ -314,7 +312,6 @@ export default function Page() {
                               shouldValidate: true,
                               shouldDirty: true,
                             });
-                            console.log("fileUrls", newFileUrls);
                           } catch (error) {
                             updateFileProgress(fileState.key, "ERROR");
                             // All errors are typed and you will get intellisense for them
