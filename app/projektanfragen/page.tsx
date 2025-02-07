@@ -30,6 +30,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import router from "next/router";
 
 export default function Page() {
   const [fileStates, setFileStates] = useState<FileState[]>([]);
@@ -139,6 +140,7 @@ export default function Page() {
       zipCode: values.zipCode,
     };
     execute({ ...payload, fileUrlsString: values.fileUrls.toString() });
+    router.push("/projektanfragen/geschafft");
   }
 
   return (
