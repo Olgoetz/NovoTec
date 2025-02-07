@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronRightCircle } from "lucide-react";
 
 const Bold = ({ children }: { children: any }) => (
-  <p className="font-bold">{children}</p>
+  <span className="font-bold">{children}</span>
 );
 
 const Text = ({ children }: { children: any }) => (
