@@ -6,6 +6,7 @@ import { TEmailFormSchema, TFormSchema } from "../_lib/validation";
 export const EmailTemplate = (body: TEmailFormSchema) => {
   const { name, email, phone, description, fileUrlsString, location, zipCode } =
     body;
+
   const fileUrls = fileUrlsString.split(",");
   return (
     <Html>

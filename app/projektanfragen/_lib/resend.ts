@@ -12,7 +12,7 @@ export async function sendMail(emailProps: any) {
       subject: `Anfrage über NovoTec Webseite`,
       react: EmailTemplate(emailProps) as React.ReactElement,
     });
-
+    console.log(data);
     if (error) {
       console.error(error);
       return { error, status: 401 };

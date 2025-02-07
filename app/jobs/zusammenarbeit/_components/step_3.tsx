@@ -41,6 +41,7 @@ export default function Step_3({ form }: Step3Props) {
         `https://api.zippopotam.us/de/${zipCode.trim()}`
       );
       const data = response.data;
+
       const city = data.places[0]["place name"];
 
       //  setCity(city); // Update the city state
@@ -95,6 +96,7 @@ export default function Step_3({ form }: Step3Props) {
                   disabled
                   {...field}
                   placeholder="wird automatisch gesetzt"
+                  value={form.getValues("step3_location")}
                 />
               </FormControl>
               <FormMessage />

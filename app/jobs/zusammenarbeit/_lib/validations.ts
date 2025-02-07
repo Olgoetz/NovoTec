@@ -62,8 +62,23 @@ export const submitSafeInquiry = actionClient
     //   };
     //   await timeout(3000);
     // console.log("data", data);
+    const payload = {
+      step1: data.clientInput.step1,
+      step2: data.clientInput.step2,
+      step3_location: data.clientInput.step3_location,
+      step3_zipCode: data.clientInput.step3_zipCode,
+      step4: data.clientInput.step4,
+      step5: data.clientInput.step5,
+      step6: data.clientInput.step6,
+      step7_email: data.clientInput.step7_email,
+      step7_firstName: data.clientInput.step7_firstName,
+      step7_lastName: data.clientInput.step7_lastName,
+      step7_phone: data.clientInput.step7_phone,
+      step8: data.clientInput.step8?.toString(),
+      step9: data.clientInput.step9,
+    };
 
-    const res = await sendMail(data);
+    const res = await sendMail(payload);
 
     //console.log("res", res);
     //return JSON.stringify(res);
