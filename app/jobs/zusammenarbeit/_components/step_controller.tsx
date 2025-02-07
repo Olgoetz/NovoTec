@@ -1,7 +1,7 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { UseFormReturn, set, useForm } from "react-hook-form";
+import { UseFormReturn, useForm } from "react-hook-form";
 
 import { NUMBER_OF_STEPS } from "../_lib/constants";
 
@@ -35,7 +35,6 @@ import { useAction } from "next-safe-action/hooks";
 import toast from "react-hot-toast";
 
 const StepController = () => {
-  const router = useRouter();
   // Manage steps and their state //
 
   // Step validation
@@ -159,7 +158,6 @@ const StepController = () => {
         position: "bottom-right",
       });
       // form.reset();
-      router.push("/jobs/zusammenarbeit/geschafft");
 
       // setFileStates([]);
       // setUploadRes([]);

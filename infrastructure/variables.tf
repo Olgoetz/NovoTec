@@ -39,10 +39,16 @@ variable "RESEND_FROM_EMAIL" {
   type = string
 }
 
-variable "RESEND_TO_EMAIL_NONPROD" {
+variable "RESEND_TO_EMAIL_NONPROD_ZUSAMMENARBEIT" {
   type = string
 }
-variable "RESEND_TO_EMAIL_PROD" {
+variable "RESEND_TO_EMAIL_NONPROD_PROJEKTANFRAGE" {
+  type = string
+}
+variable "RESEND_TO_EMAIL_PROD_ZUSAMMENARBEIT" {
+  type = string
+}
+variable "RESEND_TO_EMAIL_PROD_PROJEKTANFRAGE" {
   type = string
 }
 variable "EDGE_STORE_ACCESS_KEY" {
