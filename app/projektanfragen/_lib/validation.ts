@@ -20,8 +20,8 @@ export const FormSchema = z.object({
   }),
   description: z
     .string({ required_error: "Beschreibung erforderlich" })
-    .min(20, {
-      message: "Beschreibung (min. 25 Zeichen) ist zu kurz",
+    .min(10, {
+      message: "Beschreibung (min. 10 Zeichen) ist zu kurz",
     }),
 
   zipCode: z
@@ -31,7 +31,7 @@ export const FormSchema = z.object({
 
   fileUrls: z
     .array(z.string())
-    .min(1, { message: "Bitte laden Sie mindestens 1 Datei(en) hoch" })
+    //  .min(1, { message: "Bitte laden Sie mindestens 1 Datei(en) hoch" })
     .max(5, { message: "Maximal 5 Dateien erlaubt" }),
 });
 
