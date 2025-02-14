@@ -7,7 +7,7 @@ const Page = () => {
       <CircleCheckBigIcon className="w-20 h-20 text-novo-red" />
 
       <h1 className="text-4xl font-bold">Vielen Dank für Ihre Anfrage!</h1>
-      <p>Wir melden uns schnelltsmöglich bei Ihnen.</p>
+      <p>Wir melden uns schnellstmöglich bei Ihnen.</p>
     </div>
   );
 };
