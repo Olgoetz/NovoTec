@@ -6,8 +6,8 @@ const Page = () => {
     <div className="min-h-screen flex flex-col items-center justify-center">
       <CircleCheckBigIcon className="w-20 h-20 text-novo-red" />
 
-      <h1 className="text-4xl font-bold">Vielen Dank für die Ihre Anfrage!</h1>
-      <p>Wir melden uns schnellsmöglich bei Ihnen.</p>
+      <h1 className="text-4xl font-bold">Vielen Dank für Ihre Anfrage!</h1>
+      <p>Wir melden uns schnellstmöglich bei Ihnen.</p>
     </div>
   );
 };
