@@ -26,17 +26,6 @@ export const Footer = () => {
             Links
           </p>
           <ul className="space-y-5 text-sm">
-            {/* <li>
-              <Link
-                href="https://http://die-immobilien-ankaeufer.de/"
-                className="flex items-center"
-              >
-                <ExternalLink size={24} className="mr-5" />
-                die-immobilien-ankäufer.de - <br />
-                Nachhaltige Bestandssanierung
-              </Link>
-            </li> */}
-
             <li>
               <Link
                 href="https://novotherm-koeln.de/"
@@ -44,6 +33,15 @@ export const Footer = () => {
               >
                 <ExternalLink size={24} className="mr-5" />
                 Novotherm – Heizung & Sanitär
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://immoankaeufer.de/"
+                className="flex items-center"
+              >
+                <ExternalLink size={24} className="mr-5" />
+                immoankaeufer.de
               </Link>
             </li>
           </ul>
