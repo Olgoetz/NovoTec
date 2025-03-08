@@ -41,7 +41,7 @@ export const Footer = () => {
                 className="flex items-center"
               >
                 <ExternalLink size={24} className="mr-5" />
-                immoankaeufer.de
+                ImmoAnkäufer.de
               </Link>
             </li>
           </ul>
