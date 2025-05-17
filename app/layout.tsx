@@ -8,6 +8,7 @@ import { getDomain } from "@/lib/utils";
 import { Toaster } from "react-hot-toast";
 import { EdgeStoreProvider } from "@/lib/edgestore";
 import { GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script";
 const raleway = Raleway({ subsets: ["latin"] });
 const url = getDomain() as string;
 export const metadata: Metadata = {
@@ -61,6 +62,7 @@ export default function RootLayout({
           </div>
         </EdgeStoreProvider>
         <CookieConsent />
+        <Script async src="https://static.trustlocal.de/widget/widget_v2.js" />
       </body>
     </html>
   );

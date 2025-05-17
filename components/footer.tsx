@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import SocialMedia from "./social-media";
+import Script from "next/script";
 export const Footer = () => {
   const [currentYear, setCurrentYear] = useState<number>();
 
@@ -77,10 +78,30 @@ export const Footer = () => {
           <p className=" text-lg mb-5 font-semibold  border-b py-3 border-white">
             Sonstiges
           </p>
-          <ul className="flex flex-col space-y-5 text-sm">
-            <Link href="/datenschutz">Datenschutz</Link>
-            <Link href="/impressum">Impressum</Link>
-            <SocialMedia classes="text-white" />
+          <ul className="space-y-5 text-sm">
+            <li className="pt-1">
+              <Link href="/datenschutz">Datenschutz</Link>
+            </li>
+            <li className="pt-1">
+              <Link href="/impressum">Impressum</Link>
+            </li>
+            <li className="pt-1">
+              <SocialMedia classes="text-white" />
+            </li>
+            <li className="-ml-1">
+              <div
+                className="trustlocal-widget"
+                data-id="256399"
+                data-country-code="DE"
+                data-badge="hidden"
+                data-quote="hidden"
+                data-size="small"
+                data-type="landscape"
+                data-theme="light"
+                data-background="white"
+                data-google="default"
+              />
+            </li>
           </ul>
         </div>
       </div>
