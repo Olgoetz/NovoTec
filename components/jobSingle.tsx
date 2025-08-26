@@ -90,6 +90,8 @@ const JobSingle = async ({
             {documentToReactComponents(job.fields.tasks, renderOptions)}
             <p className="font-bold py-3">Profil:</p>
             {documentToReactComponents(job.fields.profile, renderOptions)}
+            <p className="font-bold py-3">Wir bieten Dir:</p>
+            {documentToReactComponents(job.fields.benefits, renderOptions)}
           </CardContent>
           <CardFooter>
             <div className="flex flex-col space-y-3">
