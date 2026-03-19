@@ -51,6 +51,18 @@ export default function RootLayout({
 }) {
   return (
     <html className="scroll-smooth" lang="en">
+      <Script id="consent-default" strategy="beforeInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
+        `}
+      </Script>
       <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_TAG as string} />
       <body className={raleway.className}>
         <Toaster />
