@@ -42,7 +42,7 @@
     "eslint-config-next": "^15.1.6",
     "eslint-plugin-react-hooks": "^5.1.0",
     "lucide-react": "^0.469.0",
-    "next": "^15.1.6",
+    "next": "15.5.9",
     "next-safe-action": "^7.10.2",
     "pino": "^9.6.0",
     "postcss": "8.4.49",
