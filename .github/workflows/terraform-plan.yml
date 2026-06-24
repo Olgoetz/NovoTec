@@ -9,6 +9,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  id-token: write
 
 jobs:
   terraform-plan:
@@ -30,6 +31,11 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ variables.AWS_ROLE_ARN }}
+          aws-region: eu-central-1
 
       - uses: hashicorp/setup-terraform@v3
         with:
