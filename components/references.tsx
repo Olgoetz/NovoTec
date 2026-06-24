@@ -53,6 +53,7 @@ const References: React.FC = async () => {
                     fill
                     src={`https:${el.fields.photos[0].fields.file.url}`}
                     alt={el.fields.title}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 

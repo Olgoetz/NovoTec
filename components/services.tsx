@@ -17,13 +17,13 @@ export const Services = () => {
   };
 
   const directNovoTecServices = mainServices.filter(
-    (task) => task.bgColor === "red"
+    (task) => task.bgColor === "red",
   );
   directNovoTecServices.sort((a, b) => {
     return a.title.localeCompare(b.title);
   });
   const novothermServices = mainServices.filter(
-    (task) => task.bgColor === "blue"
+    (task) => task.bgColor === "blue",
   );
   novothermServices.sort((a, b) => {
     return a.title.localeCompare(b.title);
@@ -41,11 +41,11 @@ export const Services = () => {
         <h2 className="text-2xl uppercase text-center md:text-left font-semibold mb-10 border-b pb-2">
           Ausbau- und Sanierungsmanagement - unsere Kernkompetenzen
         </h2>
-        <div className="grid md:grid-cols-2  items-center gap-8 ">
+        <div className="flex flex-wrap justify-center gap-8">
           {coreCompetencies.map((c) => (
             <div
               key={c.title}
-              className="flex items-center justify-center bg-slate-100"
+              className="flex items-center justify-center bg-slate-100 w-full md:w-[calc(50%-16px)]"
             >
               <div className="group h-60 w-full [perspective:1000px]">
                 <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
@@ -132,7 +132,7 @@ export const Services = () => {
               <AccordionItem
                 className={cn(
                   "rounded-lg border-4 hover:shadow-xl ",
-                  bgColors[task.bgColor]
+                  bgColors[task.bgColor],
                 )}
                 value={task.title}
               >
@@ -161,7 +161,7 @@ export const Services = () => {
               <AccordionItem
                 className={cn(
                   "rounded-lg border-4 hover:shadow-xl ",
-                  bgColors[task.bgColor]
+                  bgColors[task.bgColor],
                 )}
                 value={task.title}
               >
@@ -190,7 +190,7 @@ export const Services = () => {
               <AccordionItem
                 className={cn(
                   "rounded-lg border-4 hover:shadow-xl ",
-                  bgColors[task.bgColor]
+                  bgColors[task.bgColor],
                 )}
                 value={task.title}
               >

@@ -6,6 +6,7 @@ const nextConfig = {
       { hostname: "images.unsplash.com" },
       { hostname: "images.ctfassets.net" },
     ],
+    qualities: [100, 75],
   },
 };
 

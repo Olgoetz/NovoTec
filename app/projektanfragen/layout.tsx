@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Projektanfragen",
   description: "Projektanfragen für NovoTec",
   keywords: ["NovoTec", "Projekt", "Anfrage"],
+  alternates: {
+    canonical: "/projektanfragen",
+  },
 };
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {

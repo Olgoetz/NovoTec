@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   CopyrightIcon,
   Phone,
@@ -10,15 +9,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import SocialMedia from "./social-media";
-import Script from "next/script";
-export const Footer = () => {
-  const [currentYear, setCurrentYear] = useState<number>();
 
-  useEffect(() => {
-    let today = new Date();
-    let year: number = today.getFullYear();
-    setCurrentYear(year);
-  }, []);
+export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="bg-secondary-foreground w-full pt-10  text-white">
       <div className="grid md:grid-cols-3 text-left gap-6 container max-w-[1000px] mx-auto">

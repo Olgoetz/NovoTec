@@ -55,21 +55,21 @@ const coreCompetencies: Competency[] = [
     iconStyles2: "h-12 w-12 md:w-[180px]",
     //  image: Image,
   },
-  {
-    title: "Schwimmbeckensanierung",
-    description: [
-      "• Fachgerechte Fliesenverlegung und -reparatur",
-      "• Hochwertige Abdichtungsarbeiten für dauerhafte Dichtigkeit",
-      "• Sanierung und Erneuerung von Fliesenbelägen",
-      "• Einsatz langlebiger und ästhetischer Fliesenmaterialien",
-      "• Präzise Fugenarbeiten und Veredelungstechniken",
-    ],
-    containerStyles: "",
-    icon: PiSwimmingPool,
-    iconStyles1: "h-8 w-8 md:w-[180px]",
-    iconStyles2: "h-12 w-12 md:w-[180px]",
-    //  image: Image,
-  },
+  // {
+  //   title: "Schwimmbeckensanierung",
+  //   description: [
+  //     "• Fachgerechte Fliesenverlegung und -reparatur",
+  //     "• Hochwertige Abdichtungsarbeiten für dauerhafte Dichtigkeit",
+  //     "• Sanierung und Erneuerung von Fliesenbelägen",
+  //     "• Einsatz langlebiger und ästhetischer Fliesenmaterialien",
+  //     "• Präzise Fugenarbeiten und Veredelungstechniken",
+  //   ],
+  //   containerStyles: "",
+  //   icon: PiSwimmingPool,
+  //   iconStyles1: "h-8 w-8 md:w-[180px]",
+  //   iconStyles2: "h-12 w-12 md:w-[180px]",
+  //   //  image: Image,
+  // },
   {
     title: "Innen- und Dachausbauten",
     description: [

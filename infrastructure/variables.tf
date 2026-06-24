@@ -11,7 +11,7 @@ variable "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY" {
 
 }
 
-variable "GOOGLE_TAG_MANAGER_ID" {
+variable "GOOGLE_ANALYTICS_TAG" {
   type = string
 
 }
