@@ -53,9 +53,9 @@ export const Hero = () => {
       </div> */}
       <section className="">
         {/* <CrawlingText /> */}
-        <div className="absolute w-full md:w-1/2 top-1/4 left-1 z-10 text-center md:text-left text-white font-bold">
-          <div className="p-1 md:p-8 mx-2 rounded-lg flex flex-col items-center justify-start gap-y-2 md:gap-y-4">
-            <h1 className="text-2xl md:text-5xl w-full ">
+        <div className="absolute w-full md:w-2/3 top-1/4 left-0 z-10 text-center md:text-left text-white font-bold">
+          <div className="p-4 md:p-10 mx-2 rounded-xl bg-black/20 backdrop-blur-[2px] flex flex-col items-center justify-start gap-y-3 md:gap-y-5">
+            <h1 className="text-3xl md:text-5xl w-full drop-shadow-lg">
               Herzlich Willkommen bei{" "}
             </h1>
 
@@ -67,16 +67,10 @@ export const Hero = () => {
                 height={450}
                 sizes="(max-width: 768px) 90vw, 450px"
                 priority
-                className="py-8"
+                className="py-8 drop-shadow-lg"
               />
-              {/* <div>
-                <h2 className="text-2xl md:text-4xl text-center md:text-left">
-                  NovoTec®
-                </h2>
-                <p className="md:text-2xl">Ausbau & Sanierungsmanagement</p>
-              </div> */}
             </div>
-            <div className="flex flex-col justify-center text-sm md:text-lg leading-8 ">
+            <div className="flex flex-col justify-center text-base md:text-xl leading-8 drop-shadow-md">
               <p>
                 Als erfahrener Qualitätsdienstleister aus dem Rheinland bieten
                 wir seit nun fast 15 Jahren erstklassige Leistungen im Ausbau-
@@ -84,7 +78,7 @@ export const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-col md:items-start items-center justify-center w-full text-sm md:text-lg leading-8 ">
+            <div className="flex flex-col md:items-start items-center justify-center w-full text-base md:text-xl leading-8 drop-shadow-md">
               <div>
                 <p className="py-6">Unser Angebot umfasst 7 Kernkompetenzen</p>
 

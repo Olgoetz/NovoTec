@@ -49,7 +49,7 @@ function BackgroundVideo() {
     <div className="relative h-screen w-full overflow-hidden">
       {/* Poster image shown immediately while video loads */}
       <img
-        src="/video-poster.jpg"
+        src="/hero.jpg"
         alt=""
         className="absolute h-full w-full object-cover"
         aria-hidden="true"
@@ -62,7 +62,7 @@ function BackgroundVideo() {
         loop
         playsInline
         preload="none"
-        poster="/video-poster.jpg"
+        poster="/hero.jpg"
         className="absolute h-full w-full object-cover"
       >
         {/* WebM first — smaller file size, better compression */}
