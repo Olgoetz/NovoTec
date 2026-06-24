@@ -5,12 +5,11 @@ resource "vercel_project" "novotec" {
   resource_config = {
     function_default_region = "fra1"
   }
-  git_repository = {
-    type              = "github"
-    repo              = "Olgoetz/NovoTec"
-    production_branch = "main"
-
-  }
+  # git_repository = {
+  #   type              = "github"
+  #   repo              = "Olgoetz/NovoTec"
+  #   production_branch = "main"
+  # }
   vercel_authentication = {
     deployment_type = "none"
   }
