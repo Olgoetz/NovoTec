@@ -30,12 +30,3 @@ repos:
         language: system
         pass_filenames: false
         types_or: [ts, tsx]
-
-  # Terraform
-  - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.108.0
-    hooks:
-      - id: terraform_fmt
-      - id: terraform_validate
-        args:
-          - --hook-config=--retry-once-with-cleanup=true
