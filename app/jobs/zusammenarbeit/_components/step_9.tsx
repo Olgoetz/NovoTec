@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { UseFormReturn } from "react-hook-form";
 import { TFormSchema } from "../_lib/validations";
 
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { FormDescription, FormLabel } from "@/components/ui/form";
 
 interface Step9Props {
@@ -79,12 +79,12 @@ export default function Step_9({ form }: Step9Props) {
               type="button"
               key={index}
               onClick={() => setTimeslot(`${timeSlot}, ${t}`)}
-              className={clsx(
+              className={cn(
                 "p-2 bg-slate-100  hover:bg-slate-100/30 rounded-md text-novo-red text-xs",
                 {
                   "bg-slate-100/30":
                     form.watch("step9") === `${timeSlot}, ${t}`,
-                }
+                },
               )}
             >
               {t}
@@ -144,7 +144,7 @@ export default function Step_9({ form }: Step9Props) {
               {renderTimeSlots(
                 day.toLocaleDateString("de-DE", {
                   dateStyle: "long",
-                })
+                }),
               )}
             </div>
           ))

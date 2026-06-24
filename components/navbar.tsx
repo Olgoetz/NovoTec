@@ -3,10 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Mail, Menu, Phone, X } from "lucide-react";
-import clsx from "clsx";
 import SocialMedia from "./social-media";
 import { cn } from "@/lib/utils";
 
@@ -45,32 +44,32 @@ export const Navbar = () => {
   const [nav, setNav] = useState(false);
   const pathName = usePathname();
 
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [navbarBg, setNavbarBg] = useState("");
-  const controlNavbar = () => {
-    // Check if the window object is available
-    if (typeof window !== "undefined") {
-      if (window.scrollY > lastScrollY) {
-        // Scrolling down
-        setNavbarBg("bg-white text-gray-600");
-      } else {
-        // Scrolling up
-        setNavbarBg("");
-      }
-      setLastScrollY(window.scrollY);
-    }
-  };
-  useEffect(() => {
-    // Add event listener only if the window object is available
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
-      // Cleanup function to remove the event listener
-      return () => {
-        window.removeEventListener("scroll", controlNavbar);
-      };
+  const controlNavbar = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY.current) {
+      setNavbarBg("bg-white text-gray-600");
+    } else {
+      setNavbarBg("");
     }
-  }, [lastScrollY]);
+    lastScrollY.current = currentScrollY;
+    ticking.current = false;
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (!ticking.current) {
+        ticking.current = true;
+        requestAnimationFrame(controlNavbar);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [controlNavbar]);
   return (
     <>
       <div
@@ -111,7 +110,10 @@ export const Navbar = () => {
               </div> */}
               <div className="flex space-x-4">
                 <div className="relative h-6 w-6">
-                  <Link href="https://novotherm-koeln.de/">
+                  <Link
+                    href="https://novotherm-koeln.de/"
+                    className="relative block h-full w-full"
+                  >
                     <Image
                       fill
                       src="/novotherm_logo_white.svg"
@@ -131,7 +133,7 @@ export const Navbar = () => {
           <div
             className={cn(
               "px-5 hidden md:flex flex-1 h-[100px] hover:text-gray-600  hover:bg-white items-center justify-between",
-              pathName === "/" ? `group ${navbarBg}` : "bg-white"
+              pathName === "/" ? `group ${navbarBg}` : "bg-white",
             )}
           >
             <div className="flex flex-col items-center  mr-4 ">
@@ -142,7 +144,7 @@ export const Navbar = () => {
                   alt="Logo"
                   src="/novotec_logo_nobackground.png"
                   quality={100}
-                  sizes="100vw"
+                  sizes="220px"
                 />
               </Link>
               {/* <p
@@ -162,7 +164,7 @@ export const Navbar = () => {
                     key={route.label}
                     className={cn(
                       "group p-3 font-bold hover:text-primary-foreground hover:bg-secondary/10 rounded-lg transition",
-                      pathName === "/" ? `${navbarBg}` : "text-gray-600"
+                      pathName === "/" ? `${navbarBg}` : "text-gray-600",
                       // {
                       //   "text-primary-foreground bg-secondary/10":
                       //     pathName === route.link,
@@ -192,6 +194,7 @@ export const Navbar = () => {
                     alt="NovoTec Logo"
                     src="/novotec_logo_nobackground.png"
                     quality={100}
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </Link>
               </div>
@@ -208,7 +211,7 @@ export const Navbar = () => {
                     quality={100}
                   />
                 </Link>
-   
+
               </div> */}
               </div>
             </div>
@@ -223,6 +226,7 @@ export const Navbar = () => {
                     alt="NovoTec Logo"
                     src="/novotec_logo_nobackground.png"
                     quality={100}
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </Link>
               </div>

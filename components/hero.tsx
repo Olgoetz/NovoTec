@@ -1,5 +1,3 @@
-import NovoTec from "@/components/novotec";
-
 import Image from "next/image";
 import coreCompetencies from "@/data/coreCompetencies";
 import { cn } from "@/lib/utils";
@@ -8,8 +6,6 @@ import Link from "next/link";
 import BackgroundVideo from "./backgroundVideo";
 import { ChevronDown } from "lucide-react";
 export const Hero = () => {
-  const box_style =
-    "bg-slate-800/40 flex flex-col border border-white p-5 items-center space-y-3 justify-center";
   return (
     <div className="w-full  md:py-5  bg-transparent">
       {/* <div className="relative min-h-screen text-white ">
@@ -69,7 +65,7 @@ export const Hero = () => {
                 alt="NovoTec Logo Hero"
                 width={450}
                 height={450}
-                sizes="100vw"
+                sizes="(max-width: 768px) 90vw, 450px"
                 priority
                 className="py-8"
               />
@@ -90,7 +86,7 @@ export const Hero = () => {
 
             <div className="flex flex-col md:items-start items-center justify-center w-full text-sm md:text-lg leading-8 ">
               <div>
-                <p className="py-6">Unser Angebot umfasst 8 Kernkompetenzen</p>
+                <p className="py-6">Unser Angebot umfasst 7 Kernkompetenzen</p>
 
                 <ChevronDown className="w-full" size={40} />
               </div>
@@ -99,14 +95,18 @@ export const Hero = () => {
         </div>
         <BackgroundVideo />
 
-        <div className="container py-20 font-semibold grid md:grid-cols-4 gap-7  mx-auto ">
+        <div className="container py-20 font-semibold flex flex-wrap justify-center gap-7 mx-auto">
           {coreCompetencies.map((c) => (
-            <Link key={c.title} href="/leistungen">
+            <Link
+              key={c.title}
+              href="/leistungen"
+              className="w-[calc(50%-14px)] md:w-[calc(25%-21px)]"
+            >
               <div className="h-[80px] bg-slate-100 flex items-center justify-center px-1  border rounded-md shadow-lg">
                 <div
                   className={cn(
                     "flex items-center justify-start ",
-                    c.containerStyles
+                    c.containerStyles,
                   )}
                 >
                   {c.icon && <c.icon className={cn("mr-5", c.iconStyles1)} />}

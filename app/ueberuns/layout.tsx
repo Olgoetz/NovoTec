@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Über Uns",
   description: "Wer wir sind",
   keywords: ["NovoTec", "Über Uns", "Geschichte"],
+  alternates: {
+    canonical: "/ueberuns",
+  },
 };
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {

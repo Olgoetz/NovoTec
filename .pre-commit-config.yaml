@@ -1,0 +1,41 @@
+repos:
+  # General file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=1000"]
+      - id: no-commit-to-branch
+        args: ["--branch", "main"]
+
+  # Prettier formatting
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        types_or: [javascript, jsx, ts, tsx, css, json, markdown]
+        exclude: "(node_modules|.next|infrastructure)/"
+
+  # ESLint
+  - repo: local
+    hooks:
+      - id: typescript
+        name: typescript type-check
+        entry: npx tsc --noEmit
+        language: system
+        pass_filenames: false
+        types_or: [ts, tsx]
+
+  # Terraform
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.108.0
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_validate
+        args:
+          - --hook-config=--retry-once-with-cleanup=true

@@ -1,12 +1,14 @@
 
 resource "vercel_project" "novotec" {
-  name                       = "novotec"
-  framework                  = "nextjs"
-  serverless_function_region = "fra1"
+  name      = "novotec"
+  framework = "nextjs"
+  resource_config = {
+    function_default_region = "fra1"
+  }
   git_repository = {
     type              = "github"
     repo              = github_repository.novotec.full_name
-    production_branch = "prod"
+    production_branch = "main"
 
   }
   vercel_authentication = {
