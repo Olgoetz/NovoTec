@@ -7,7 +7,7 @@ resource "vercel_project" "novotec" {
   }
   git_repository = {
     type              = "github"
-    repo              = github_repository.novotec.full_name
+    repo              = "Olgoetz/NovoTec"
     production_branch = "main"
 
   }
